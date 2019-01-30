@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+@font-face {
+  font-family: 'Gotham-Pro';
+  src: url("../../fonts/GothamPro.ttf") format("truetype");
+}
+* {
+  margin: 0;
+}
+
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.title {
+  font-family: "Gotham-Pro", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #0d0b0b;
+  text-transform: uppercase;
+}
+
+.card a {
+  text-decoration: none !important;
+}
+.card a:hover {
+  color: #ffa334;
+}
+
+.card img, .card {
+  border-radius: 0 !important;
+}
+
+.card-date {
+  color: #0d0b0b;
+  font-size: 14px;
+  font-family: "Roboto Light", sans-serif;
+}
+
+.card-title {
+  color: #ff8c01;
+  font-size: 22px !important;
+  font-family: "Roboto Medium", sans-serif !important;
+}
+
+.card-text {
+  font-family: "Roboto Light", sans-serif;
+  font-size: 16px;
+  color: #0d0b0b;
+}
+
+.t-transf-cap {
+  text-transform: capitalize;
+}
+
+.adv-item {
+  border: 1px solid #c6c6c6;
+}
+
+.adv-title {
+  font-size: 20px !important;
+  font-family: "Roboto Medium", sans-serif;
+  color: #0d0b0b;
+}
+
+.adv-main-text {
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-color: #0d0b0b;
+  font-size: 16px;
+}
+
+.test {
+  height: 100px;
+  width: 100px;
+}
+
+/*# sourceMappingURL=main.css.map */
