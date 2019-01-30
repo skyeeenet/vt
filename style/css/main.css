@@ -134,7 +134,7 @@ div.declarationHead {
   position: absolute;
   width: 10px;
   height: 10px;
-  content: url("../images/sliderButton.png");
+  content: url("../../images/sliderButton.png");
   opacity: 0.25;
 }
 
