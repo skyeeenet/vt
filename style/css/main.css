@@ -224,3 +224,49 @@ div.declarationHead {
   outline: none;
   opacity: 1;
 }
+
+.vit_foot_main_text {
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ecedef;
+}
+
+.vit_foot_text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ababab;
+}
+
+.vit_footer_container {
+  background-color: black;
+}
+
+.vit_search_field {
+  background-color: #ecedef;
+  font-size: 16px;
+  padding-left: 15px;
+  border: none;
+}
+
+.vit_search_icon {
+  background-color: #d80056;
+  border: none;
+  padding: 0 27px;
+}
+
+.vit_col4 {
+  height: 46px;
+}
+
+.vit_search {
+  height: 46px;
+}
+
+input::-webkit-input-placeholder {
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
