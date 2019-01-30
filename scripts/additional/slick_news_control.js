@@ -9,7 +9,7 @@ $(document).ready(function () {
         slidesToScroll: 1,
         responsive: [
             {
-                
+
             }
         ]
     });
