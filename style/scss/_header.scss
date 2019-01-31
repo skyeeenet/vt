@@ -1,152 +1,21 @@
 @import "btn_menu";
 
-.navbar {
-  height: 100px;
-}
-
-.nav-link {
-  color: $navbar-links-color !important;
-  letter-spacing: 1px;
-  font-family: Poppins, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-right: 1rem;
-}
-
-.navbar-brand {
-
-  a {
-
-    h2 {
-      color: $navbar-logo-color !important;
-      font-family: Poppins, sans-serif;
-      font-weight: 600;
-      font-size: 28px;
-    }
-  }
-
-  small {
-    color: $navbar-links-color !important;
-    font-family: Poppins;
-    font-weight: 400;
-    letter-spacing: 1px;
-    font-size: 16px;
-  }
-}
-
-.up-header_line {
-  height: 50px;
-  background-color: $up-line-header-bg-color;
-
-  h3, span {
-    color: white !important;
-    font-family: Poppins, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-  }
-
-  span {
-    margin-right: 3rem;
-  }
-
-}
-
-.logo {
-  margin-left: 1.6rem;
-
-  h2 {
-
-    a {
-      color: $navbar-logo-color !important;
-      font-family: Poppins, sans-serif;
-      font-weight: 600;
-      font-size: 28px;
-    }
-  }
-}
-
-.navbar-nav {
-  background-color: black;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100%;
-
-  ul {
-    width: 100%;
-  }
-}
-
-@import "btn_menu";
-
-@font-face{
-  font-family: 'Lato-Regular';
-  src: url('../../fonts/Lato-Regular.ttf') format('truetype');
-}
-
-@font-face{
-  font-family: 'Lato-Light';
-  src: url('../../fonts/Lato-Light.ttf') format('truetype');
-}
-
-@font-face{
-  font-family: 'Asap-Regular';
-  src: url('../../fonts/Asap-Regular.ttf') format('truetype');
-}
-
-@font-face{
-  font-family: 'Asap-Medium';
-  src: url('../../fonts/Asap-Medium.ttf') format('truetype');
-}
-
-@font-face{
-  font-family: 'Asap-Italic';
-  src: url('../../fonts/Asap-Italic.ttf') format('truetype');
-}
-
-@font-face{
-  font-family: 'Asap-Bold';
-  src: url('../../fonts/Asap-Bold.ttf') format('truetype');
-}
-
-$font-navbar: "Lato-Regular";
-$font-title: "Asap-Regular";
 $font-navbar-color: #4d4d4d;
 $font-navbar-size: 18px;
 $active-color : #00baff;
+$font-navbar: "Roboto", sans-serif;
 $max-width: 1366px;
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
+.navbar-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .logo {
   color: $font-navbar-color;
   display: flex;
-  flex-direction: column;
   align-items: center;
   margin-left: 10px;
-}
-
-.title-h2 {
-  font-family: "Lato-Light";
-  font-weight: 400;
-  font-size: 14px;
-}
-
-.title-h4 {
-  font-family: "Lato-Regular";
-  font-weight: 800;
-  font-size: 8px;
 }
 
 .navbar {
@@ -166,6 +35,7 @@ ul {
         font-family: $font-navbar;
         font-size: 16px;
         color: $font-navbar-color;
+        text-decoration: none;
       }
     }
   }
@@ -177,69 +47,7 @@ ul {
   z-index: 100;
 }
 
-header {
-  background: url(../../images/header-bg.png) no-repeat center top / cover;
-}
-
-.column-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.header-h1 {
-  font-family: "Asap-Medium";
-  color: $font-navbar-color;
-  font-size: 90px;
-}
-
-.header-h3 {
-  color: rgba(0,0,0,0.3);
-  font-family: "Asap-Medium";
-  font-size: 22px;
-}
-
-.header-title-container {
-  max-width: $max-width;
-  margin: 0 auto;
-  margin-top: 200px;
-  padding-bottom: 200px;
-  padding-left: 10px;
-}
-
-.row-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.btn {
-  display: block;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  color: $font-navbar-color;
-  font-family: "Asap-Medium";
-  font-size: 16px;
-  align-self: flex-start;
-}
-
-.mr-20 {
-  margin-right: 20px;
-}
-
-.mt-30 {
-  margin-top: 30px;
-}
-
-.btn-white {
-  background-color: white;
-  box-shadow: 0 5px 20px 5px rgba(0,0,0,0.1);
-}
-
-.btn-tr {
-  border: 1px solid black;
-}
-
-
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 980px) {
 
   .navbar-second {
     margin-top: 0 !important;
@@ -268,7 +76,7 @@ header {
   }
 }
 
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 980px) {
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -276,8 +84,10 @@ header {
   }
 
   #dropdown-menu {
+    z-index: 100;
     position: absolute;
-    top: 80px;
+    top: 120px;
+    left: 0;
     background-color: white;
     width: 100%;
 

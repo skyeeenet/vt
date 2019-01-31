@@ -1,17 +1,11 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&subset=cyrillic');
-/* Roboto font */
-
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&subset=cyrillic');
-/* Roboto Condensed font */
 @font-face {
   font-family: 'Gotham-Pro';
   src: url("../../fonts/GothamPro.ttf") format("truetype");
 }
-
 * {
   margin: 0;
-  padding: 0;
 }
 
 .navbar-toggler {
@@ -27,6 +21,150 @@ a {
   text-decoration: none;
 }
 
+.menu-btn {
+  z-index: 10;
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -10px;
+  width: 20px;
+  height: 2px;
+  background-color: black;
+}
+
+.menu-btn span::before,
+.menu-btn span::after {
+  content: '';
+  display: block;
+  transition: .2s;
+}
+
+.menu-btn span::before {
+  /*Поднимаем псевдоэлемент на 5px */
+  transform: translateY(-5px);
+}
+
+.menu-btn span::after {
+  transform: translateY(5px);
+}
+
+/* крестик*/
+.menu-btn-active span {
+  height: 0;
+}
+
+.menu-btn-active span::before {
+  transform: rotate(45deg);
+}
+
+.menu-btn-active span::after {
+  transform: rotate(-45deg);
+}
+
+.navbar-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.logo {
+  color: #4d4d4d;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100px;
+  align-items: center;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+}
+.navbar ul li {
+  margin-right: 3rem;
+}
+.navbar ul li a {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+#btn-show {
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+@media screen and (max-width: 980px) {
+  .navbar-second {
+    margin-top: 0 !important;
+    justify-content: flex-start;
+  }
+  .navbar-second ul {
+    margin-top: 20px;
+  }
+
+  .navbar {
+    margin-top: 10px;
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+  }
+  .navbar ul li:last-child {
+    margin-right: 0;
+  }
+  .navbar ul li {
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width: 980px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  #dropdown-menu {
+    z-index: 100;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+  }
+  #dropdown-menu li {
+    width: 100%;
+  }
+  #dropdown-menu li a {
+    display: block;
+    padding: 10px;
+  }
+
+  #btn-show {
+    display: inline-block !important;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
 .title {
   font-family: "Gotham-Pro", sans-serif;
   font-weight: 400;
@@ -82,7 +220,7 @@ a {
   text-align: center;
   font-family: Roboto, sans-serif;
   font-weight: 400;
-  color: #0d0b0b;
+  font-color: #0d0b0b;
   font-size: 16px;
 }
 
@@ -91,182 +229,4 @@ a {
   width: 100px;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
-div.topHeader {
-  background-color: #0d0b0b;
-}
-
-div.currentWeek div:first-child {
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ecedef;
-  text-transform: uppercase;
-}
-
-div.currentWeek div:last-child {
-  font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #ff8c01;
-  text-transform: uppercase;
-}
-
-div.contactsTopHeader {
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ecedef;
-}
-
-div.logoHeader div:first-child {
-  font-family: "Roboto", sans-serif;
-  font-size: 28px;
-  color: #ff8c01;
-}
-
-div.logoHeader div:last-child {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  color: #0d0b0b;
-}
-
-ul.navigationMenu li {
-  margin: 0 5px;
-  opacity: 0.5;
-}
-
-ul.navigationMenu li.active {
-  opacity: 1;
-}
-
-ul.navigationMenu li:hover {
-  opacity: 0.7;
-}
-
-ul.navigationMenu li a {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #0d0b0b;
-  text-transform: uppercase;
-}
-
-div.sliderBLock {
-  height: 300px;
-  background: #ecedef;
-  overflow: hidden;
-}
-
-div.sliderBLock img {
-  object-fit: cover;
-}
-
-div.declaration {
-  height: 300px;
-  background-color: #ecedef;
-}
-
-div.declarationHead {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #ff8c01;
-  text-transform: uppercase;
-}
-
-/* Slick Slider settings */
-
-.dotsSlck {
-  outline: none;
-  position: absolute;
-  display: block;
-  width: 100%;
-  list-style: none;
-  text-align: center;
-  padding-bottom: 0;
-}
-
-.dotsSlck li {
-  outline: none;
-  position: relative;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
-  margin: 0 5px;
-}
-
-.dotsSlck li button {
-  outline: none;
-  display: block;
-  border: 0;
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
-  background: transparent;
-  font-size: 0;
-}
-
-.dotsSlck li button:before {
-  outline: none;
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  content: url("../../images/sliderButton.png");
-  opacity: 0.25;
-}
-
-.dotsSlck li.slick-active button:before {
-  outline: none;
-  opacity: 1;
-}
-
-.vit_foot_main_text {
-  text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #ecedef;
-}
-
-.vit_foot_text {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #ababab;
-}
-
-.vit_footer_container {
-  background-color: black;
-}
-
-.vit_search_field {
-  background-color: #ecedef;
-  font-size: 16px;
-  padding-left: 15px;
-  border: none;
-}
-
-.vit_search_icon {
-  background-color: #d80056;
-  border: none;
-  padding: 0 27px;
-}
-
-.vit_col4 {
-  height: 46px;
-}
-
-.vit_search {
-  height: 46px;
-}
-
-input::-webkit-input-placeholder {
-  color: #000000;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-}
+/*# sourceMappingURL=main.css.map */
