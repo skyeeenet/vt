@@ -44,28 +44,32 @@
                 <!-- /.container -->
             </div>
             <!-- /.container-fluid topHeader -->
-            <div class="navbar-container">
-                <nav class="navbar navbar-second">
-                    <div class="logo d-flex">
-                        <div><img src="images/logo.png" alt=""></div>
-                        <div class="d-flex flex-column">
-                            <h2 class="title-h2">OENRIQUE</h2>
-                            <h4 class="title-h4">UX/UI EXPERT</h4>
+            <div class="container navbar-container">
+                <nav class="navbar navbar-second d-flex flex-row justify-content-between align-items-center">
+                    <div class="d-flex flex-row justify-content-around align-items-center logoHeader mt-3 mb-3">
+                        <img src="images/logo.png" alt="logo" height="100px">
+                        <div class="d-flex flex-column justify-content-around align-items-start ml-2">
+                            <div>Oenrique</div>
+                            <div>UX/UI Expert</div>
                         </div>
                     </div>
-                    <ul id="dropdown-menu">
-                        <li><a href="#1">HOME</a></li>
-                        <li><a href="#2">ABOUT</a></li>
-                        <li><a href="#3">SERVICE</a></li>
-                        <li><a class="active" href="#4">PORTFOLIO</a></li>
-                        <li><a href="#5">CONTACT</a></li>
+                    <ul id="dropdown-menu" class="align-items-center">
+                        <li><a href="#1">Главная</a></li>
+                        <li><a href="#2">Абитуриенту</a></li>
+                        <li><a href="#3">Студенту</a></li>
+                        <li><a class="active" href="#4">Кафедра</a></li>
+                        <li><a href="#5">
+                                <span class="d-lg-none">Поиск</span>
+                                <img class="d-none d-lg-block" src="images/search.svg" height="15px" width="15px" alt="search">
+                            </a>
+                        </li>
                     </ul>
                     <a id="btn-show" href="#" class="menu-btn">
                         <span></span>
                     </a>
                 </nav>
             </div>
-            <!-- /.container -->
+            <!-- /.navbar-container -->
             <div class="container mt-3 mb-3">
                 <div class="row">
                     <div class="col-lg-8 slck">
@@ -353,10 +357,8 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
@@ -366,28 +368,7 @@
     <script src="scripts/additional/slick_news_control.js"></script>
     <script src="scripts/additional/slick_news_content_control.js"></script>
     <script src="scripts/additional/slick_technologies_control.js"></script>
-    <script>
-        var btn = $('#btn-show');
-        var dropdown = $('#dropdown-menu');
-        var flag = true;
-
-        btn.click(function () {
-
-            if (flag) {
-                dropdown.slideDown();
-
-            } else {
-
-                dropdown.slideUp();
-            }
-            flag = !flag;
-        });
-
-        $('.menu-btn').on('click', function (e) {
-            e.preventDefault();
-            $(this).toggleClass('menu-btn-active');
-        });
-    </script>
+    <script src="scripts/additional/burger_menu_control.js"></script>
 </body>
 
 </html>
