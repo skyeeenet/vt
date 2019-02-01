@@ -32,6 +32,16 @@
                         <a class="dropdown-item" href="{{ route('admin.header.menu') }}">Редактирование меню</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Content
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="content">
+                        <a class="dropdown-item" href="{{ route('admin.content.images') }}">Изображения</a>
+                        <a class="dropdown-item" href="{{ route('admin.content.upper-slider') }}">Верхний слайдер</a>
+                        <a class="dropdown-item" href="{{ route('admin.content.adverts') }}">Объявления</a>
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>

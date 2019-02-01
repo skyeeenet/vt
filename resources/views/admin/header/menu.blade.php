@@ -34,11 +34,11 @@
                     <tr>
                         <td>{{$element->item}}</td>
                         <td>{{$element->url}}</td>
-                        <td><a href="{{ '/admin/header/submenu/'.$element->id }}"><i class="fas fa-edit"></i></a></td>
+                        <td><a class="btn btn-primary" href="{{ '/admin/header/submenu/'.$element->id }}"><i class="fas fa-edit"></i></a></td>
                         <td>
                             <form action="{{ route('admin.header.menu').'/destroy/'.$element->id }}" method="post">
                                 {{csrf_field()}}
-                                <input type="submit">
+                                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </td>
                         <!--<td><i class="far fa-trash-alt"></i></td>-->
