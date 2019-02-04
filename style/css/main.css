@@ -6,14 +6,15 @@
 /* Roboto Condensed font */
 
 @font-face {
-  font-family: 'Gotham-Pro';
-  src: url("../../fonts/GothamPro.ttf") format("truetype");
+  font-family: 'Gotham-Pro-Light';
+  src: url("../../fonts/GothamPro-Light.ttf") format("truetype");
 }
 
 
 
 * {
   margin: 0;
+  padding: 0;
 }
 
 .navbar-toggler {
@@ -380,8 +381,9 @@ div.specGreyLine {
 }
 
 div.specHeadContentText {
-  font-family: "Gotham-Pro", sans-serif;
-  font-weight: 300;
+  font-family: "Gotham-Pro-Light", sans-serif;
+  /*font-weight: 300;*/
+  text-transform: uppercase;
   font-size: 30px;
   color: #0d0b0b;
   margin-top: 50px;
@@ -477,6 +479,48 @@ input::-webkit-input-placeholder {
 }
 
 /* vitassuper zone end */
+
+/* skyeeenet zone */
+
+.prev {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  z-index: 999999;
+}
+
+.next {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  z-index: 999999;
+}
+
+.next, .prev {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  outline: none;
+}
+
+.next, .prev i {
+  color: #d1d1d1;
+  font-size: 30px;
+}
+
+/* skyeeenet zone end */
+
+/* intusmortius zone */
+
+.gallery {
+  max-width: 60%;
+}
+
+/* intusmortius zone end */
 
 /* HanGerrel zone */
 
