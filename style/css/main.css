@@ -369,6 +369,37 @@ div.declarationHead {
   opacity: 1;
 }
 
+/* Slick Sliden settigns end */
+
+div.specGreyLine {
+  border: 1px solid #d1d1d1;
+  width: 100%;
+  margin-top: -30px;
+}
+
+div.specHeadContentText {
+  font-family: "Gotham-Pro", sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  color: #0d0b0b;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+div.specDoubledColorLine {
+  margin-bottom: 10px;
+}
+
+div.specDoubledColorLine div:first-child {
+  border: 1px solid #ff8c01;
+  width: 30px;
+}
+
+div.specDoubledColorLine div:last-child {
+  border: 1px solid #0d0b0b;
+  width: 30px;
+}
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
@@ -417,6 +448,12 @@ input::-webkit-input-placeholder {
   color: #000000;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
+}
+
+.vit_text_subjects{
+  color:#0d0b0b;
+  font-size: 36px;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* vitassuper zone end */
