@@ -10,6 +10,8 @@
   src: url("../../fonts/GothamPro.ttf") format("truetype");
 }
 
+
+
 * {
   margin: 0;
 }
@@ -454,6 +456,24 @@ input::-webkit-input-placeholder {
   color:#0d0b0b;
   font-size: 36px;
   font-family: 'Roboto', sans-serif;
+}
+
+.roboto24lt{
+  font-family: 'Roboto' , sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.roboto24bd{
+  font-family: 'Roboto' , sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.roboto18lt{
+  font-family: 'Roboto' , sans-serif;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 /* vitassuper zone end */
