@@ -10,8 +10,6 @@
   src: url("../../fonts/GothamPro-Light.ttf") format("truetype");
 }
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +24,7 @@ ul {
   list-style: none;
 }
 
-a {
+a:hover {
   text-decoration: none;
 }
 
@@ -382,7 +380,6 @@ div.specGreyLine {
 
 div.specHeadContentText {
   font-family: "Gotham-Pro-Light", sans-serif;
-  /*font-weight: 300;*/
   text-transform: uppercase;
   font-size: 30px;
   color: #0d0b0b;
@@ -402,6 +399,38 @@ div.specDoubledColorLine div:first-child {
 div.specDoubledColorLine div:last-child {
   border: 1px solid #0d0b0b;
   width: 30px;
+}
+
+img.scaleSomeImage {
+  max-width: 90%;
+}
+
+.someHeadText {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+div.someBlockButton {
+  background-color: #d80056;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  transition: all 0.3s;
+}
+
+div.someBlockButton:hover {
+  background-color: #b1054a;
+  transition: all 0.3s;
+}
+
+div.someBlockText {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #0d0b0b;
 }
 
 /* andinoriel zone end */
@@ -454,26 +483,26 @@ input::-webkit-input-placeholder {
   font-weight: 600;
 }
 
-.vit_text_subjects{
-  color:#0d0b0b;
+.vit_text_subjects {
+  color: #0d0b0b;
   font-size: 36px;
   font-family: 'Roboto', sans-serif;
 }
 
-.roboto24lt{
-  font-family: 'Roboto' , sans-serif;
+.roboto24lt {
+  font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 300;
 }
 
-.roboto24bd{
-  font-family: 'Roboto' , sans-serif;
+.roboto24bd {
+  font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 700;
 }
 
-.roboto18lt{
-  font-family: 'Roboto' , sans-serif;
+.roboto18lt {
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 300;
 }
@@ -524,23 +553,20 @@ input::-webkit-input-placeholder {
 
 /* HanGerrel zone */
 
-.bg_color_green
-{
+.bg_color_green {
   background-color: #4caf50;
 }
 
-.bg_color_aquamarine
-{
+.bg_color_aquamarine {
   background-color: #5cb8d7;
 }
 
-.bg_color_grey
-{
+.bg_color_grey {
   background-color: #d1d1d1;
 }
 
-.roboto16lt{
-  font-family: 'Roboto' , sans-serif;
+.roboto16lt {
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
