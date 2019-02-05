@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Content;
 
-use App\Advert;
 use App\Http\Controllers\Controller;
+use App\Models\Advert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,7 +11,7 @@ class AdvertController extends Controller
 {
     public function index() {
 
-        $adverts = Advert::paginate(1);
+        $adverts = Advert::paginate(10);
 
         return view('admin.content.adverts.index', compact('adverts'));
     }

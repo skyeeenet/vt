@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin\Header;
 
 use App\Http\Controllers\Controller;
-use App\Menu;
-use App\Submenu;
+use App\Models\Menu;
+use App\Models\Submenu;
 use Illuminate\Http\Request;
 
 class SubmenuController extends Controller

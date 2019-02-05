@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Header;
 
-use App\Header;
 use App\Http\Controllers\Controller;
+use App\Models\Header;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

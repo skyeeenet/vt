@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Content;
 
-use App\UpperSlider;
+use App\Models\UpperSlider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

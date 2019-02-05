@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\Header;
 
 use App\Http\Controllers\Controller;
-use App\Menu;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class HeaderMenuController extends Controller

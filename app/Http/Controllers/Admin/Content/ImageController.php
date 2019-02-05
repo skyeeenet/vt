@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\Content;
 
 use App\Http\Controllers\Controller;
-use App\Image;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
