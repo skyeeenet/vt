@@ -553,6 +553,42 @@ input::-webkit-input-placeholder {
   font-size: 30px;
 }
 
+.schedule-border {
+
+  /*border: 2px solid rgba(0,0,0,0.1);*/
+}
+
+.schedule-date::after {
+
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  right: -15px;
+  height: 14px;
+  width: 14px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  transform: rotate(-45deg);
+}
+
+.schedule-date::before {
+
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  height: 14px;
+  width: 14px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  transform: rotate(45deg);
+}
+
+.schedule-date form input {
+
+  border: none;
+}
+
 /* skyeeenet zone end */
 
 /* intusmortius zone */
