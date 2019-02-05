@@ -1,2 +1,0 @@
-# vt
-Department website VT
