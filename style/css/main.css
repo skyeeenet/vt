@@ -478,6 +478,18 @@ input::-webkit-input-placeholder {
   font-weight: 300;
 }
 
+.vit_dropdown{
+  border: 1px solid gray;
+}
+
+.vit_bg{
+  background: gray;
+}
+
+.vit_border{
+  border: 3px solid black;
+}
+
 /* vitassuper zone end */
 
 /* skyeeenet zone */
