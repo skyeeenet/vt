@@ -83,8 +83,8 @@ div.MAINBOX {
 }
 
 .navbar-container {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 .navbar {
@@ -181,11 +181,17 @@ div.MAINBOX {
 }
 
 .title {
-  font-family: "Gotham-Pro", sans-serif;
+  font-family: "Gotham-Pro-Light", sans-serif;
   font-weight: 400;
   font-size: 24px;
   color: #0d0b0b;
   text-transform: uppercase;
+}
+
+.sub-title {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 22px;
 }
 
 .card a {
@@ -238,6 +244,27 @@ div.MAINBOX {
   font-weight: 400;
   color: #0d0b0b;
   font-size: 16px;
+}
+
+.table-red {
+  color: #d80056;
+}
+
+.table-title {
+  color: #5cb8d7;
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+.plane-link {
+  color: #5cb8d7;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.td-poiner {
+  background-color: #ff8c01;
 }
 
 /* skyeeenet zone end */
