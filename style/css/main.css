@@ -586,16 +586,57 @@ input::-webkit-input-placeholder {
   font-weight: 300;
 }
 
-.vit_dropdown {
-  border: 1px solid gray;
+
+.vit_dropdown{
+    position: relative;
+    display: flex;
 }
 
-.vit_bg {
-  background: gray;
+.vit_dropdownchild {
+  display: none;
+  position: absolute;
+ 
+  background-color: black;
+  min-width: 120px;
 }
 
-.vit_border {
-  border: 3px solid black;
+.student:hover .vit_dropdownchild{
+  display: block;
+  z-index: 2;
+  top:55px;
+}
+
+.contacts:hover .vit_dropdownchild{
+  display: block;
+  z-index: 2;
+  top:55px;
+}
+
+
+.department:hover .vit_dropdownchild{
+  display: block;
+  z-index: 2;
+  top:55px;
+}
+
+.enrollee:hover .vit_dropdownchild {
+  display: block;
+  z-index: 2;
+  top:55px;
+}
+
+.vit_dropdownchild a:hover{
+  color: #b1054a;
+}
+
+.vit_dropdownchild a{
+  text-decoration: none;
+  color:#ababab;
+  display: block;
+}
+
+.vit_index{
+  z-index: 1;
 }
 
 /* vitassuper zone end */
