@@ -25,6 +25,7 @@
 
 ul {
   list-style: none;
+  margin: 0;
 }
 
 a:hover {
@@ -131,7 +132,6 @@ div.MAINBOX {
     margin-top: 0 !important;
     justify-content: flex-start;
   }
- 
   .navbar {
     margin-top: 10px;
     flex-direction: column;
@@ -510,6 +510,14 @@ div.coeffBlock:hover div.eclipseElement {
   transition: all 0.3s;
 }
 
+#dropdown-menu-eclipse2, #dropdown-menu-eclipse3, #dropdown-menu-eclipse4, #dropdown-menu-eclipse5 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -10;
+}
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
@@ -550,7 +558,7 @@ div.coeffBlock:hover div.eclipseElement {
   height: 46px;
 }
 
-.vit_margin{
+.vit_margin {
   margin-bottom: 165px;
 }
 
@@ -588,43 +596,41 @@ input::-webkit-input-placeholder {
   font-weight: 300;
 }
 
-
-.vit_dropdown{
-    position: relative;
-    display: flex;
+.vit_dropdown {
+  position: relative;
+  display: flex;
 }
 
 .vit_dropdownchild {
   display: none;
   position: absolute;
- 
   background-color: black;
   min-width: 120px;
 }
 
-.vit_hover:hover .vit_dropdownchild{
+.vit_hover:hover .vit_dropdownchild {
   display: block;
   z-index: 2;
-  top:55px;
+  top: 55px;
 }
 
-@media screen and (max-width: 992px){
- .vit_dropdownchild{
+@media screen and (max-width: 992px) {
+  .vit_dropdownchild {
     display: none !important;
   }
 }
 
-.vit_dropdownchild a:hover{
+.vit_dropdownchild a:hover {
   color: #b1054a;
 }
 
-.vit_dropdownchild a{
+.vit_dropdownchild a {
   text-decoration: none;
-  color:#ababab;
+  color: #ababab;
   display: block;
 }
 
-.vit_index{
+.vit_index {
   z-index: 1;
 }
 
