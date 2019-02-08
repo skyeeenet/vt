@@ -262,6 +262,7 @@ div.MAINBOX {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .td-poiner {
@@ -516,6 +517,10 @@ div.coeffBlock:hover div.eclipseElement {
   bottom: 0;
   opacity: 0;
   z-index: -10;
+}
+
+.downloadBlock {
+  display: none;
 }
 
 /* andinoriel zone end */
