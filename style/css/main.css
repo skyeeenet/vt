@@ -131,9 +131,7 @@ div.MAINBOX {
     margin-top: 0 !important;
     justify-content: flex-start;
   }
-  .navbar-second ul {
-    margin-top: 20px;
-  }
+ 
   .navbar {
     margin-top: 10px;
     flex-direction: column;
@@ -552,6 +550,10 @@ div.coeffBlock:hover div.eclipseElement {
   height: 46px;
 }
 
+.vit_margin{
+  margin-bottom: 165px;
+}
+
 .vit_search {
   height: 46px;
 }
@@ -600,29 +602,16 @@ input::-webkit-input-placeholder {
   min-width: 120px;
 }
 
-.student:hover .vit_dropdownchild{
+.vit_hover:hover .vit_dropdownchild{
   display: block;
   z-index: 2;
   top:55px;
 }
 
-.contacts:hover .vit_dropdownchild{
-  display: block;
-  z-index: 2;
-  top:55px;
-}
-
-
-.department:hover .vit_dropdownchild{
-  display: block;
-  z-index: 2;
-  top:55px;
-}
-
-.enrollee:hover .vit_dropdownchild {
-  display: block;
-  z-index: 2;
-  top:55px;
+@media screen and (max-width: 992px){
+ .vit_dropdownchild{
+    display: none !important;
+  }
 }
 
 .vit_dropdownchild a:hover{
