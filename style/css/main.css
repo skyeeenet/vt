@@ -128,7 +128,7 @@ div.MAINBOX {
   flex-direction: column;
 }
 
-.thebest-container img{
+.thebest-container img {
   height: 300px;
   width: 300px;
   border-radius: 100%;
@@ -295,7 +295,7 @@ div.MAINBOX {
   padding: 5px 10px;
   font-size: 14px;
   color: white;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .btn-second:hover {
@@ -339,7 +339,10 @@ div.MAINBOX {
   color: white;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
 /* skyeeenet zone end */
 
 /* andinoriel zone */
@@ -650,6 +653,20 @@ div.personText {
 
 .condensed {
   font-weight: 600;
+}
+
+.blockClick {
+  cursor: pointer;
+}
+
+div.popup_element {
+  padding: 10px 10px;
+  background-color: #0d0d0d;
+  color: white;
+}
+
+div.popup_element>a {
+  color: white;
 }
 
 /* andinoriel zone end */
