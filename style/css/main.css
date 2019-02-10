@@ -370,6 +370,98 @@ div.MAINBOX {
   height: 400px;
 }
 
+.news-post-inner img {
+  max-width: 100%;
+}
+
+.news-post-inner h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin-top: 30px;
+  /*color: #5cb8d7;*/
+  color: #0d0d0d;
+}
+
+.news-post-inner span {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #0d0d0d;
+}
+
+.news-post-inner p {
+  margin-top: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+
+.span-with-line:after {
+  position: absolute;
+  margin-left: 18px;
+  content: "";
+  height: 18px;
+  width: 1px;
+  background-color: #a4a4a4;
+}
+
+.search-form {
+  margin-right: 50px;
+}
+
+.search-form input, button {
+  border: none;
+}
+
+.search-form input:focus {
+  outline: none;
+}
+
+.search-form button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-form button:focus {
+  outline: none;
+}
+
+.search-form span {
+  display: block;
+  padding: 5px 25px;
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+}
+
+.recent-posts h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  padding-left: 20px;
+}
+
+.recent-posts h3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 10px solid transparent;
+  border-left: 10px solid #5cb8d7;
+  border-top: 10px solid #5cb8d7;
+}
+
+.recent-posts a {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
 /* skyeeenet zone end */
 
 /* andinoriel zone */
