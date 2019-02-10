@@ -122,6 +122,18 @@ div.MAINBOX {
   text-decoration: none;
 }
 
+.thebest-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.thebest-container img {
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+}
+
 #btn-show {
   display: none;
   cursor: pointer;
@@ -283,7 +295,7 @@ div.MAINBOX {
   padding: 5px 10px;
   font-size: 14px;
   color: white;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .btn-second:hover {
@@ -357,6 +369,7 @@ div.MAINBOX {
   width: 440px;
   height: 400px;
 }
+
 /* skyeeenet zone end */
 
 /* andinoriel zone */
@@ -671,6 +684,20 @@ div.personText {
   font-weight: 600;
 }
 
+.blockClick {
+  cursor: pointer;
+}
+
+div.popup_element {
+  padding: 10px 10px;
+  background-color: #0d0d0d;
+  color: white;
+}
+
+div.popup_element>a {
+  color: white;
+}
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
@@ -719,7 +746,7 @@ div.personText {
   height: 46px;
 }
 
-input::-webkit-input-placeholder {
+.vit_search input::-webkit-input-placeholder {
   color: #000000;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
@@ -747,6 +774,24 @@ input::-webkit-input-placeholder {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 300;
+}
+
+
+.roboto36lt{
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.roboto16{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.roboto16lt{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .vit_dropdown {
@@ -785,6 +830,72 @@ input::-webkit-input-placeholder {
 
 .vit_index {
   z-index: 1;
+}
+
+.vit_news_button {
+  background-color: white;
+  border: none !important;
+}
+
+.vit_input {
+  border: none !important;
+}
+
+.vit_form {
+  height: 40px;
+}
+
+.vit_news_search {
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+.vit_news{
+  margin-bottom: 100px;
+}
+
+.vit_triangl {
+  padding: 0 0 0 30px;
+  position: relative;
+}
+
+.vit_triangl:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  top:3px;
+  left: 0;
+  height: 0;
+  border-top: 15px solid #00BAF4;
+  border-right: 15px solid transparent;
+}
+
+.vit_news img {
+  max-width:100%;
+
+}
+.vit_dropdown{
+    position: relative;
+    display: flex;
+}
+
+.vit_dropdownchild {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 120px;
+}
+
+.enrollee:hover .vit_dropdownchild {
+  display: block;
+  top:55px;
+}
+
+.vit_dropdownchild a{
+  text-decoration: none;
+  color:#ababab;
+  display: block;
+
 }
 
 /* vitassuper zone end */

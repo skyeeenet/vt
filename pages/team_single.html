@@ -99,25 +99,34 @@
                         <div class="mb-4 condensed">Контакты</div>
                         <div class="d-flex flex-row justify-content-around align-items-center mb-4">
                             <div class="d-flex flex-column justify-content-center align-items-center">
-                                <img src="../images/person_email.png" alt="email">
+                                <img src="../images/person_email.png" alt="email" class="blockClick" id="email_click">
                                 <div class="text-center condensed mt-2">
                                     Email
                                 </div>
-                                <!-- /.text-center -->
-                            </div>
-                            <!-- /.d-flex flex-column justify-content-center align-items-center -->
-                            <div class="d-flex flex-column justify-content-center align-items-center">
-                                <img src="../images/person_call.png" alt="phone">
-                                <div class="text-center condensed mt-2">
-                                    Телефон
+                                <div id="email_popup" class="popup_element">
+                                    <a href="mailto:#">email@email.com</a>
                                 </div>
                                 <!-- /.text-center -->
                             </div>
                             <!-- /.d-flex flex-column justify-content-center align-items-center -->
-                            <div class="d-flex flex-column justify-content-center align-items-center">
-                                <img src="../images/person_facebook.png" alt="">
+                            <div class="d-flex flex-column justify-content-center align-items-center blockClick">
+                                <img src="../images/person_call.png" alt="phone" class="blockClick" id="phone_click">
+                                <div class="text-center condensed mt-2">
+                                    Телефон
+                                </div>
+                                <div id="phone_popup" class="popup_element">
+                                    +380647845125
+                                </div>
+                                <!-- /.text-center -->
+                            </div>
+                            <!-- /.d-flex flex-column justify-content-center align-items-center -->
+                            <div class="d-flex flex-column justify-content-center align-items-center blockClick">
+                                <img src="../images/person_facebook.png" alt="facebook" class="blockClick" id="facebook_click">
                                 <div class="text-center condensed mt-2">
                                     Facebook
+                                </div>
+                                <div id="facebook_popup" class="popup_element">
+                                    <a href="#">facebook.com/user404</a>
                                 </div>
                                 <!-- /.text-center -->
                             </div>
@@ -192,6 +201,7 @@
     <script src="../scripts/additional/slick_technologies_control.js"></script>
     <script src="../scripts/additional/burger_menu_control.js"></script>
     <script src="../scripts/additional/slick_foreign_practice.js"></script>
+    <script src="../scripts/additional/popper_control.js"></script>
 </body>
 
 </html>
