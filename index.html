@@ -55,7 +55,7 @@
                     </div>
 
                     <!-- -->
-                    <ul id="dropdown-menu" class="align-items-center navigationMenu">
+                    <!--<ul id="dropdown-menu" class="align-items-center navigationMenu">
 
                         <li class="active"><a href="#">Главная</a></li>
                         <div class="vit_hover">
@@ -106,10 +106,10 @@
                     </ul>
                     <a id="btn-show" href="#" class="menu-btn">
                         <span></span>
-                    </a>
+                    </a>-->
                     <!-- -->
 
-                    <!-- <div class="flex-column">
+                    <div class="flex-column">
                             <ul id="dropdown-menu" class="align-items-center animated navigationMenu">
                                 <li class="active"><a href="#">Главная</a></li>
                                 <li id="dropdown-menu-clickable2"><a href="#">Абитуриенту</a></li>
@@ -150,14 +150,14 @@
                             <a id="btn-show" href="#" class="menu-btn">
                                 <span></span>
                             </a>
-                        </div> -->
+                        </div> 
                 </nav>
             </div>
             <!-- /.navbar-container -->
         </header>
         <main>
             <section>
-                <div class="container mt-3 mb-3">
+                <div class="container mt-3">
                     <div class="row">
                         <div class="col-lg-8 slck vit_index">
                             <div class="sliderBLock card">
@@ -179,9 +179,12 @@
                                 Объявления
                             </div>
                             <div class="d-flex flex-column justify-content-center align-items-center">
-                                <div> Недавние события повлекли за собой массу протестов </div>
-                                <div> Недавние события повлекли за собой массу протестов </div>
-                                <div> Недавние события повлекли за собой массу протестов </div>
+                                <p> Недавние события повлекли за собой массу протестов </p>
+                                <p> Недавние события повлекли за собой массу протестов </p>
+                                <p> Недавние события повлекли за собой массу протестов </p>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <a class="btn-second" href="">Все объявления</a>
                             </div>
                         </div>
                         <!-- /.col-lg-4 -->
@@ -191,9 +194,8 @@
                 <!-- /.container.mt-3.mb-3 -->
             </section>
             <section>
-                <div class="container">
-
-                    <div class="w-100 d-flex flex-column align-items-center mb-2 mt-5 mt-lg-0">
+                <div class="container margin-top">
+                    <div class="w-100 d-flex flex-column align-items-center margin-bottom">
                         <h2 class="title">Недавние новости и события</h2>
                         <div class="d-flex flex-row justify-content-center specDoubledColorLine">
                             <div></div>
@@ -287,12 +289,18 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row mt-5">
+                        <div class="col-12 d-flex justify-content-center">
+                            <a class="btn btn-main" href="">Больше новостей</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section>
-                <div class="container">
-                    <div class="w-100 d-flex flex-column align-items-center mb-5 mt-5">
+                <div class="container margin-top">
+                    <div class="w-100 d-flex flex-column align-items-center margin-bottom">
                         <h2 class="title">Почему именно мы ?</h2>
                         <div class="d-flex flex-row justify-content-center specDoubledColorLine">
                             <div></div>
@@ -382,9 +390,18 @@
                     </div>
                 </div>
             </section>
+            <section>
+                <div id="thebest">
+                    <div class="thebest-container">
+                        <img src="images/best.jpg" alt="">
+                        <h3>Иванов Иван</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer>
-            <div class="vit_footer_container">
+            <div class="vit_footer_container margin-top">
                 <div class="container pt-5 pb-5 vit_footer_container">
                     <div class="row">
                         <div class="col d-flex justify-content-center">
@@ -424,8 +441,8 @@
                     </div>
                 </div>
             </div>
+        </footer>
     </div>
-    </footer>
 
     </div>
     <!-- Optional JavaScript -->
@@ -443,6 +460,33 @@
     <script src="./scripts/additional/slick_technologies_control.js"></script>
     <script src="./scripts/additional/burger_menu_control.js"></script>
     <script src="scripts/additional/dropdown_menu_eclipse_control.js"></script>
+    <script>
+        $('#thebest').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
 </body>
 
 </html>
