@@ -115,10 +115,23 @@ div.MAINBOX {
 }
 
 .navbar ul li a {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Light";
   font-size: 16px;
+  text-transform: uppercase;
   color: #4d4d4d;
   text-decoration: none;
+}
+
+.thebest-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.thebest-container img{
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
 }
 
 #btn-show {
@@ -269,6 +282,64 @@ div.MAINBOX {
   background-color: #ff8c01;
 }
 
+.btn-main {
+  background-color: #d80056;
+  border: none;
+  outline: none;
+  color: #ecedef;
+  border-radius: 0;
+}
+
+.btn-second {
+  background-color: #d80056;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.btn-second:hover {
+  color: white;
+}
+
+.margin-top {
+  margin-top: 100px;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
+}
+
+.ads-text {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.ads-second-text {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #5cb8d7;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 /* skyeeenet zone end */
 
 /* andinoriel zone */
