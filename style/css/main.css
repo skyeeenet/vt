@@ -115,10 +115,23 @@ div.MAINBOX {
 }
 
 .navbar ul li a {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Light";
   font-size: 16px;
+  text-transform: uppercase;
   color: #4d4d4d;
   text-decoration: none;
+}
+
+.thebest-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.thebest-container img{
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
 }
 
 #btn-show {
@@ -269,6 +282,64 @@ div.MAINBOX {
   background-color: #ff8c01;
 }
 
+.btn-main {
+  background-color: #d80056;
+  border: none;
+  outline: none;
+  color: #ecedef;
+  border-radius: 0;
+}
+
+.btn-second {
+  background-color: #d80056;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.btn-second:hover {
+  color: white;
+}
+
+.margin-top {
+  margin-top: 100px;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
+}
+
+.ads-text {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.ads-second-text {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #5cb8d7;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 /* skyeeenet zone end */
 
 /* andinoriel zone */
@@ -521,6 +592,64 @@ div.coeffBlock:hover div.eclipseElement {
 
 .downloadBlock {
   display: none;
+}
+
+div.personPhoto {
+  border: 25px solid #e4edf7;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+div.personPhoto img:first-child {
+  border: 25px solid #d1e3f6;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+div.personPhoto:hover {
+  border: 25px solid #d4e2f3;
+  transition: all 0.3s;
+  transform: scale(1.1);
+}
+
+div.personPhoto:hover img:first-child {
+  border: 25px solid #bfd2e7;
+  transition: all 0.3s;
+  transform: scale(1.1);
+}
+
+div.personInfo div:first-child {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #0d0d0d;
+}
+
+div.personInfo div:last-child {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #0d0d0d;
+}
+
+div.buttonGoTo {
+  border: 2px solid #d80056;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+div.buttonGoTo:hover {
+  box-shadow: inset 0 0 0 5px #d80056;
+  transition: all 0.3s;
+}
+
+div.personText {
+  font-family: "Gotham-Pro-Light", sans-serif;
+  font-size: 18px;
+}
+
+.condensed {
+  font-weight: 600;
 }
 
 /* andinoriel zone end */
