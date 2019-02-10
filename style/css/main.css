@@ -122,18 +122,6 @@ div.MAINBOX {
   text-decoration: none;
 }
 
-.thebest-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.thebest-container img{
-  height: 300px;
-  width: 300px;
-  border-radius: 100%;
-}
-
 #btn-show {
   display: none;
   cursor: pointer;
@@ -340,6 +328,35 @@ div.MAINBOX {
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+.slick-center {
+  transform: scale(1.2,1.2);
+  transition: .3s linear;
+}
+
+.thebest-container {
+  margin: 0 auto;
+  text-align: center;
+  transition: .3s linear;
+}
+
+.thebest-container img{
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.declaration-text {
+  padding-top: 80px;
+  height: 250px;
+  overflow-y: auto;
+}
+
+.history-inner-container img {
+  width: 440px;
+  height: 400px;
+}
 /* skyeeenet zone end */
 
 /* andinoriel zone */
@@ -411,6 +428,7 @@ div.sliderBLock img {
 
 div.declaration {
   height: 300px;
+  overflow: hidden;
   background-color: #ecedef;
 }
 
@@ -515,7 +533,8 @@ div.someBlockButton {
   background-color: #d80056;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  font-size: 18px;
+  padding: 10px 15px;
+  font-size: 14px;
   text-transform: uppercase;
   color: white;
   transition: all 0.3s;
