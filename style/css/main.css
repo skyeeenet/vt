@@ -601,6 +601,7 @@ div.coeffBlock:hover div.eclipseElement {
   font-weight: 300;
 }
 
+
 .roboto36lt{
   font-family: 'Roboto', sans-serif;
   font-size: 36px;
@@ -696,6 +697,30 @@ div.coeffBlock:hover div.eclipseElement {
 
 .vit_news img {
   max-width:100%;
+
+}
+.vit_dropdown{
+    position: relative;
+    display: flex;
+}
+
+.vit_dropdownchild {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 120px;
+}
+
+.enrollee:hover .vit_dropdownchild {
+  display: block;
+  top:55px;
+}
+
+.vit_dropdownchild a{
+  text-decoration: none;
+  color:#ababab;
+  display: block;
+
 }
 
 /* vitassuper zone end */
