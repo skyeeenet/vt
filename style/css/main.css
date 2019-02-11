@@ -792,6 +792,16 @@ div.popup_element>a {
   color: white;
 }
 
+div.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #18243e;
+  z-index: 100;
+}
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
