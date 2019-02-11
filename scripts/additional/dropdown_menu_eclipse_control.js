@@ -25,6 +25,7 @@ $(function () {
                 //hide sub menu
                 $('#dropdown-menu-eclipse2').removeClass('fadeInUp');
                 $('#dropdown-menu-eclipse2').addClass('fadeOutDown');
+                $('#dropdown-menu-eclipse2').css('z-index', '-10');
             };
         });
 });
@@ -54,6 +55,7 @@ $(function () {
                 //hide sub menu
                 $('#dropdown-menu-eclipse3').removeClass('fadeInUp');
                 $('#dropdown-menu-eclipse3').addClass('fadeOutDown');
+                $('#dropdown-menu-eclipse3').css('z-index', '-10');
             };
         });
 });
@@ -83,6 +85,7 @@ $(function () {
                 //hide sub menu
                 $('#dropdown-menu-eclipse4').removeClass('fadeInUp');
                 $('#dropdown-menu-eclipse4').addClass('fadeOutDown');
+                $('#dropdown-menu-eclipse4').css('z-index', '-10');
             };
         });
 });
@@ -112,6 +115,7 @@ $(function () {
                 //hide sub menu
                 $('#dropdown-menu-eclipse5').removeClass('fadeInUp');
                 $('#dropdown-menu-eclipse5').addClass('fadeOutDown');
+                $('#dropdown-menu-eclipse5').css('z-index', '-10');
             };
         });
 });

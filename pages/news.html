@@ -32,8 +32,8 @@
                         <div class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
                             <div class="mt-md-0 mt-md-0 ml-3"><img src="../images/placeholder.svg" heigth="20px" width="20px"
                                     alt="position"><span class="pl-2">Мариуполь</span></div>
-                            <div class="mt-2 mt-md-0 ml-3"><img src="../images/email.svg" heigth="20px" width="20px"
-                                    alt="mail"><span class="pl-2">test@gmail.com</span></div>
+                            <div class="mt-2 mt-md-0 ml-3"><img src="../images/email.svg" heigth="20px" width="20px" alt="mail"><span
+                                    class="pl-2">test@gmail.com</span></div>
                             <div class="mt-2 mt-md-0 ml-3"><img src="../images/phone-receiver.svg" heigth="20px" width="20px"
                                     alt="phone"><span class="pl-2">+380647845125</span></div>
                         </div>
@@ -45,7 +45,7 @@
             </div>
             <!-- /.container-fluid topHeader -->
             <div class="container navbar-container">
-                <nav class="navbar navbar-second d-flex flex-row justify-content-between align-items-center">
+                <nav class="navbar navbar-second d-flex flex-row flex-nowrap justify-content-between align-items-center">
                     <div class="d-flex flex-row justify-content-around align-items-center logoHeader mt-3 mb-3">
                         <img src="../images/logo.png" alt="logo" height="100px">
                         <div class="d-flex flex-column justify-content-around align-items-start ml-2">
@@ -53,15 +53,59 @@
                             <div>UX/UI Expert</div>
                         </div>
                     </div>
+                    <!-- Custom dropdown -->
+                    <div class="flex-column">
+                        <ul id="dropdown-menu" class="align-items-center animated navigationMenu">
+                            <li class="active"><a href="#">Главная</a></li>
+                            <li id="dropdown-menu-clickable2"><a href="#">Абитуриенту</a></li>
+                            <li id="dropdown-menu-clickable3"><a href="#">Студенту</a></li>
+                            <li id="dropdown-menu-clickable4"><a href="#">Кафедра</a></li>
+                            <li id="dropdown-menu-clickable5"><a href="#">Контакты</a></li>
+                            <li><a href="#">
+                                    <span class="d-lg-none">Поиск</span>
+                                    <img class="d-none d-lg-block" src="../images/search.svg" height="15px" width="15px"
+                                        alt="search">
+                                </a>
+                            </li>
+                        </ul>
+                        <ul id="dropdown-menu-eclipse2" class="flex-row justify-content-between align-items-center animated navigationMenu">
+                            <li><a href="#">Пункт меню 2</a></li>
+                            <li><a href="#">Пункт меню 2</a></li>
+                            <li><a href="#">Пункт меню 2</a></li>
+                            <li><a href="#">Пункт меню 2</a></li>
+                        </ul>
+                        <ul id="dropdown-menu-eclipse3" class="flex-row justify-content-between align-items-center animated navigationMenu">
+                            <li><a href="#">Пункт меню 3</a></li>
+                            <li><a href="#">Пункт меню 3</a></li>
+                            <li><a href="#">Пункт меню 3</a></li>
+                            <li><a href="#">Пункт меню 3</a></li>
+                        </ul>
+                        <ul id="dropdown-menu-eclipse4" class="flex-row justify-content-between align-items-center animated navigationMenu">
+                            <li><a href="#">Пункт меню 4</a></li>
+                            <li><a href="#">Пункт меню 4</a></li>
+                            <li><a href="#">Пункт меню 4</a></li>
+                            <li><a href="#">Пункт меню 4</a></li>
+                        </ul>
+                        <ul id="dropdown-menu-eclipse5" class="flex-row justify-content-between align-items-center animated navigationMenu">
+                            <li><a href="#">Пункт меню 5</a></li>
+                            <li><a href="#">Пункт меню 5</a></li>
+                            <li><a href="#">Пункт меню 5</a></li>
+                            <li><a href="#">Пункт меню 5</a></li>
+                        </ul>
+                        <a id="btn-show" href="#" class="menu-btn">
+                            <span></span>
+                        </a>
+                    </div>
+                    <!-- Custom dropdown end -->
 
-                    <!-- -->
-                    <ul id="dropdown-menu" class="align-items-center navigationMenu">
+                    <!-- Other implementation of custom dropdown -->
 
+                    <!--<ul id="dropdown-menu" class="align-items-center navigationMenu">
                         <li class="active"><a href="#">Главная</a></li>
                         <div class="vit_hover">
                             <li><a href="#">Абитуриенту</a></li>
                             <div class="vit_dropdownchild">
-                                <a href="../pages/enroll.html">Пункт меню</a>
+                                <a href="./pages/enroll.html">Пункт меню</a>
                                 <a href="#">Пункт меню</a>
                                 <a href="#">Пункт меню</a>
                                 <a href="#">Пункт меню</a>
@@ -98,63 +142,37 @@
                                 <a href="#">Пункт меню</a>
                             </div>
                         </div>
+                    <ul id="dropdown-menu" class="align-items-center navigationMenu">                        
+                        <li class="active"><a href="#">Главная</a></li>
+                        <div class="enrollee">
+                        <li><a href="#">Абитуриенту</a></li>
+                        <div class="vit_dropdownchild">
+                            <a href="enroll.html">Пункт меню</a>
+                            <a href="#">Пункт меню</a>
+                            <a href="#">Пункт меню</a>
+                            <a href="#">Пункт меню</a>
+                            <a href="#">Пункт меню</a>
+                        </div>
+                        </div>
+                        <li><a href="#">Студенту</a></li>
+                        <li><a href="#">Кафедра</a></li>
+                        <li><a href="#">Контакты</a></li>                    
+
                         <li><a href="#">
                                 <span class="d-lg-none">Поиск</span>
-                                <img class="d-none d-lg-block" src="../images/search.svg" height="15px" width="15px"
-                                    alt="search">
+                                <img class="d-none d-lg-block" src="./images/search.svg" height="15px" width="15px" alt="search">
                             </a>
                         </li>
                     </ul>
                     <a id="btn-show" href="#" class="menu-btn">
                         <span></span>
-                    </a>
-                    <!-- -->
+                    </a>-->
 
-                    <!-- <div class="flex-column">
-                            <ul id="dropdown-menu" class="align-items-center animated navigationMenu">
-                                <li class="active"><a href="#">Главная</a></li>
-                                <li id="dropdown-menu-clickable2"><a href="#">Абитуриенту</a></li>
-                                <li id="dropdown-menu-clickable3"><a href="#">Студенту</a></li>
-                                <li id="dropdown-menu-clickable4"><a href="#">Кафедра</a></li>
-                                <li id="dropdown-menu-clickable5"><a href="#">Контакты</a></li>
-                                <li><a href="#">
-                                        <span class="d-lg-none">Поиск</span>
-                                        <img class="d-none d-lg-block" src="images/search.svg" height="15px" width="15px"
-                                            alt="search">
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul id="dropdown-menu-eclipse2" class="flex-row justify-content-between align-items-center animated navigationMenu">
-                                <li><a href="#">Пункт меню 2</a></li>
-                                <li><a href="#">Пункт меню 2</a></li>
-                                <li><a href="#">Пункт меню 2</a></li>
-                                <li><a href="#">Пункт меню 2</a></li>
-                            </ul>
-                            <ul id="dropdown-menu-eclipse3" class="flex-row justify-content-between align-items-center animated navigationMenu">
-                                <li><a href="#">Пункт меню 3</a></li>
-                                <li><a href="#">Пункт меню 3</a></li>
-                                <li><a href="#">Пункт меню 3</a></li>
-                                <li><a href="#">Пункт меню 3</a></li>
-                            </ul>
-                            <ul id="dropdown-menu-eclipse4" class="flex-row justify-content-between align-items-center animated navigationMenu">
-                                <li><a href="#">Пункт меню 4</a></li>
-                                <li><a href="#">Пункт меню 4</a></li>
-                                <li><a href="#">Пункт меню 4</a></li>
-                                <li><a href="#">Пункт меню 4</a></li>
-                            </ul>
-                            <ul id="dropdown-menu-eclipse5" class="flex-row justify-content-between align-items-center animated navigationMenu">
-                                <li><a href="#">Пункт меню 5</a></li>
-                                <li><a href="#">Пункт меню 5</a></li>
-                                <li><a href="#">Пункт меню 5</a></li>
-                                <li><a href="#">Пункт меню 5</a></li>
-                            </ul>
-                            <a id="btn-show" href="#" class="menu-btn">
-                                <span></span>
-                            </a>
-                        </div> -->
+                    <!-- Other implementation of custom dropdown end -->
                 </nav>
             </div>
             <!-- /.navbar-container -->
+            <div class="specGreyLine"></div>
         </header>
         <main>
             <section>
@@ -171,13 +189,18 @@
                             <div class="row news-post mt-5">
                                 <div class="news-post-inner">
                                     <img src="../images/photo.png" alt="">
-                                    <a href="#"><h2>Заголовок номер один</h2></a>
+                                    <a href="#">
+                                        <h2>Заголовок номер один</h2>
+                                    </a>
                                     <span class="span-with-line mr-3">Дата: Июнь 13, 2019</span>
                                     <span class="ml-3">Автор: Иванов Иван</span>
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered altera
-                                        tion in some form, by injected humour, or randomised words which don’t look even slightly believable.
-                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassi
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered altera
+                                        tion in some form, by injected humour, or randomised words which don’t look
+                                        even slightly believable.
+                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                                        isn’t anything embarrassi
                                         ng hidden in the middle of text.
                                     </p>
                                 </div>
@@ -185,13 +208,18 @@
                             <div class="row news-post mt-5">
                                 <div class="news-post-inner">
                                     <img src="../images/photo.png" alt="">
-                                    <a href="#"><h2>Заголовок номер один</h2></a>
+                                    <a href="#">
+                                        <h2>Заголовок номер один</h2>
+                                    </a>
                                     <span class="span-with-line mr-3">Дата: Июнь 13, 2019</span>
                                     <span class="ml-3">Автор: Иванов Иван</span>
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered altera
-                                        tion in some form, by injected humour, or randomised words which don’t look even slightly believable.
-                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassi
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered altera
+                                        tion in some form, by injected humour, or randomised words which don’t look
+                                        even slightly believable.
+                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                                        isn’t anything embarrassi
                                         ng hidden in the middle of text.
                                     </p>
                                 </div>
@@ -199,13 +227,18 @@
                             <div class="row news-post mt-5">
                                 <div class="news-post-inner">
                                     <img src="../images/photo.png" alt="">
-                                    <a href="#"><h2>Заголовок номер один</h2></a>
+                                    <a href="#">
+                                        <h2>Заголовок номер один</h2>
+                                    </a>
                                     <span class="span-with-line mr-3">Дата: Июнь 13, 2019</span>
                                     <span class="ml-3">Автор: Иванов Иван</span>
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered altera
-                                        tion in some form, by injected humour, or randomised words which don’t look even slightly believable.
-                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassi
+                                        There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered altera
+                                        tion in some form, by injected humour, or randomised words which don’t look
+                                        even slightly believable.
+                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                                        isn’t anything embarrassi
                                         ng hidden in the middle of text.
                                     </p>
                                 </div>
