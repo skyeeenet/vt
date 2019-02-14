@@ -744,6 +744,95 @@ div.preloader {
   z-index: 100;
 }
 
+div.conf_dropdown_element_first {
+  background: #e4edf7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #ff8c01;
+  position: relative;
+}
+
+div.conf_dropdown_button {
+  border: 12px solid transparent;
+  border-top: 12px solid #ff8c01;
+  position: absolute;
+  top: 40%;
+  left: 125px;
+}
+
+div.dropdown_elements {
+  overflow: hidden;
+  height: 0;
+  transition: all 0.7s;
+}
+
+div.dropdown_elements_active {
+  height: 100%;
+}
+
+div.dropdown_elements div {
+  font-family: 'Gotham-Pro-Light', sans-serif;
+  font-size: 18px;
+  color: #0d0b0b;
+}
+
+div.dropdown_elements div:first-child img {
+  margin-bottom: 15px;
+}
+
+div.registration {
+  border: 1px solid #ff9090;
+}
+
+div.registration div:first-child {
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+div.registration div:last-child {
+  margin-bottom: 15px;
+}
+
+div.registration div.registration_link {
+  margin: 15px 0;
+}
+
+div.registration div.registration_link a {
+  color: #5cb8d7;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+
+div.registration div.registration_link a:hover {
+  color: #4ca4c2;
+  transition: all 0.3s;
+}
+
+div.conf_documents {
+  margin-top: 50px;
+}
+
+div.dropdown_elements_menu_text {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+div.conf_documents div div {
+  font-size: 24px;
+  color: #5cb8d7;
+  margin-left: 15px;
+}
+
+div.conf_slider_link>a {
+  color: #5cb8d7;
+  font-size: 18px;
+}
+
+div.conf_slider_link>a:hover {
+  color: #4ca4c2;
+  font-size: 18px;
+}
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
