@@ -33,23 +33,15 @@
 
         group.ready(function () {
 
-            var group_id = group.val();
-
-            $.ajax({
-                url: 'schedule/'+group_id,
-                dataType : "json",
-                type: "GET",
-                success: function(data){
-                    printData(data);
-                },
-                error: function () {
-                    alert('Во время выполнения запроса произошла ошибка');
-                }
-            });
+            req();
         });
 
         group.change(function () {
 
+            req();
+        });
+
+        var req = function () {
             var group_id = group.val();
 
             $.ajax({
@@ -63,7 +55,7 @@
                     alert('Во время выполнения запроса произошла ошибка');
                 }
             });
-        });
+        }
 
         var printData = function (data) {
 

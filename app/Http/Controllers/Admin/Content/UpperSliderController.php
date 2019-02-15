@@ -12,7 +12,7 @@ class UpperSliderController extends Controller
 
         $slides = UpperSlider::all();
 
-        return view('admin.content.slider.upper-slider', compact('slides'));
+        return view('admin.pages.index.index', compact('slides'));
     }
 
     public function store(Request $request) {

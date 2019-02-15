@@ -26,13 +26,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
            Route::post('/delete/{image}', 'Content\ImageController@destroy');
        });
 
-       Route::group(['prefix' => 'upper-slider'], function() {
+       Route::group(['prefix' => 'slider'], function() {
 
-           Route::get('/', 'Content\UpperSliderController@index')->name('admin.content.upper-slider');
-           Route::post('/create', 'Content\UpperSliderController@store')->name('admin.content.upper-slider.create');
-           Route::post('/delete/{upper}', 'Content\UpperSliderController@destroy');
-           Route::post('/update/{upper}', 'Content\UpperSliderController@update');
-           Route::get('/edit/{upper}', 'Content\UpperSliderController@edit');
+           Route::get('/', 'Content\SliderController@index')->name('admin.content.slider');
+           Route::get('/create', 'Content\SliderController@create')->name('admin.content.slider.create');
+           Route::get('/edit/{slider}', 'Content\SliderController@edit');
+           Route::post('/store', 'Content\SliderController@store')->name('admin.content.slider.store');
+           Route::post('/update/{slider}', 'Content\SliderController@update');
+           Route::post('/delete/{slider}', 'Content\SliderController@destroy');
+       });
+
+       Route::group(['prefix' => 'slider_image'], function () {
+
+           Route::get('/edit/{slider_Image}', 'Content\SliderImageController@edit');
+           Route::post('/delete/{slider_Image}', 'Content\SliderImageController@destroy');
+           Route::post('/update/{slider_Image}', 'Content\SliderImageController@update');
        });
 
        Route::group(['prefix' => 'adverts'], function () {
@@ -56,6 +64,22 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 
        });
 
+   });
+
+   Route::group(['prefix' => 'pages'], function () {
+
+       Route::get('/', 'Pages\PageController@index')->name('admin.pages');
+       Route::get('/{page}', 'Pages\PageController@show');
+       Route::get('/create', 'Pages\PageController@create')->name('admin.pages.create');
+       Route::get('/edit/{page}', 'Pages\PageController@edit');
+       Route::post('/store', 'Pages\PageController@store')->name('admin.pages.store');
+       Route::post('/update/{page}', 'Pages\PageController@update');
+       Route::post('/delete/{page}', 'Pages\PageController@destroy');
+
+       Route::group(['prefix' => 'index'], function () {
+
+            Route::get('/', 'Pages\Index\IndexController@index')->name('admin.pages.index.index');
+       });
    });
 
    Route::group(['prefix' => 'schedule'], function () {

@@ -34,12 +34,23 @@ class ScheduleController extends Controller
 
     public function edit(Schedule $schedule) {
 
-
+        $weeks = Week::select('id','value')->get();
+        $subjects = Subject::select('id', 'value')->get();
+        $groups = Group::select('id', 'value')->get();
+        return view('admin.schedule.edit', compact('schedule', 'weeks', 'subjects', 'groups'));
     }
 
     public function update(Schedule $schedule, Request $request) {
 
+        $schedule->update([
 
+           'week_id' => $request->input('week_id'),
+           'group_id' => $request->input('group_id'),
+           'subject_id' => $request->input('subject_id'),
+           'number' => $request->input('number')
+        ]);
+
+        return redirect(route('admin.schedule'));
     }
 
     public function create() {

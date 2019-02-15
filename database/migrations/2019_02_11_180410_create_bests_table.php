@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUpperSlidersTable extends Migration
+class CreateBestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUpperSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('upper_sliders', function (Blueprint $table) {
+        Schema::create('bests', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('image_id')->index()->unsigned();
-            $table->text('value');
+            $table->integer('user_id')->index()->unsigned();
+            $table->string('interview_url');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateUpperSlidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('upper_sliders');
+        Schema::dropIfExists('bests');
     }
 }
