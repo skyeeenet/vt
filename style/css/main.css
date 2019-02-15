@@ -862,6 +862,11 @@ div.preloader {
   font-family: 'Roboto', sans-serif;
 }
 
+.roboto24 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
+
 .roboto24lt {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
@@ -998,6 +1003,32 @@ div.preloader {
   text-decoration: none;
   color: #ababab;
   display: block;
+}
+
+.shield img{
+  width: 20%;
+ 
+}
+
+.shield a{
+  color:#ff8c01;
+}
+
+.methodical img{
+  width: 20%;
+}
+
+.methodical a{
+  color:#ff8c01;
+}
+
+.documents{
+  padding: 100px 0;
+}
+
+.dox-text{
+  font-family: "Gotham-Pro-Light", sans-serif;
+  font-size: 24px;
 }
 
 /* vitassuper zone end */
