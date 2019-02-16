@@ -47,7 +47,8 @@ class ScheduleController extends Controller
            'week_id' => $request->input('week_id'),
            'group_id' => $request->input('group_id'),
            'subject_id' => $request->input('subject_id'),
-           'number' => $request->input('number')
+           'number' => $request->input('number'),
+           'day' => $request->input('day')
         ]);
 
         return redirect(route('admin.schedule'));
@@ -68,12 +69,14 @@ class ScheduleController extends Controller
             'group_id' => $request->input('group-id'),
             'subject_id' => $request->input('subject-id'),
             'week_id' => $request->input('week-id'),
-            'number' => $request->input('number')],
+            'number' => $request->input('number'),
+            'day' => $request->input('day')],
 
             ['group_id' => $request->input('group-id'),
             'subject_id' => $request->input('subject-id'),
             'week_id' => $request->input('week-id'),
-            'number' => $request->input('number')
+            'number' => $request->input('number'),
+            'day' => $request->input('day')
             ]);
 
         return redirect()->back();

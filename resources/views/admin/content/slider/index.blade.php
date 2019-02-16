@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h2>Управление слайдерами</h2>
-        <a class="btn btn-primary" href="{{route('admin.content.slider.create')}}">Создать слайдер</a>
+        <a class="btn btn-primary mt-3 mb-3" href="{{route('admin.content.slider.create')}}">Создать слайдер</a>
 
         <table class="table">
             <thead>

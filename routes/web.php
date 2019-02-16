@@ -36,6 +36,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
            Route::post('/delete/{slider}', 'Content\SliderController@destroy');
        });
 
+       Route::group(['prefix' => 'text'], function () {
+
+           Route::get('/', 'Content\TextController@index')->name('admin.content.text');
+           Route::get('/create', 'Content\TextController@create')->name('admin.content.text.create');
+           Route::get('/edit/{text}', 'Content\TextController@edit');
+           Route::post('/store', 'Content\TextController@store')->name('admin.content.text.store');
+           Route::post('/update/{text}', 'Content\TextController@update');
+           Route::post('/delete/{text}', 'Content\TextController@destroy');
+       });
+
        Route::group(['prefix' => 'slider_image'], function () {
 
            Route::get('/edit/{slider_Image}', 'Content\SliderImageController@edit');

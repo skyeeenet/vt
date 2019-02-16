@@ -46,6 +46,16 @@
                         <option @if($schedule->number == 6) selected @endif value="6">6</option>
                     </select>
                 </div>
+                <label for="day">День</label>
+                <select class="form-control mt-4 mb-4" name="day" id="day">
+                    <option @if($schedule->number == 'Понедельник') selected @endif value="Понедельник">Понедельник</option>
+                    <option @if($schedule->number == 'Вторник') selected @endif value="Вторник">Вторник</option>
+                    <option @if($schedule->number == 'Среда') selected @endif value="Среда">Среда</option>
+                    <option @if($schedule->number == 'Четверг') selected @endif value="Четверг">Четверг</option>
+                    <option @if($schedule->number == 'Пятница') selected @endif value="Пятница">Пятница</option>
+                    <option @if($schedule->number == 'Суббота') selected @endif value="Суббота">Суббота</option>
+                    <option @if($schedule->number == 'Воскресенье') selected @endif value="Воскресенье">Воскресенье</option>
+                </select>
                 <button class="btn btn-primary" type="sumbit">Обновить</button>
             </form>
         </div>

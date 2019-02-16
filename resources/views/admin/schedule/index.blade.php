@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-
+    <h3 class="text-center mt-3 mb-3">Раписание</h3>
     <select name="" id="group_id">
         @foreach($groups as $group)
             <option value="{{$group->id}}">{{$group->value}}</option>
@@ -14,6 +14,7 @@
             <tr>
                 <th>Неделя</th>
                 <th>Пара</th>
+                <th>День</th>
                 <th>Группа</th>
                 <th>Предмет</th>
                 <th>Редактировать</th>
@@ -67,6 +68,7 @@
 
                 body.append('<tr>'+'<td>'+item['week']['value']+'</td>'
                         +'<td>'+item['number']+'</td>'
+                        +'<td>'+item['day']+'</td>'
                         +'<td>'+item['group']['value']+'</td>'
                         +'<td>'+item['subject']['value']+'</td>'
                         +'<td><a class="btn btn-primary" href="schedule/edit/'+item['id']+'"><i class="far fa-edit"></i></a></td>'

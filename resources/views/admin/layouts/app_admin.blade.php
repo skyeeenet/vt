@@ -32,10 +32,11 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Content
+                        Наполнение
                     </a>
                     <div class="dropdown-menu" aria-labelledby="content">
                         <a class="dropdown-item" href="{{ route('admin.content.images') }}">Изображения</a>
+                        <a class="dropdown-item" href="{{ route('admin.content.text') }}">Тексты</a>
                         <a class="dropdown-item" href="{{ route('admin.content.slider') }}">Настройка слайдеров</a>
                         <a class="dropdown-item" href="{{ route('admin.content.adverts') }}">Объявления</a>
                         <a class="dropdown-item" href="{{ route('admin.content.posts') }}">Новости</a>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schedule extends Model
 {
-    protected $fillable = ['group_id', 'subject_id', 'week_id', 'number'];
+    protected $fillable = ['group_id', 'subject_id', 'week_id', 'number', 'day'];
 
     public function group() {
 
