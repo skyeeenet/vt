@@ -400,6 +400,24 @@ div.MAINBOX {
     font-size: 22px;
     font-weight: 300;
 }
+
+.btn-reg {
+    display: inline-block;
+    color: #ff8c01;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.btn-reg:hover {
+    transition: .2s;
+    color: #ffa232;
+}
+
+.schedule-btn {
+    font-size: 14px;
+}
 /* skyeeenet zone end */
 
 /* andinoriel zone */
@@ -797,15 +815,8 @@ div.registration div.registration_link {
   margin: 15px 0;
 }
 
-div.registration div.registration_link a {
-  color: #5cb8d7;
-  font-size: 24px;
-  transition: all 0.3s;
-}
-
-div.registration div.registration_link a:hover {
-  color: #4ca4c2;
-  transition: all 0.3s;
+.registration_link button {
+  color: white !important;
 }
 
 div.conf_documents {

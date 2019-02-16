@@ -21,168 +21,114 @@
 </head>
 
 <body>
-    <div class="MAINBOX">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-center" id="myModalLabel">Регистрация</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="conf">Выберите конференцию</label>
+                        <select class="form-control" name="conf" id="conf">
+                            <option value="1">Первая конфа</option>
+                            <option value="2">Вторая конфа</option>
+                        </select>
+                    </div>
+                    <label for="text">Комментарий</label>
+                    <div class="form-group">
+                        <textarea class="form-control w-100" name="text" id="text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+                <button type="button" class="btn btn-primary">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
         <header>
             <div class="container-fluid topHeader">
                 <div class="container">
-                    <div
-                        class="d-flex flex-row justify-content-around justify-content-md-between align-items-center pt-3 pb-3 pt-lg-2 pb-lg-2">
-                        <div
-                            class="d-flex flex-column flex-sm-row justify-content-center align-items-center currentWeek">
+                    <div class="d-flex flex-row justify-content-around justify-content-md-between align-items-center pt-3 pb-3 pt-lg-2 pb-lg-2">
+                        <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center currentWeek">
                             <div>Текущая&nbsp;неделя:&nbsp;</div>
                             <div>Четная</div>
                         </div>
                         <!-- /.currentWeek -->
-                        <div
-                            class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
-                            <div class="mt-md-0 mt-md-0 ml-3"><img src="../images/placeholder.svg" heigth="20px"
-                                    width="20px" alt="position"><span class="pl-2">Мариуполь</span></div>
-                            <div class="mt-2 mt-md-0 ml-3"><img src="../images/email.svg" heigth="20px" width="20px"
-                                    alt="mail"><span class="pl-2">test@gmail.com</span></div>
-                            <div class="mt-2 mt-md-0 ml-3"><img src="../images/phone-receiver.svg" heigth="20px"
-                                    width="20px" alt="phone"><span class="pl-2">+380647845125</span></div>
+                        <div class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
+                            <div class="mt-md-0 mt-md-0 ml-3"><img src="../images/placeholder.svg" heigth="20px" width="20px"
+                                                                   alt="position"><span class="pl-2">Мариуполь</span></div>
+                            <div class="mt-2 mt-md-0 ml-3"><img src="../images/email.svg" heigth="20px" width="20px" alt="mail"><span
+                                    class="pl-2">test@gmail.com</span></div>
+                            <div class="mt-2 mt-md-0 ml-3">
+                                <img src="../images/login.svg" height="20px" width="20px" alt="registration"><a class="btn-reg ml-2" href="#">Регистрация</a>
+                            </div>
                         </div>
                         <!-- /.contactsTopHeader -->
                     </div>
-                    <!-- /.d-flex.flex-row.justify-content-around.justify-content-md-between.align-items-center.pt-3.pb-3.pt-lg-2.pb-lg-2 -->
                 </div>
-                <!-- /.container -->
             </div>
-            <!-- /.container-fluid topHeader -->
-            <div class="container navbar-container">
-                <nav
-                    class="navbar navbar-second d-flex flex-row flex-nowrap justify-content-between align-items-center">
-                    <div class="d-flex flex-row justify-content-around align-items-center logoHeader mt-3 mb-3">
-                        <img src="../images/logo.png" alt="logo" height="100px">
-                        <div class="d-flex flex-column justify-content-around align-items-start ml-2">
-                            <div>Oenrique</div>
-                            <div>UX/UI Expert</div>
-                        </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+                <div class="container">
+                    <div class="col-md-4">
+                        <a class="ml-2 navbar-brand" href="#">LOGO</a>
                     </div>
-                    <!-- Custom dropdown -->
-                    <div class="flex-column">
-                        <ul id="dropdown-menu" class="align-items-center animated navigationMenu">
-                            <li class="active"><a href="#">Главная</a></li>
-                            <li id="dropdown-menu-clickable2"><a href="#">Абитуриенту</a></li>
-                            <li id="dropdown-menu-clickable3"><a href="#">Студенту</a></li>
-                            <li id="dropdown-menu-clickable4"><a href="#">Кафедра</a></li>
-                            <li id="dropdown-menu-clickable5"><a href="#">Контакты</a></li>
-                            <li><a href="#">
-                                    <span class="d-lg-none">Поиск</span>
-                                    <img class="d-none d-lg-block" src="../images/search.svg" height="15px" width="15px"
-                                        alt="search">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                    <div class="col-md-10 collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active mr-md-3">
+                                <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown mr-md-3">
+                                <a class="nav-link dropdown-toggle" href="#" id="enrollee" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    абитуриенту
                                 </a>
+                                <div class="dropdown-menu" aria-labelledby="enrollee">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown mr-md-3">
+                                <a class="nav-link dropdown-toggle" href="#" id="student" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    студенту
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="student">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown mr-md-3">
+                                <a class="nav-link dropdown-toggle" href="#" id="department" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    кафедра
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="department">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Контакты</a>
                             </li>
                         </ul>
-                        <ul id="dropdown-menu-eclipse2"
-                            class="flex-row justify-content-between align-items-center animated navigationMenu">
-                            <li><a href="#">Пункт меню 2</a></li>
-                            <li><a href="#">Пункт меню 2</a></li>
-                            <li><a href="#">Пункт меню 2</a></li>
-                            <li><a href="#">Пункт меню 2</a></li>
-                        </ul>
-                        <ul id="dropdown-menu-eclipse3"
-                            class="flex-row justify-content-between align-items-center animated navigationMenu">
-                            <li><a href="#">Пункт меню 3</a></li>
-                            <li><a href="#">Пункт меню 3</a></li>
-                            <li><a href="#">Пункт меню 3</a></li>
-                            <li><a href="#">Пункт меню 3</a></li>
-                        </ul>
-                        <ul id="dropdown-menu-eclipse4"
-                            class="flex-row justify-content-between align-items-center animated navigationMenu">
-                            <li><a href="#">Пункт меню 4</a></li>
-                            <li><a href="#">Пункт меню 4</a></li>
-                            <li><a href="#">Пункт меню 4</a></li>
-                            <li><a href="#">Пункт меню 4</a></li>
-                        </ul>
-                        <ul id="dropdown-menu-eclipse5"
-                            class="flex-row justify-content-between align-items-center animated navigationMenu">
-                            <li><a href="#">Пункт меню 5</a></li>
-                            <li><a href="#">Пункт меню 5</a></li>
-                            <li><a href="#">Пункт меню 5</a></li>
-                            <li><a href="#">Пункт меню 5</a></li>
-                        </ul>
-                        <a id="btn-show" href="#" class="menu-btn">
-                            <span></span>
-                        </a>
                     </div>
-                    <!-- Custom dropdown end -->
-
-                    <!-- Other implementation of custom dropdown -->
-
-                    <!--<ul id="dropdown-menu" class="align-items-center navigationMenu">
-                        <li class="active"><a href="#">Главная</a></li>
-                        <div class="vit_hover">
-                            <li><a href="#">Абитуриенту</a></li>
-                            <div class="vit_dropdownchild">
-                                <a href="./pages/enroll.html">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                            </div>
-                        </div>
-                        <div class="vit_hover">
-                            <li><a href="#">Студенту</a></li>
-                            <div class="vit_dropdownchild">
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                            </div>
-                        </div>
-                        <div class="vit_hover">
-                            <li><a href="#">Кафедра</a></li>
-                            <div class="vit_dropdownchild">
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                            </div>
-                        </div>
-                        <div class="vit_hover">
-                            <li><a href="#">Контакты</a></li>
-                            <div class="vit_dropdownchild">
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                                <a href="#">Пункт меню</a>
-                            </div>
-                        </div>
-                    <ul id="dropdown-menu" class="align-items-center navigationMenu">                        
-                        <li class="active"><a href="#">Главная</a></li>
-                        <div class="enrollee">
-                        <li><a href="#">Абитуриенту</a></li>
-                        <div class="vit_dropdownchild">
-                            <a href="enroll.html">Пункт меню</a>
-                            <a href="#">Пункт меню</a>
-                            <a href="#">Пункт меню</a>
-                            <a href="#">Пункт меню</a>
-                            <a href="#">Пункт меню</a>
-                        </div>
-                        </div>
-                        <li><a href="#">Студенту</a></li>
-                        <li><a href="#">Кафедра</a></li>
-                        <li><a href="#">Контакты</a></li>                    
-
-                        <li><a href="#">
-                                <span class="d-lg-none">Поиск</span>
-                                <img class="d-none d-lg-block" src="./images/search.svg" height="15px" width="15px" alt="search">
-                            </a>
-                        </li>
-                    </ul>
-                    <a id="btn-show" href="#" class="menu-btn">
-                        <span></span>
-                    </a>-->
-
-                    <!-- Other implementation of custom dropdown end -->
-                </nav>
-            </div>
-            <!-- /.navbar-container -->
-            <div class="specGreyLine"></div>
+                </div>
+            </nav>
         </header>
         <main>
             <div class="container">
@@ -191,7 +137,7 @@
                     <div></div>
                     <div></div>
                 </div>
-                <div class="col-12 col-lg-10 offset-lg-1 mt-4 roboto16lt">
+                <div class="col-12 col-lg-12 mt-4 roboto16lt">
                     Несмотря на то, что в настоящее время существует довольно большое количество методик чего-нибудь, не
                     уделено достаточного внимания достоверности полученных результатов из-за отсутствия учета
                     чего-нибудь,
@@ -239,7 +185,7 @@
                             <div class="d-flex flex-column justify-content-center align-items-center registration">
                                 <div>Открыта регистрация</div>
                                 <div>На участие в конференции</div>
-                                <div class="registration_link"><a href="#">Подать заявку онлайн</a></div>
+                                <div class="registration_link"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Подать заявку онлайн</button></div>
                                 <div>С 18.02 по 22.02</div>
                             </div>
                         </div>
@@ -329,7 +275,7 @@
                             <div class="d-flex flex-column justify-content-center align-items-center registration">
                                 <div>Открыта регистрация</div>
                                 <div>На участие в конференции</div>
-                                <div class="registration_link"><a href="#">Подать заявку онлайн</a></div>
+                                <div class="registration_link"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Подать заявку онлайн</button></div>
                                 <div>С 18.02 по 22.02</div>
                             </div>
                         </div>
@@ -427,7 +373,6 @@
                 </div>
             </div>
         </footer>
-    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
