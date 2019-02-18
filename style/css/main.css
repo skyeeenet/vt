@@ -92,7 +92,6 @@ div.MAINBOX {
   transform: rotate(-45deg);
 }
 
-
 .thebest-container {
   width: 100%;
   display: flex;
@@ -127,7 +126,7 @@ div.MAINBOX {
 
 .card {
   border: none !important;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .card a {
@@ -166,7 +165,7 @@ div.MAINBOX {
 
 .adv-item {
   /*border: 1px solid #c6c6c6;*/
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
 
@@ -396,28 +395,29 @@ div.MAINBOX {
 }
 
 .teacher h3 {
-    font-family: "Roboto";
-    font-size: 22px;
-    font-weight: 300;
+  font-family: "Roboto";
+  font-size: 22px;
+  font-weight: 300;
 }
 
 .btn-reg {
-    display: inline-block;
-    color: #ff8c01;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    transition: .2s;
+  display: inline-block;
+  color: #ff8c01;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: .2s;
 }
 
 .btn-reg:hover {
-    transition: .2s;
-    color: #ffa232;
+  transition: .2s;
+  color: #ffa232;
 }
 
 .schedule-btn {
-    font-size: 14px;
+  font-size: 14px;
 }
+
 /* skyeeenet zone end */
 
 /* andinoriel zone */
@@ -489,7 +489,7 @@ div.sliderBLock img {
 
 div.declaration {
   height: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
 
@@ -844,6 +844,16 @@ div.conf_slider_link>a:hover {
   font-size: 18px;
 }
 
+img.socialsLink {
+  opacity: 0.9;
+  transition: all 0.1s;
+}
+
+img.socialsLink:hover {
+  opacity: 1;
+  transition: all 0.1s;
+}
+ 
 /* andinoriel zone end */
 
 /* vitassuper zone */
@@ -1047,28 +1057,27 @@ div.conf_slider_link>a:hover {
   display: block;
 }
 
-.shield img{
-  width: 20%;
- 
-}
-
-.shield a{
-  color:#ff8c01;
-}
-
-.methodical img{
+.shield img {
   width: 20%;
 }
 
-.methodical a{
-  color:#ff8c01;
+.shield a {
+  color: #ff8c01;
 }
 
-.documents{
+.methodical img {
+  width: 20%;
+}
+
+.methodical a {
+  color: #ff8c01;
+}
+
+.documents {
   padding: 100px 0;
 }
 
-.dox-text{
+.dox-text {
   font-family: "Gotham-Pro-Light", sans-serif;
   font-size: 24px;
 }
