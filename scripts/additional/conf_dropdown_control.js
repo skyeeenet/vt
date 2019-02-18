@@ -1,31 +1,48 @@
 $(document).ready(function () {
+    function controlDropdown(dropdownElement, flag, rotating) {
+        if (!flag) {
+            flag = true;
+            $(dropdownElement).slideDown(600);
+            $(rotating).css({ 'transform': 'rotate(180deg)' });
+        } else {
+            flag = false;
+            $(dropdownElement).slideUp(600);
+            $(rotating).css({ 'transform': 'rotate(0deg)' });
+        }
+        return flag;
+    }
 
-    var flag1 = false;
-    var flag2 = false;
-    $('#conf_dropdown_button1').click(function () {
-        if (!flag1) {
-            $('#drpdn_el_1').addClass('dropdown_elements_active');
-            flag1 = true;
-            $('#drpdn_el_1').removeClass('fadeOutRight');
-            $('#drpdn_el_1').addClass('fadeInLeft');
-        } else {
-            $('#drpdn_el_1').removeClass('dropdown_elements_active');
-            flag1 = false;
-            $('#drpdn_el_1').removeClass('fadeInLeft');
-            $('#drpdn_el_1').addClass('fadeOutRight');
-        }
-    });
-    $('#conf_dropdown_button2').click(function () {
-        if (!flag2) {
-            $('#drpdn_el_2').addClass('dropdown_elements_active');
-            flag2 = true;
-            $('#drpdn_el_2').removeClass('fadeOutRight');
-            $('#drpdn_el_2').addClass('fadeInLeft');
-        } else {
-            $('#drpdn_el_2').removeClass('dropdown_elements_active');
-            flag2 = false;
-            $('#drpdn_el_2').removeClass('fadeInLeft');
-            $('#drpdn_el_2').addClass('fadeOutRight');
-        }
-    });
+    var flag1 = false,
+        flag2 = false;
+
+    if ($(window).width() <= '992' ? true : false) {
+        $('#conf_dropdown_button1').click(function (event) {
+            event.preventDefault();
+            rotating = $('#conf_dropdown_button1>a>img');
+            flag1 = controlDropdown('#drpdn_el_1', flag1, rotating);
+        });
+    }
+    else {
+        $('#conf_dropdown_button1>a').click(function (event) {
+            event.preventDefault();
+            rotating = $('#conf_dropdown_button1>a>img');
+            flag1 = controlDropdown('#drpdn_el_1', flag1, rotating);
+        });
+    };
+
+    if ($(window).width() <= '992' ? true : false) {
+        $('#conf_dropdown_button2').click(function (event) {
+            event.preventDefault();
+            rotating = $('#conf_dropdown_button2>a>img');
+            flag1 = controlDropdown('#drpdn_el_2', flag1, rotating);
+        });
+    }
+    else {
+        $('#conf_dropdown_button2>a').click(function (event) {
+            event.preventDefault();
+            rotating = $('#conf_dropdown_button2>a>img');
+            flag1 = controlDropdown('#drpdn_el_2', flag1, rotating);
+        });
+    };
+
 });

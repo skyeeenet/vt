@@ -762,30 +762,21 @@ div.preloader {
   z-index: 100;
 }
 
+div.conf_dropdown_element_first>a>img {
+  transition: all 0.6s;
+}
+
 div.conf_dropdown_element_first {
   background: #e4edf7;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+  font-weight: 500;
   color: #ff8c01;
   position: relative;
 }
 
-div.conf_dropdown_button {
-  border: 12px solid transparent;
-  border-top: 12px solid #ff8c01;
-  position: absolute;
-  top: 40%;
-  left: 125px;
-}
-
 div.dropdown_elements {
-  overflow: hidden;
-  height: 0;
-  transition: all 0.7s;
-}
-
-div.dropdown_elements_active {
-  height: 100%;
+  display: none;
 }
 
 div.dropdown_elements div {
@@ -853,7 +844,7 @@ img.socialsLink:hover {
   opacity: 1;
   transition: all 0.1s;
 }
- 
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
