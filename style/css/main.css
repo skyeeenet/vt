@@ -928,6 +928,11 @@ img.socialsLink:hover {
   font-weight: 300;
 }
 
+.roboto18{
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
 .roboto36lt {
   font-family: 'Roboto', sans-serif;
   font-size: 36px;
@@ -1071,6 +1076,10 @@ img.socialsLink:hover {
 .dox-text {
   font-family: "Gotham-Pro-Light", sans-serif;
   font-size: 24px;
+}
+
+.avatar{
+  max-width: 360px;
 }
 
 /* vitassuper zone end */
