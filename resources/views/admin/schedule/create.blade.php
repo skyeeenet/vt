@@ -44,6 +44,12 @@
                 <option value="Суббота">Суббота</option>
                 <option value="Воскресенье">Воскресенье</option>
             </select>
+            <label for="occupation">Вид занятия</label>
+            <select class="form-control mb-4" name="occupation-id" id="occupation">
+                @foreach($occupations as $occupation)
+                    <option value="{{$occupation->id}}">{{$occupation->value}}</option>
+                @endforeach
+            </select>
             <button class="btn btn-primary" type="submit">Создать</button>
         </form>
     </div>

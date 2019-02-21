@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 16 2019 г., 00:33
+-- Время создания: Фев 22 2019 г., 00:02
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.2.0
 
@@ -194,7 +194,34 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2019_02_11_180410_create_bests_table', 9),
 (16, '2019_02_13_071823_create_pages_table', 10),
 (17, '2019_02_13_183641_create_sliders_table', 11),
-(18, '2019_02_13_205702_create_slider__images_table', 12);
+(18, '2019_02_13_205702_create_slider__images_table', 12),
+(19, '2019_02_16_130352_create_texts_table', 13),
+(20, '2019_02_17_214504_create_social_users_table', 14),
+(21, '2019_02_17_220214_create_socials_table', 14),
+(22, '2019_02_18_115316_create_occupation_types_table', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `occupation_types`
+--
+
+CREATE TABLE `occupation_types` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image_id` int(10) UNSIGNED DEFAULT NULL,
+  `value` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `occupation_types`
+--
+
+INSERT INTO `occupation_types` (`id`, `image_id`, `value`, `created_at`, `updated_at`) VALUES
+(2, 4, 'Лекция', '2019-02-18 13:44:47', '2019-02-18 13:44:47'),
+(3, 1, 'Практическая', '2019-02-18 13:44:59', '2019-02-18 13:44:59'),
+(4, 7, 'Лаба', '2019-02-18 14:02:46', '2019-02-18 14:02:46');
 
 -- --------------------------------------------------------
 
@@ -255,7 +282,7 @@ INSERT INTO `posts` (`id`, `image_id`, `title`, `body`, `user_id`, `created_at`,
 
 CREATE TABLE `roles` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -264,9 +291,10 @@ CREATE TABLE `roles` (
 -- Дамп данных таблицы `roles`
 --
 
-INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
+INSERT INTO `roles` (`id`, `value`, `created_at`, `updated_at`) VALUES
 (1, 'user', NULL, NULL),
-(2, 'student', NULL, NULL);
+(2, 'student', NULL, NULL),
+(3, 'admin', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -277,9 +305,11 @@ INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `schedules` (
   `id` int(10) UNSIGNED NOT NULL,
   `number` int(11) NOT NULL,
+  `day` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `group_id` int(10) UNSIGNED NOT NULL,
   `subject_id` int(10) UNSIGNED NOT NULL,
   `week_id` int(11) NOT NULL,
+  `occupation_type_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -288,11 +318,12 @@ CREATE TABLE `schedules` (
 -- Дамп данных таблицы `schedules`
 --
 
-INSERT INTO `schedules` (`id`, `number`, `group_id`, `subject_id`, `week_id`, `created_at`, `updated_at`) VALUES
-(2, 1, 2, 5, 3, '2019-02-05 19:21:54', '2019-02-05 19:21:54'),
-(3, 1, 2, 5, 2, '2019-02-05 19:22:09', '2019-02-07 20:06:58'),
-(9, 2, 2, 5, 2, '2019-02-07 20:14:24', '2019-02-07 20:14:24'),
-(10, 2, 3, 5, 2, '2019-02-07 20:14:37', '2019-02-07 20:14:37');
+INSERT INTO `schedules` (`id`, `number`, `day`, `group_id`, `subject_id`, `week_id`, `occupation_type_id`, `created_at`, `updated_at`) VALUES
+(11, 1, 'Понедельник', 2, 5, 2, 3, '2019-02-16 13:39:28', '2019-02-18 13:52:12'),
+(13, 6, 'Понедельник', 2, 6, 2, 3, '2019-02-18 13:53:38', '2019-02-18 13:53:38'),
+(14, 1, 'Вторник', 2, 5, 3, 3, '2019-02-18 13:53:58', '2019-02-18 13:53:58'),
+(15, 1, 'Понедельник', 2, 6, 2, 2, '2019-02-18 13:54:23', '2019-02-18 13:54:23'),
+(16, 1, 'Понедельник', 3, 6, 3, 3, '2019-02-18 14:01:00', '2019-02-18 14:01:00');
 
 -- --------------------------------------------------------
 
@@ -308,6 +339,13 @@ CREATE TABLE `sliders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `page_id`, `title`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'slider2', '2019-02-16 10:43:58', '2019-02-16 10:43:58');
+
 -- --------------------------------------------------------
 
 --
@@ -319,6 +357,50 @@ CREATE TABLE `slider_images` (
   `image_id` int(10) UNSIGNED NOT NULL,
   `slider_id` int(10) UNSIGNED NOT NULL,
   `value` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `slider_images`
+--
+
+INSERT INTO `slider_images` (`id`, `image_id`, `slider_id`, `value`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Слайд номер один', '2019-02-16 10:43:58', '2019-02-16 10:43:58'),
+(2, 5, 1, 'Слайд номер два', '2019-02-16 10:44:19', '2019-02-16 10:44:19');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `socials`
+--
+
+CREATE TABLE `socials` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `value` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `socials`
+--
+
+INSERT INTO `socials` (`id`, `value`, `image_id`, `created_at`, `updated_at`) VALUES
+(1, 'Facebook updated', 4, '2019-02-18 16:02:36', '2019-02-18 16:05:02');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `social_users`
+--
+
+CREATE TABLE `social_users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `social_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -370,12 +452,36 @@ INSERT INTO `submenus` (`id`, `menu_id`, `value`, `url`, `created_at`, `updated_
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `texts`
+--
+
+CREATE TABLE `texts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page_id` int(10) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `texts`
+--
+
+INSERT INTO `texts` (`id`, `description`, `value`, `page_id`, `created_at`, `updated_at`) VALUES
+(3, 'Текст для шапки', '<p>Текст</p>', NULL, '2019-02-16 12:57:47', '2019-02-16 12:57:47');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `users`
 --
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `role_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -389,8 +495,8 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `role_id`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Тилинин Сергей', '1', 'serega.tilinin@gmail.com', NULL, '$2y$10$EZjMoSg4pOHBI6/iUZrzXOTz9NFaski2lMd/SQZxlsmOe07Ye/hba', 'tdxdPlvRg2Ff3t2pJZ7aRw8Xb0xzkevpExTH4tDHJ6cmmdQ3GhzGgVOvTC9U', '2019-02-01 16:27:33', '2019-02-01 16:27:33');
+INSERT INTO `users` (`id`, `name`, `image`, `description`, `role_id`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Тилинин Сергей', 'macbook_and_iphone_1550428686.jpg', 'updated', '1', 'serega.tilinin@gmail.com', NULL, '$2y$10$EZjMoSg4pOHBI6/iUZrzXOTz9NFaski2lMd/SQZxlsmOe07Ye/hba', 'tdxdPlvRg2Ff3t2pJZ7aRw8Xb0xzkevpExTH4tDHJ6cmmdQ3GhzGgVOvTC9U', '2019-02-01 16:27:33', '2019-02-18 17:39:11');
 
 -- --------------------------------------------------------
 
@@ -463,6 +569,13 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `occupation_types`
+--
+ALTER TABLE `occupation_types`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `image_id` (`image_id`);
+
+--
 -- Индексы таблицы `pages`
 --
 ALTER TABLE `pages`
@@ -487,7 +600,7 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `roles_name_unique` (`name`);
+  ADD UNIQUE KEY `roles_name_unique` (`value`);
 
 --
 -- Индексы таблицы `schedules`
@@ -495,7 +608,8 @@ ALTER TABLE `roles`
 ALTER TABLE `schedules`
   ADD PRIMARY KEY (`id`),
   ADD KEY `schedules_group_id_index` (`group_id`),
-  ADD KEY `schedules_subject_id_index` (`subject_id`);
+  ADD KEY `schedules_subject_id_index` (`subject_id`),
+  ADD KEY `occupation_type_id` (`occupation_type_id`);
 
 --
 -- Индексы таблицы `sliders`
@@ -513,6 +627,21 @@ ALTER TABLE `slider_images`
   ADD KEY `slider_id` (`slider_id`);
 
 --
+-- Индексы таблицы `socials`
+--
+ALTER TABLE `socials`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `socials_image_id_index` (`image_id`);
+
+--
+-- Индексы таблицы `social_users`
+--
+ALTER TABLE `social_users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `social_users_social_id_index` (`social_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Индексы таблицы `subjects`
 --
 ALTER TABLE `subjects`
@@ -523,6 +652,13 @@ ALTER TABLE `subjects`
 --
 ALTER TABLE `submenus`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `texts`
+--
+ALTER TABLE `texts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `texts_page_id_index` (`page_id`);
 
 --
 -- Индексы таблицы `users`
@@ -582,7 +718,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT для таблицы `occupation_types`
+--
+ALTER TABLE `occupation_types`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
@@ -600,25 +742,37 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `schedules`
 --
 ALTER TABLE `schedules`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT для таблицы `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `slider_images`
 --
 ALTER TABLE `slider_images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `socials`
+--
+ALTER TABLE `socials`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `social_users`
+--
+ALTER TABLE `social_users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `subjects`
@@ -631,6 +785,12 @@ ALTER TABLE `subjects`
 --
 ALTER TABLE `submenus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `texts`
+--
+ALTER TABLE `texts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

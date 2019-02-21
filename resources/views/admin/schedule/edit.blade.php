@@ -56,6 +56,12 @@
                     <option @if($schedule->number == 'Суббота') selected @endif value="Суббота">Суббота</option>
                     <option @if($schedule->number == 'Воскресенье') selected @endif value="Воскресенье">Воскресенье</option>
                 </select>
+                <label for="occupation">Вид занятия</label>
+                <select class="form-control mb-4" name="occupation-id" id="occupation">
+                    @foreach($occupations as $occupation)
+                        <option @if($occupation->id == $schedule->occupation_type_id) selected @endif value="{{$occupation->id}}">{{$occupation->value}}</option>
+                    @endforeach
+                </select>
                 <button class="btn btn-primary" type="sumbit">Обновить</button>
             </form>
         </div>

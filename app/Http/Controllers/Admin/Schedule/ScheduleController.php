@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin\Schedule;
 
 use App\Http\Controllers\Controller;
 use App\Models\Group;
+use App\Models\OccupationType;
 use App\Models\Schedule;
 use App\Models\Subject;
 use App\Models\Week;
 use Illuminate\Http\Request;
-use function MongoDB\BSON\toJSON;
 
 class ScheduleController extends Controller
 {
@@ -27,7 +27,7 @@ class ScheduleController extends Controller
 
         //$schedule = Schedule::select('id', 'group_id', 'subject_id', 'week_id')->where('group_id', $group_id)->get();
 
-        $schedule = Schedule::with(['group', 'subject', 'week'])->where('group_id', $group_id)->get();
+        $schedule = Schedule::with(['group', 'subject', 'week', 'occupation'])->where('group_id', $group_id)->get();
 
         return $schedule;
     }
@@ -37,7 +37,9 @@ class ScheduleController extends Controller
         $weeks = Week::select('id','value')->get();
         $subjects = Subject::select('id', 'value')->get();
         $groups = Group::select('id', 'value')->get();
-        return view('admin.schedule.edit', compact('schedule', 'weeks', 'subjects', 'groups'));
+        $occupations = OccupationType::select('id', 'value')->get();
+
+        return view('admin.schedule.edit', compact('schedule', 'weeks', 'subjects', 'groups', 'occupations'));
     }
 
     public function update(Schedule $schedule, Request $request) {
@@ -47,6 +49,7 @@ class ScheduleController extends Controller
            'week_id' => $request->input('week_id'),
            'group_id' => $request->input('group_id'),
            'subject_id' => $request->input('subject_id'),
+            'occupation_type_id' => $request->input('occupation-id'),
            'number' => $request->input('number'),
            'day' => $request->input('day')
         ]);
@@ -59,8 +62,9 @@ class ScheduleController extends Controller
         $groups = Group::select('id', 'value')->get();
         $subjects = Subject::select('id', 'value')->get();
         $weeks = Week::select('id', 'value')->get();
+        $occupations = OccupationType::select('id', 'value')->get();
 
-        return view('admin.schedule.create', compact('groups', 'subjects', 'weeks'));
+        return view('admin.schedule.create', compact('groups', 'subjects', 'weeks', 'occupations'));
     }
 
     public function store(Request $request) {
@@ -70,11 +74,13 @@ class ScheduleController extends Controller
             'subject_id' => $request->input('subject-id'),
             'week_id' => $request->input('week-id'),
             'number' => $request->input('number'),
+            'occupation_type_id' => $request->input('occupation-id'),
             'day' => $request->input('day')],
 
             ['group_id' => $request->input('group-id'),
             'subject_id' => $request->input('subject-id'),
             'week_id' => $request->input('week-id'),
+            'occupation_type_id' => $request->input('occupation-id'),
             'number' => $request->input('number'),
             'day' => $request->input('day')
             ]);

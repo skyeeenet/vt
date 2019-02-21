@@ -136,11 +136,56 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
         Route::post('/delete/{week}','Week\WeekController@destroy');
     });
 
+    Route::group(['prefix' => 'occupations'], function () {
 
+        Route::get('/', 'Schedule\OccupationTypeController@index')->name('admin.occupation');
+        Route::get('/create', 'Schedule\OccupationTypeController@create')->name('admin.occupation.create');
+        Route::get('/edit/{occupation}', 'Schedule\OccupationTypeController@edit');
+        Route::post('/store', 'Schedule\OccupationTypeController@store')->name('admin.occupation.store');
+        Route::post('/update/{occupation}', 'Schedule\OccupationTypeController@update');
+        Route::post('/delete/{occupation}', 'Schedule\OccupationTypeController@destroy');
+    });
+
+    Route::group(['prefix' => 'socials'], function () {
+
+        Route::get('/', 'User\SocialController@index')->name('admin.socials');
+        Route::get('/create', 'User\SocialController@create')->name('admin.socials.create');
+        Route::get('/edit/{social}', 'User\SocialController@edit');
+        Route::post('/store', 'User\SocialController@store')->name('admin.socials.store');
+        Route::post('/update/{social}', 'User\SocialController@update');
+        Route::post('/delete/{social}', 'User\SocialController@destroy');
+    });
+
+    Route::group(['prefix' => 'socials'], function () {
+
+        Route::get('/', 'User\SocialController@index')->name('admin.socials');
+        Route::get('/create', 'User\SocialController@create')->name('admin.socials.create');
+        Route::get('/edit/{social}', 'User\SocialController@edit');
+        Route::post('/store', 'User\SocialController@store')->name('admin.socials.store');
+        Route::post('/update/{social}', 'User\SocialController@update');
+        Route::post('/delete/{social}', 'User\SocialController@destroy');
+    });
+
+    Route::group(['prefix' => 'users'], function () {
+
+        Route::get('/', 'User\UserController@index')->name('admin.users');
+        Route::get('/create', 'User\UserController@create')->name('admin.users.create');
+        Route::get('/edit/{user}', 'User\UserController@edit');
+        Route::get('/{user}', 'User\UserController@show');
+        Route::post('/store', 'User\UserController@store')->name('admin.users.store');
+        Route::post('/update/{user}', 'User\UserController@update');
+        Route::post('/delete/{user}', 'User\UserController@destroy');
+    });
 });
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
+
+    Route::get('/', 'UserController@index')->name('user');
+    Route::post('/user}', 'UserController@update')->name('user.update');
 });
 
 Auth::routes();
