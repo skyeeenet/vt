@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../style/css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../style/css/slick.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../style/css/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../style/css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
@@ -111,63 +112,89 @@
             <div class="container">
                 <div
                     class="d-flex flex-column-reverse flex-lg-row justify-content-around align-items-center align-items-lg-start">
-                    <div class="">
-                        <div class="flex-column justify-content-center align-items-center">
-                            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center">
-                                <!-- COLUMN 1 -->
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div
-                                        class="d-flex flex-row justify-content-between align-items-center alboomSmallPhotoRow">
-                                        <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                                        <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                                    </div>
-                                    <!-- /.alboomSmallPhotoRow -->
-                                    <div
-                                        class="d-flex flex-row justify-content-between align-items-center alboomSmallPhotoRow">
-                                        <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                                        <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                                    </div>
-                                    <!-- /.alboomSmallPhotoRow -->
-                                    <div class="alboomBigPhoto">
-                                        <img src="../images/Прямоугольник 5 копия 5.png" alt="gallery_photo">
-                                    </div>
-                                    <!-- /.alboomBigPhoto -->
-                                </div>
-                                <!-- /.d-flex flex-column justify-content-center align-items-center -->
-                                <!-- COLUMN 2 -->
-                                <div
-                                    class="d-flex flex-column flex-lg-column-reverse justify-content-center align-items-center">
-                                    <div
-                                        class="d-flex flex-row justify-content-between align-items-center alboomSmallPhotoRow">
-                                        <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                                        <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                                    </div>
-                                    <!-- /.alboomSmallPhotoRow -->
-                                    <div
-                                        class="d-flex flex-row justify-content-between align-items-center alboomSmallPhotoRow">
-                                        <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                                        <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                                    </div>
-                                    <!-- /.alboomSmallPhotoRow -->
-                                    <div class="alboomBigPhoto">
-                                        <img src="../images/Прямоугольник 5 копия 5.png" alt="gallery_photo">
-                                    </div>
-                                    <!-- /.alboomBigPhoto -->
-                                </div>
-                                <!-- /.d-flex flex-column justify-content-center align-items-center -->
+                    <div class="flex-column justify-content-center align-items-center">
+                        <!-- ROW 1 -->
+                        <div class="d-flex flex-row justify-content-center align-items-center">
+                            <div
+                                class="d-flex flex-column justify-content-between align-items-center alboomSmallPhotoRow">
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
+                                </a>
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
+                                </a>
                             </div>
-                            <!-- /.d-flex flex-row justify-content-between align-items-center -->
-                            <div class="row d-flex justify-content-center mt-5 mb-5">
-                                <div class="pagination">
-                                    <a href="#">&laquo;</a>
-                                    <a href="#">1</a>
-                                    <a class="active" href="#">2</a>
-                                    <a href="#">3</a>
-                                    <a href="#">4</a>
-                                    <a href="#">5</a>
-                                    <a href="#">6</a>
-                                    <a href="#">&raquo;</a>
-                                </div>
+                            <!-- /.alboomSmallPhotoRow -->
+                            <div
+                                class="d-flex flex-column justify-content-between align-items-center alboomSmallPhotoRow">
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
+                                </a>
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
+                                </a>
+                            </div>
+                            <!-- /.alboomSmallPhotoRow -->
+                            <div class="alboomBigPhoto">
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5 копия 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5 копия 5.png" alt="gallery_photo">
+                                </a>
+                            </div>
+                            <!-- /.alboomBigPhoto -->
+                        </div>
+                        <!-- /.d-flex flex-column justify-content-center align-items-center -->
+                        <!-- ROW 1 END -->
+                        <!-- ROW 2 -->
+                        <div class="d-flex flex-row-reverse justify-content-center align-items-center">
+                            <div
+                                class="d-flex flex-column justify-content-between align-items-center alboomSmallPhotoRow">
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
+                                </a>
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
+                                </a>
+                            </div>
+                            <!-- /.alboomSmallPhotoRow -->
+                            <div
+                                class="d-flex flex-column justify-content-between align-items-center alboomSmallPhotoRow">
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
+                                </a>
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
+                                </a>
+                            </div>
+                            <!-- /.alboomSmallPhotoRow -->
+                            <div class="alboomBigPhoto">
+                                <a data-fancybox="gallery" href="../images/Прямоугольник 5 копия 5.png">
+                                    <!-- preview -->
+                                    <img src="../images/Прямоугольник 5 копия 5.png" alt="gallery_photo">
+                                </a>
+                            </div>
+                            <!-- /.alboomBigPhoto -->
+                        </div>
+                        <!-- /.d-flex flex-column justify-content-center align-items-center -->
+                        <!-- ROW 2 END -->
+                        <div class="row d-flex justify-content-center mt-5 mb-5">
+                            <div class="pagination">
+                                <a href="#">&laquo;</a>
+                                <a href="#">1</a>
+                                <a class="active" href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">&raquo;</a>
                             </div>
                         </div>
                     </div>
@@ -245,6 +272,7 @@
         crossorigin="anonymous"></script>
     <!-- Another JS -->
     <script src="../scripts/additional/slick.min.js"></script>
+    <script src="../scripts/additional/jquery.fancybox.min.js"></script>
     <script src="../scripts/__main__.js"></script>
 </body>
 

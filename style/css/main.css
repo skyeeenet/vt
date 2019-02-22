@@ -835,12 +835,12 @@ img.socialsLink:hover {
   transition: all 0.1s;
 }
 
-div.alboomSmallPhotoRow>img {
+div.alboomSmallPhotoRow>a>img {
   max-width: 164px;
   margin: 15px;
 }
 
-div.alboomBigPhoto>img {
+div.alboomBigPhoto>a>img {
   max-width: 356px;
   margin: 15px;
 }

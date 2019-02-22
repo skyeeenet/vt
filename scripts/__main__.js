@@ -41,7 +41,7 @@ function run_preloader() {
         'top': '0',
         'right': '0',
         'bottom': '0',
-        'background': '#18243e',
+        'background': '#18233e',
         'z-index': '100'
     });
     
