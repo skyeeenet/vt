@@ -34,14 +34,14 @@ $(document).ready(function () {
         $('#conf_dropdown_button2').click(function (event) {
             event.preventDefault();
             rotating = $('#conf_dropdown_button2>a>img');
-            flag1 = controlDropdown('#drpdn_el_2', flag1, rotating);
+            flag2 = controlDropdown('#drpdn_el_2', flag2, rotating);
         });
     }
     else {
         $('#conf_dropdown_button2>a').click(function (event) {
             event.preventDefault();
             rotating = $('#conf_dropdown_button2>a>img');
-            flag1 = controlDropdown('#drpdn_el_2', flag1, rotating);
+            flag2 = controlDropdown('#drpdn_el_2', flag2, rotating);
         });
     };
 
