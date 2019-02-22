@@ -835,6 +835,31 @@ img.socialsLink:hover {
   transition: all 0.1s;
 }
 
+div.alboomSmallPhotoRow>img {
+  max-width: 164px;
+  margin: 15px;
+}
+
+div.alboomBigPhoto>img {
+  max-width: 356px;
+  margin: 15px;
+}
+
+div.alboomCategory h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+}
+
+div.alboomCategory a {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
