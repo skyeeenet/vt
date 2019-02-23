@@ -22,7 +22,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
        Route::group(['prefix' => 'images'], function () {
 
            Route::get('/', 'Content\ImageController@index')->name('admin.content.images');
-           Route::post('/create', 'Content\ImageController@store')->name('admin.content.images.create');
+           Route::get('/edit/{image}', 'Content\ImageController@edit');
+           Route::post('/create', 'Content\ImageController@store')->name('admin.content.images.store');
+           Route::post('/update/{image}', 'Content\ImageController@update');
            Route::post('/delete/{image}', 'Content\ImageController@destroy');
        });
 
@@ -144,16 +146,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
         Route::post('/store', 'Schedule\OccupationTypeController@store')->name('admin.occupation.store');
         Route::post('/update/{occupation}', 'Schedule\OccupationTypeController@update');
         Route::post('/delete/{occupation}', 'Schedule\OccupationTypeController@destroy');
-    });
-
-    Route::group(['prefix' => 'socials'], function () {
-
-        Route::get('/', 'User\SocialController@index')->name('admin.socials');
-        Route::get('/create', 'User\SocialController@create')->name('admin.socials.create');
-        Route::get('/edit/{social}', 'User\SocialController@edit');
-        Route::post('/store', 'User\SocialController@store')->name('admin.socials.store');
-        Route::post('/update/{social}', 'User\SocialController@update');
-        Route::post('/delete/{social}', 'User\SocialController@destroy');
     });
 
     Route::group(['prefix' => 'socials'], function () {
