@@ -1,4 +1,4 @@
-run_preloader();
+//run_preloader();
 
 $(document).ready(function () {
     slick_news_control();
