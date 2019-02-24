@@ -17,7 +17,7 @@
             @forelse($socials as $social)
                 <tr>
                     <td>{{$social->id}}</td>
-                    <td><img width="300px" src="{{$social->image['url']}}" alt=""></td>
+                    <td><img width="50px" src="{{$social->image['url']}}" alt=""></td>
                     <td>{{$social->value}}</td>
                     <td><a class="btn btn-primary" href="{{route('admin.socials').'/edit/'.$social->id}}"><i class="far fa-edit"></i></a></td>
                     <td>

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\Image;
+//use App\Models\Image;
 use App\Models\Role;
 use App\Models\Social;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
@@ -42,13 +43,60 @@ class UserController extends Controller
 
     public function update(User $user, Request $request) {
 
-        $user->update([
+        if ($request->hasFile('image')) {
 
-            'role_id' => $request->input('role'),
-            'description' => $request->input('description'),
-            'email' => $request->input('email'),
-            'name' => $request->input('name')
-        ]);
+            if($request->hasFile('image')) {
+                //get filename with extension
+                $filenamewithextension = $request->file('image')->getClientOriginalName();
+
+                //get filename without extension
+                $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+
+                //get file extension
+                $extension = $request->file('image')->getClientOriginalExtension();
+
+                //filename to store
+                $filenametostore = $filename.'_'.time().'.'.$extension;
+
+                //Upload File
+                $request->file('image')->storeAs('public/profile_images', $filenametostore);
+
+                $path = '/storage/profile_images/'. $filenametostore;
+
+                if($user->image != null) {
+
+                    //Storage::delete('/public/profile_images/'.$user->image);
+                    unlink(public_path($user->image));
+                }
+
+                $user->update([
+                    'image' => $path,
+                    'role_id' => $request->input('role'),
+                    'description' => $request->input('description'),
+                    'email' => $request->input('email'),
+                    'name' => $request->input('name')
+                ]);
+
+                //Resize image here
+                $thumbnailpath = public_path('storage/profile_images/'.$filenametostore);
+                $img = Image::make($thumbnailpath)->resize(400, 400, function($constraint) {
+                    $constraint->aspectRatio();
+                });
+
+                $img->save($thumbnailpath);
+            }
+        }
+        else {
+            $user->update([
+
+                'role_id' => $request->input('role'),
+                'description' => $request->input('description'),
+                'email' => $request->input('email'),
+                'name' => $request->input('name')
+            ]);
+        }
+
+
 
         return redirect(route('admin.users'));
     }

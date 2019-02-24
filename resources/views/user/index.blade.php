@@ -2,47 +2,52 @@
 
 @section('content')
     <div class="container">
-        <p class="mt-3">Имя пользователя: {{$user->name}}</p>
-        <p>Email: {{$user->email}}</p>
-        @if($user->image == null)
-            <div>
-                <p>Загрузить изображение профиля ?</p>
-                <form enctype="multipart/form-data" action="{{route('user.update')}}" method="post">
-                    {{csrf_field()}}
-                    <p>Новый: <input type="file" id="file" name="image"></p>
-                    <ul id="list" style="list-style: none;"></ul>
-                    <button class="btn btn-primary" type="submit">Загрузить</button>
-                </form>
+        <div class="row">
+            <div class="col-md-6 col-12"><p class="mt-3">Имя пользователя: {{$user->name}}</p>
+                <p>Email: {{$user->email}}</p>
+                @if($user->image == null)
+                    <div>
+                        <p>Загрузить изображение профиля ?</p>
+                        <form enctype="multipart/form-data" action="{{route('user.update')}}" method="post">
+                            {{csrf_field()}}
+                            <p>Новый: <input type="file" id="file" name="image"></p>
+                            <ul id="list" style="list-style: none;"></ul>
+                            <button class="btn btn-primary" type="submit">Загрузить</button>
+                        </form>
+                    </div>
+                @else
+                    <div>
+                        <img width="400px" src="{{$user->image}}" alt="user-profile-photo">
+                        <p>Обновить изображение профиля ?</p>
+                        <form enctype="multipart/form-data" action="{{route('user.update')}}" method="post">
+                            {{csrf_field()}}
+                            <p>Новый: <input type="file" id="file" name="image"></p>
+                            <ul id="list" style="list-style: none;"></ul>
+                            <button class="btn btn-primary" type="submit">Обновить</button>
+                        </form>
+                    </div>
+                @endif</div>
+            <div class="col-md-6 col-12">
+                <p class="mt-3">О себе: </p>
+                @if($user->description == null)
+                    <p>Добавить информацию о себе ?</p>
+                    <form action="{{route('user.update')}}" method="post">
+                        {{csrf_field()}}
+                        <textarea name="description" id="description" cols="45" rows="10"></textarea>
+                        <button class="btn btn-primary" type="submit">Добавить</button>
+                    </form>
+                @else
+                    <p>{{$user->description}}</p>
+                    <p>Обновить информацию о себе ?</p>
+                    <form action="{{route('user.update')}}" method="post">
+                        {{csrf_field()}}
+                        <textarea name="description" id="description" cols="45" rows="10"></textarea>
+                        <br>
+                        <button class="btn btn-primary" type="submit">Обновить</button>
+                    </form>
+                @endif
             </div>
-        @else
-            <div>
-                <img width="400px" src="{{'/storage/profile_images/'.$user->image}}" alt="">
-                <p>Обновить изображение профиля ?</p>
-                <form enctype="multipart/form-data" action="{{route('user.update')}}" method="post">
-                    {{csrf_field()}}
-                    <p>Новый: <input type="file" id="file" name="image"></p>
-                    <ul id="list" style="list-style: none;"></ul>
-                    <button class="btn btn-primary" type="submit">Обновить</button>
-                </form>
-            </div>
-        @endif
-        <p class="mt-3">О себе: </p>
-        @if($user->description == null)
-            <p>Добавить информацию о себе ?</p>
-            <form action="{{route('user.update')}}" method="post">
-                {{csrf_field()}}
-                <textarea name="description" id="description" cols="45" rows="10"></textarea>
-                <button class="btn btn-primary" type="submit">Добавить</button>
-            </form>
-        @else
-            <p>{{$user->description}}</p>
-            <p>Обновить информацию о себе ?</p>
-            <form action="{{route('user.update')}}" method="post">
-                {{csrf_field()}}
-                <textarea name="description" id="description" cols="45" rows="10"></textarea>
-                <button class="btn btn-primary" type="submit">Обновить</button>
-            </form>
-        @endif
+        </div>
     </div>
 @endsection
 

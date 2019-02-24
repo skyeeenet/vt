@@ -36,13 +36,16 @@ class UserController extends Controller
             //Upload File
             $request->file('image')->storeAs('public/profile_images', $filenametostore);
 
+            $path = '/storage/profile_images/'. $filenametostore;
+
             if($user->image != null) {
 
-                Storage::delete('/public/profile_images/'.$user->image);
+                //Storage::delete('/public/profile_images/'.$user->image);
+                unlink(public_path($user->image));
             }
 
             $user->update([
-                'image' => $filenametostore
+                'image' => $path
             ]);
 
             //Resize image here

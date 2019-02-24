@@ -12,8 +12,78 @@
     <title>@yield('title')</title>
 </head>
 <body>
+<style>
+    nav {background: #413F3C;}
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    nav ul:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    nav a {
+        text-decoration: none;
+        display: block;
+        transition: .3s linear;
+    }
+    .topmenu > li {
+        float: left;
+        position: relative;
+        border-left: 1px solid black;
+    }
+    .topmenu > li:first-child {border-left: 0;}
+    .topmenu > li > a {
+        padding: 20px 30px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #FEFDFD;
+        letter-spacing: 2px;
+    }
+    .topmenu > li > a.active,
+    .submenu a:hover {color: #ddbe86;}
+    .topmenu .fa,
+    .submenu .fa {
+        margin-left: 5px;
+        color: inherit;
+    }
+    .submenu {
+        position: absolute;
+        z-index: 5;
+        min-width: 200px;
+        background: white;
+        border-top: 1px solid #CBCBCC;
+        border-left: 1px solid #CBCBCC;
+        border-right: 1px solid #CBCBCC;
+        visibility: hidden;
+        opacity: 0;
+        transform-origin: 0% 0%;
+        transform: rotateX(-90deg);
+        transition: .3s linear;
+    }
+    .submenu li {position: relative;}
+    .submenu li a {
+        color: #282828;
+        padding: 10px 20px;
+        font-size: 13px;
+        border-bottom: 1px solid #CBCBCC;
+    }
+    .submenu .submenu {
+        position: absolute;
+        left: 100%;
+        top: -1px;
+        transition: .3s linear;
+    }
+    nav li:hover > .submenu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/admin">Админ-панель <small>alpha</small> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -116,7 +186,82 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
+        <nav class="mb-4">
+            <ul class="topmenu">
+                <li><a href="/admin">Admin-Panel <small>alpha</small></a></li>
+                <li><a href="" class="active">Header<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.header.text') }}">Редактирование текстов/изображений</a></li>
+                        <li><a href="{{ route('admin.header.menu') }}">Редактирование меню</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="active">Наполнение<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.content.images') }}">Изображения</a></li>
+                        <li><a href="{{ route('admin.content.text') }}">Тексты</a></li>
+                        <li><a href="{{ route('admin.content.slider') }}">Создание слайдеров</a></li>
+                        <li><a href="{{ route('admin.content.adverts') }}">Объявления</a></li>
+                        <li><a href="{{ route('admin.content.posts') }}">Новости</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="active">Расписание<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.schedule') }}">Просмотреть</a></li>
+                        <li><a href="{{ route('admin.schedule.create') }}">Создать</a></li>
+                        <li><a href="">Группы<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.groups') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.groups.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Предметы<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.subjects') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.subjects.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Виды занятий<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.occupation') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.occupation.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Недели<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.weeks') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.weeks.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="" class="active">Пользователи<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.users') }}">Просмотреть всех</a></li>
+                        <li><a href="{{ route('user') }}">Мой профиль</a></li>
+                        <li><a href="">Преподаватели<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.lecturers') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.lecturers.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Социальные сети<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.socials') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.socials.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Роли<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.roles') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.roles.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Контакты</a></li>
+            </ul>
+        </nav>
 </header>
 @yield('content')
 <script

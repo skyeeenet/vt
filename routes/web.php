@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'CheckAdmin']], function () {
    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
 
    Route::get('/header/text', 'Header\HeaderTextController@index')->name('admin.header.text');
@@ -116,6 +116,28 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
        Route::post('/delete/{group}','Group\GroupController@destroy');
    });
 
+    Route::group(['prefix' => 'roles'], function () {
+
+        Route::get('/','User\RoleController@index')->name('admin.roles');
+        Route::get('/create','User\RoleController@create')->name('admin.roles.create');
+        Route::get('/{role}','User\RoleController@show');
+        Route::get('/edit/{role}','User\RoleController@edit');
+        Route::post('/store','User\RoleController@store')->name('admin.roles.store');
+        Route::post('/update/{role}','User\RoleController@update');
+        Route::post('/delete/{role}','User\RoleController@destroy');
+    });
+
+    Route::group(['prefix' => 'lecturers'], function () {
+
+        Route::get('/','Lecturer\LecturerController@index')->name('admin.lecturers');
+        Route::get('/create','Lecturer\LecturerController@create')->name('admin.lecturers.create');
+        Route::get('/{role}','Lecturer\LecturerController@show');
+        Route::get('/edit/{role}','Lecturer\LecturerController@edit');
+        Route::post('/store','Lecturer\LecturerController@store')->name('admin.lecturers.store');
+        Route::post('/update/{role}','Lecturer\LecturerController@update');
+        Route::post('/delete/{role}','Lecturer\LecturerController@destroy');
+    });
+
     Route::group(['prefix' => 'subjects'], function () {
 
         Route::get('/','Subject\SubjectController@index')->name('admin.subjects');
@@ -170,8 +192,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
     });
 });
 
-Route::get('/', function () {
+Route::get('/w', function () {
     return view('welcome');
+});
+
+Route::get('/', function () {
+    return view('public.index.index');
 });
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
