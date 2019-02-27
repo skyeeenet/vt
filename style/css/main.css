@@ -149,23 +149,10 @@ div.MAINBOX {
   border-radius: 0 !important;
 }
 
-.card-date {
-  color: #0d0b0b;
-  font-size: 14px;
-  font-family: "Roboto Light", sans-serif;
-}
-
-.card-title {
-  color: #ff8c01;
-  font-size: 22px !important;
-  font-family: "Roboto Medium", sans-serif !important;
-}
-
-.card-text {
-  font-family: "Roboto Light", sans-serif;
-  font-size: 16px;
+.second-text{
   color: #0d0b0b;
 }
+
 
 .t-transf-cap {
   text-transform: capitalize;
@@ -181,14 +168,6 @@ div.MAINBOX {
   font-size: 20px !important;
   font-family: "Roboto Medium", sans-serif;
   color: #0d0b0b;
-}
-
-.adv-main-text {
-  text-align: center;
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  color: #0d0b0b;
-  font-size: 16px;
 }
 
 .table-red {
@@ -248,16 +227,10 @@ div.MAINBOX {
   line-height: 24px;
 }
 
-.ads-second-text {
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.ads-second-text p:first-child span  {
+.roboto14md p:first-child span  {
   color: #ff8c01;
 }
-.ads-second-text p:last-child span {
+.roboto14md p:last-child span {
   color: #ff8c01;
 }
 .pagination {
@@ -941,6 +914,11 @@ div.alboomCategory a {
   font-size: 24px;
 }
 
+.roboto22md{
+  font-size: 22px !important;
+  font-family: "Roboto Medium", sans-serif !important;
+}
+
 .roboto24lt {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
@@ -987,6 +965,17 @@ div.alboomCategory a {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 700;
+}
+
+.roboto14{
+  font-size: 14px;
+  font-family: "Roboto Light", sans-serif;
+}
+
+.roboto14md{
+  font-size: 14px;
+  font-family: "Roboto Light", sans-serif;
+  font-weight: 500;
 }
 
 .vit_dropdown {
