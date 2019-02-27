@@ -111,15 +111,17 @@
         </header>
         <main>
             <section>
-                <div class="w-100 d-flex flex-column align-items-center mb-5 mt-5 mt-lg-0">
-                    <div class="specHeadContentText text-center">профиль пользователя</div>
-                    <div class="d-flex flex-row justify-content-center specDoubledColorLine">
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
                 <div class="container">
-                    <p class="text-center mb-5 mt-5 roboto24">Добро пожаловать, {{$user->name}}</p>
+                        <div class="text-center mb-5">
+                                <h1 class="title">
+                                    Профиль пользователя
+                                </h1>
+                                <div class="d-flex flex-row justify-content-center specDoubledColorLine">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                    <p class="text-center mb-5 roboto24">Добро пожаловать, {{$user->name}}</p>
                     <div class="row flex-column-reverse flex-xl-row">
                         <div class="col-xl-8 col-12 mt-5 mt-xl-0">
                             <div class="d-flex justify-content-between mb-3">
