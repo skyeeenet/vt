@@ -246,6 +246,12 @@ div.MAINBOX {
   font-size: 14px;
 }
 
+.ads-second-text p:first-child span  {
+  color: #ff8c01;
+}
+.ads-second-text p:last-child span {
+  color: #ff8c01;
+}
 .pagination {
   display: inline-block;
 }
