@@ -909,6 +909,13 @@ div.alboomCategory a {
   font-family: 'Roboto', sans-serif;
 }
 
+.table-sertif td,th{
+  border: 2px solid #dee2e6;
+}
+.table-sertif thead{
+border: 2px solid #dee2e6;
+}
+
 .roboto24 {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
