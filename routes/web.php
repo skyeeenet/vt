@@ -196,16 +196,19 @@ Route::get('/w', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('public.index.index');
-});
+Route::get('/', 'Publics\Index\IndexController@index');
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
 
-    Route::get('/', 'UserController@index')->name('user');
+    Route::get('/', 'Publics\User\IndexController@index')->name('user');
+    Route::get('/edit', 'Publics\User\IndexController@edit')->name('user.edit');
     Route::post('/user}', 'UserController@update')->name('user.update');
 });
 
 Auth::routes();
+
+Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha, $config = 'default') {
+    return $captcha->src($config);
+});
 
 Route::get('/home', 'HomeController@index')->name('home');

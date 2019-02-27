@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin\Header;
 
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\Contracts\ImageProcessor;
 use App\Models\Header;
+use Http\Client\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,7 +25,7 @@ class HeaderTextController extends Controller
         return view('admin.header.index', compact('arr'));
     }
 
-    public function update(Request $request) {
+    public function update(Request $request, ImageProcessor $imageProcessor) {
 
         if ($request->place) {
 
@@ -61,14 +63,20 @@ class HeaderTextController extends Controller
 
             $current_logo = Header::where('type', 'logo')->first();
 
-            Storage::delete('/public/'. $current_logo->value);
+            if($request->hasFile('logo')) {
 
-            $path = $request->file('logo')->store('uploads', 'public');
+                if ($current_logo != null) {
+                    unlink(public_path($current_logo->value));
+                }
 
-            Header::updateOrCreate(
-                ['type' => 'logo'],
-                ['value' => $path]
-            );
+                $path = $imageProcessor::compressAndSave($request, 'logo', 'storage/uploads/');
+
+                Header::updateOrCreate(
+                    ['type' => 'logo'],
+                    ['value' => $path]
+                );
+            }
+
         }
 
         return redirect('/admin/header/text');

@@ -12,7 +12,7 @@
                 <p>Телефон: <input type="text" name="phone" value="@isset($arr['phone']) {{ $arr['phone'] }} @endisset"></p>
                 <h2>Редактировать логотип: </h2>
                 <p>Надпись: <input type="text" name="logo-text" value="@isset($arr['logo-text']) {{ $arr['logo-text'] }} @endisset"></p>
-                <p>Текущий: <img src="@isset($arr['logo']) {{ '/storage/'.$arr['logo'] }} @endisset" style="max-width: 100px; max-height: 100px;" alt="Логотип"></p>
+                <p>Текущий: <img src="@isset($arr['logo']) {{ $arr['logo'] }} @endisset" style="max-width: 100px; max-height: 100px;" alt="Логотип"></p>
                 <p>Новый: <input type="file" id="file" name="logo"></p>
                 <ul id="list" style="list-style: none;"></ul>
                 <div>

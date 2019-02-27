@@ -26,6 +26,7 @@ class HeaderMenuController extends Controller
 
     public function destroy(Menu $menu) {
 
+        $menu->submenu()->delete();
         $menu->delete();
         return redirect(route('admin.header.menu'));
     }

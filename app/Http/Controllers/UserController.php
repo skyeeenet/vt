@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helpers\Contracts\ImageProcessor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -16,27 +17,11 @@ class UserController extends Controller
         return view('user.index', compact('user'));
     }
 
-    public function update(Request $request) {
+    public function update(Request $request, ImageProcessor $imageProcessor) {
 
         $user = Auth::user();
 
         if($request->hasFile('image')) {
-            //get filename with extension
-            $filenamewithextension = $request->file('image')->getClientOriginalName();
-
-            //get filename without extension
-            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-
-            //get file extension
-            $extension = $request->file('image')->getClientOriginalExtension();
-
-            //filename to store
-            $filenametostore = $filename.'_'.time().'.'.$extension;
-
-            //Upload File
-            $request->file('image')->storeAs('public/profile_images', $filenametostore);
-
-            $path = '/storage/profile_images/'. $filenametostore;
 
             if($user->image != null) {
 
@@ -44,19 +29,18 @@ class UserController extends Controller
                 unlink(public_path($user->image));
             }
 
+            $path = $imageProcessor::compressAndSave($request, 'image', 'storage/profile_images/', 360, 450);
+
             $user->update([
                 'image' => $path
             ]);
-
-            //Resize image here
-            $thumbnailpath = public_path('storage/profile_images/'.$filenametostore);
-            $img = Image::make($thumbnailpath)->resize(400, 400, function($constraint) {
-                $constraint->aspectRatio();
-            });
-
-            $img->save($thumbnailpath);
+        }
+        else {
+            $user->update([
+                'description' => $request->input('description')
+            ]);
         }
 
-        return redirect()->back();
+        return redirect(route('user'));
     }
 }

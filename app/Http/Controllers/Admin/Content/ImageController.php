@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin\Content;
 
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\Contracts\ImageProcessor;
+use Http\Client\Exception;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -14,7 +16,7 @@ class ImageController extends Controller
         return view('admin.content.images.index', compact('images'));
     }
 
-    public function store(Request $request) {
+    public function store(Request $request, ImageProcessor $imageProcessor) {
 
         if ($request->input('type') == 'remote') {
 
@@ -29,36 +31,13 @@ class ImageController extends Controller
         else if ($request->input('type') == 'local') {
 
             if($request->hasFile('image')) {
-                //get filename with extension
-                $filenamewithextension = $request->file('image')->getClientOriginalName();
 
-                //get filename without extension
-                $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-
-                //get file extension
-                $extension = $request->file('image')->getClientOriginalExtension();
-
-                //filename to store
-                $filenametostore = $filename.'_'.time().'.'.$extension;
-
-                //Upload File
-                $request->file('image')->storeAs('public/uploads', $filenametostore);
-
-                $path = '/storage/uploads/'. $filenametostore;
-
-                //Resize image here
-                $thumbnailpath = public_path('storage/uploads/'.$filenametostore);
+                $path = $imageProcessor::compressAndSave($request, 'image', 'storage/uploads/');
 
                 $image = new \App\Models\Image([
                     'url' => $path,
                     'type' => 'local'
                 ]);
-
-                $img = Image::make($thumbnailpath)->resize(400, 400, function($constraint) {
-                    $constraint->aspectRatio();
-                });
-
-                $img->save($thumbnailpath);
 
                 $image->save();
             }
@@ -89,9 +68,13 @@ class ImageController extends Controller
         }
         else if ($image->type == 'local') {
 
-            unlink(public_path($image->url));
-
             $image->delete();
+
+            try {
+                unlink(public_path($image->url));
+            }
+            catch(Exception $ex) {}
+
         }
 
         return redirect()->back();

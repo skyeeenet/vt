@@ -1,100 +1,6 @@
 @extends('public.layouts.basic')
 
 @section('content')
-<div class="MAINBOX">
-    <header>
-        <div class="container-fluid topHeader">
-            <div class="container">
-                <div
-                        class="d-flex flex-row justify-content-around justify-content-md-between align-items-center pt-3 pb-3 pt-lg-2 pb-lg-2">
-                    <div
-                            class="d-flex flex-column flex-sm-row justify-content-center align-items-center currentWeek">
-                        <div>Текущая&nbsp;неделя:&nbsp;</div>
-                        <div>Четная</div>
-                    </div>
-                    <!-- /.currentWeek -->
-                    <div
-                            class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
-                        <div class="mt-md-0 mt-md-0 ml-3"><img src="./images/placeholder.svg" heigth="20px"
-                                                               width="20px" alt="position"><span class="pl-2">Мариуполь</span></div>
-                        <div class="mt-2 mt-md-0 ml-3"><img src="./images/email.svg" heigth="20px" width="20px"
-                                                            alt="mail"><span class="pl-2">test@gmail.com</span></div>
-                        @if(Auth::guest()) <div class="mt-2 mt-md-0 ml-3">
-                            <img src="{{ asset('images/login.svg') }}" height="20px" width="20px" alt="registration"><a
-                                    class="btn-reg ml-2" href="/register">Регистрация</a>
-                        </div>
-                        @else
-                            <div class="mt-2 mt-md-0 ml-3">
-                                <img src="{{ asset('images/login.svg') }}" height="20px" width="20px" alt="registration"><a
-                                        class="btn-reg ml-2" href="/admin">Админ-панель</a>
-                            </div>
-                        @endif
-                    </div>
-                    <!-- /.contactsTopHeader -->
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-            <div class="container">
-                <div class="col-md-4">
-                    <a class="ml-2 navbar-brand" href="#">LOGO</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-
-                <div class="col-md-10 collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active mr-md-3">
-                            <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item dropdown mr-md-3">
-                            <a class="nav-link dropdown-toggle" href="#" id="enrollee" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                абитуриенту
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="enrollee">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown mr-md-3">
-                            <a class="nav-link dropdown-toggle" href="#" id="student" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                студенту
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="student">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown mr-md-3">
-                            <a class="nav-link dropdown-toggle" href="#" id="department" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                кафедра
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="department">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Контакты</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
     <main>
         <section>
             <div class="container mt-3">
@@ -229,12 +135,6 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row mt-5">
-                    <div class="col-12 d-flex justify-content-center">
-                        <a class="btn btn-main" href="">Больше новостей</a>
                     </div>
                 </div>
             </div>
@@ -374,35 +274,4 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="vit_footer_container margin-top">
-            <div class="container pt-5 pb-5 vit_footer_container">
-                <div class="row">
-                    <div class="col d-flex justify-content-center">
-                        <div class="nav flex-column align-items-start">
-                            <p class="vit_foot_main_text">последние обновления</p>
-                            <p class="vit_foot_text">текст 1</p>
-                            <p class="vit_foot_text">текст 1</p>
-                            <p class="vit_foot_text">текст 1</p>
-                        </div>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <div class="nav flex-column align-items-start">
-                            <p class="vit_foot_main_text">последние обновления</p>
-                            <p class="vit_foot_text">текст 1</p>
-                            <p class="vit_foot_text">текст 1</p>
-                            <p class="vit_foot_text">текст 1</p>
-                        </div>
-                    </div>
-                    <div class="col d-flex  justify-content-center">
-                        <form class="search-form m-0" action="#" method="get">
-                                <span class="bg-white"><input type="text" placeholder="Поиск..."><button
-                                            type="submit">НАЙТИ</button></span>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
 @endsection
