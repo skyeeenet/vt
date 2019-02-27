@@ -110,10 +110,18 @@ div.MAINBOX {
   z-index: 100;
 }
 
+.title_second {
+  font-family: "Gotham-Pro-Light", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: #0d0b0b;
+  text-transform: uppercase;
+}
+
 .title {
   font-family: "Gotham-Pro-Light", sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 32px;
   color: #0d0b0b;
   text-transform: uppercase;
 }
@@ -569,7 +577,7 @@ div.specGreyLine {
   margin-top: -30px;
 }
 
-div.specHeadContentText {
+.specHeadContentText {
   font-family: "Gotham-Pro-Light", sans-serif;
   text-transform: uppercase;
   font-size: 30px;
@@ -951,6 +959,14 @@ div.alboomCategory a {
 .roboto18 {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
+  font-weight: 300;
+}
+
+
+.roboto18smbd {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .roboto36lt {
