@@ -1,0 +1,3 @@
+scripts/* linguist-vendored=true
+pages/* linguist-vendored=true
+style/css/main.css linguist-vendored=true
