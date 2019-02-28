@@ -18,24 +18,19 @@
                     <div class="col-xl-8 col-12 mt-5 mt-xl-0">
                         <div class="d-flex justify-content-between mb-3">
                             <b class="roboto24">О себе</b>
-                            <a href="{{route('user.edit')}}" class="roboto18lt">Изменить</a>
+                            <a href="{{route('user.edit')}}" class="roboto18lt btn btn-primary">Редактировать профиль</a>
                         </div>
                         <p class="roboto18">{{$user->description}}</p>
                     </div>
                     <div class="col-xl-4 col-12 d-flex flex-column align-items-center d-xl-block">
-                        <form action="{{route('user.update')}}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div><img style="max-width: 360px;max-height: 450px;" src="{{$user->image}}" alt="" class="avatar">
-                                <div class="d-flex justify-content-around mt-3">
-                                    <div class="custom-file" style="width: 200px;">
-                                        <input type="file" class="custom-file-input" id="customFile" name="image">
-                                        <label class="custom-file-label" for="customFile">Изменить</label>
-                                    </div>
-                                    <button class="btn btn-primary" type="submit">Применить</button>
-                                </div>
-                                <p class="text-center mt-3"><a href="#" class="text-danger roboto18lt">Удалить</a></p>
-                            </div>
-                        </form>
+                            <div><img style="max-width: 360px;max-height: 450px;" src="{{$user->image}}" alt="" class="avatar"></div>
+                        <div class="d-flex mt-3">
+                            @forelse($socials as $social)
+                                <a class="mr-2" href="{{$social->url}}"><img width="35px" height="35px" src="{{\App\Models\Social::where('id', $social->social_id)->first()->image['url']}}" alt=""></a>
+                            @empty
+                            <p class="roboto18lt">Пользователь еще не добавил соц.сети</p>
+                            @endforelse
+                        </div>
                     </div>
                 </div>
             </div>

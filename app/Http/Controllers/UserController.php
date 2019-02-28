@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Helpers\Contracts\ImageProcessor;
+use App\Models\Social;
+use App\Models\SocialUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -36,8 +38,27 @@ class UserController extends Controller
             ]);
         }
         else {
+
+            $socials = Social::select('value', 'id')->get();
+
+            foreach ($socials as $social) {
+
+                SocialUser::updateOrCreate(
+                    [
+                        'user_id' => $user->id,
+                        'social_id' => $social->id
+                    ],
+                    [
+                        'user_id' => $user->id,
+                        'social_id' => $social->id,
+                        'url' => $request->input($social->value)
+                    ]
+                );
+            }
+
             $user->update([
-                'description' => $request->input('description')
+                'description' => $request->input('description'),
+                'name' => $request->input('name')
             ]);
         }
 

@@ -16,30 +16,32 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/main.css') }}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/slick.css') }}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/slick-theme.css') }}" />
+    @yield('styles')
+    <style>
+        .user-form {
+            position: relative;
+        }
+        .user-form ul {
+            display: none;
+            position: absolute;
+            top: 22px;
+            z-index: 100;
+            background-color: white;
+        }
+        .user-form ul li {
+            min-width: 150px;
+            padding: 10px;
+        }
+        .user-form ul li {
+            border-bottom: 1px solid black;
+        }
+        .user-form:hover ul {
+            display: block;
+        }
+    </style>
 </head>
-@yield('styles')
-<style>
-    .user-form {
-        position: relative;
-    }
-    .user-form ul {
-        display: none;
-        position: absolute;
-        top: 22px;
-        z-index: 100;
-        background-color: white;
-    }
-    .user-form ul li {
-        min-width: 150px;
-        padding: 10px;
-    }
-    .user-form ul li {
-        border-bottom: 1px solid black;
-    }
-    .user-form:hover ul {
-        display: block;
-    }
-</style>
+<body>
+<div class="MAINBOX">
 <header>
     <div class="container-fluid topHeader">
         <div class="container">
@@ -125,7 +127,6 @@
         </div>
     </nav>
 </header>
-<body>
 @yield('content')
 <footer>
     <div class="vit_footer_container margin-top">
@@ -181,5 +182,6 @@
 <script src="{{ asset('scripts/additional/slick.min.js') }}"></script>
 <script src="{{ asset('scripts/__main__.js') }}"></script>
 @yield('scripts')
+</div>
 </body>
 </html>
