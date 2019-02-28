@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 //use App\Models\Image;
 use App\Models\Role;
 use App\Models\Social;
+use App\Models\SocialUser;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +25,9 @@ class UserController extends Controller
 
         $roles = Role::all();
 
-        return view('admin.user.edit', compact('user', 'roles'));
+        $socials = Social::all();
+
+        return view('admin.user.edit', compact('user', 'roles', 'socials'));
     }
 
     public function create() {
@@ -42,6 +45,8 @@ class UserController extends Controller
     }
 
     public function update(User $user, Request $request) {
+
+        $socials = Social::all();
 
         if ($request->hasFile('image')) {
 
@@ -69,6 +74,21 @@ class UserController extends Controller
                     unlink(public_path($user->image));
                 }
 
+                foreach ($socials as $social) {
+
+                    SocialUser::updateOrCreate(
+                        [
+                            'user_id' => $user->id,
+                            'social_id' => $social->id
+                        ],
+                        [
+                            'user_id' => $user->id,
+                            'social_id' => $social->id,
+                            'url' => $request->input($social->value)
+                        ]
+                    );
+                }
+
                 $user->update([
                     'image' => $path,
                     'role_id' => $request->input('role'),
@@ -87,6 +107,22 @@ class UserController extends Controller
             }
         }
         else {
+
+            foreach ($socials as $social) {
+
+                SocialUser::updateOrCreate(
+                    [
+                        'user_id' => $user->id,
+                        'social_id' => $social->id
+                    ],
+                    [
+                        'user_id' => $user->id,
+                        'social_id' => $social->id,
+                        'url' => $request->input($social->value)
+                    ]
+                );
+            }
+
             $user->update([
 
                 'role_id' => $request->input('role'),

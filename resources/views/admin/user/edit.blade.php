@@ -13,6 +13,17 @@
                 <label for="name">Почта</label>
                 <input class="form-control" type="email" id="email" name="email" value="{{$user->email}}">
             </div>
+            <div class="d-flex flex-column">
+                @foreach($socials as $social)
+                    <div class="form-group">
+                        <label for="name">{{$social->value}}</label>
+                        <p class="d-flex"><img class="mr-2" width="35px" height="35px" src="{{$social->image['url']}}" alt=""><input class="form-control" type="text" value="{{\App\Models\SocialUser::where([
+                                        'user_id' => $user->id,
+                                        'social_id' => $social->id
+                                        ])->first()['url']}}" name="{{$social->value}}"></p>
+                    </div>
+                @endforeach
+            </div>
             <div>
                 <p>Изображение профиля</p>
                 <img style="max-width: 300px;" src="{{$user->image}}" alt="Profile photo">
