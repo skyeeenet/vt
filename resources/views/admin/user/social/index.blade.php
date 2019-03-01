@@ -9,6 +9,7 @@
                 <th>id</th>
                 <th>Иконка</th>
                 <th>Социальная сети</th>
+                <th>URL</th>
                 <th>Редактировать</th>
                 <th>Удалить</th>
             </tr>
@@ -19,6 +20,7 @@
                     <td>{{$social->id}}</td>
                     <td><img width="50px" src="{{$social->image['url']}}" alt=""></td>
                     <td>{{$social->value}}</td>
+                    <td>{{$social->url}}</td>
                     <td><a class="btn btn-primary" href="{{route('admin.socials').'/edit/'.$social->id}}"><i class="far fa-edit"></i></a></td>
                     <td>
                         <form action="{{route('admin.socials').'/delete/'.$social->id}}" method="post">
@@ -29,6 +31,7 @@
                 </tr>
             @empty
                 <tr>
+                    <td>Социальные сети не найдены</td>
                     <td>Социальные сети не найдены</td>
                     <td>Социальные сети не найдены</td>
                     <td>Социальные сети не найдены</td>

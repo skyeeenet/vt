@@ -83,110 +83,6 @@
     }
 </style>
 <header>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/admin">Админ-панель <small>alpha</small> </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Header
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('admin.header.text') }}">Редактирование текстов/изображений</a>
-                        <a class="dropdown-item" href="{{ route('admin.header.menu') }}">Редактирование меню</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Наполнение
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.content.images') }}">Изображения</a>
-                        <a class="dropdown-item" href="{{ route('admin.content.text') }}">Тексты</a>
-                        <a class="dropdown-item" href="{{ route('admin.content.slider') }}">Настройка слайдеров</a>
-                        <a class="dropdown-item" href="{{ route('admin.content.adverts') }}">Объявления</a>
-                        <a class="dropdown-item" href="{{ route('admin.content.posts') }}">Новости</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Страницы
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.content.adverts') }}">Объявления</a>
-                        <a class="dropdown-item" href="{{ route('admin.content.posts') }}">Новости</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Расписание
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.schedule') }}">Просмотреть</a>
-                        <a class="dropdown-item" href="{{ route('admin.schedule.create') }}">Создать</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Группы
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.groups') }}">Просмотреть</a>
-                        <a class="dropdown-item" href="{{ route('admin.groups.create') }}">Создать</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Предметы
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.subjects') }}">Просмотреть</a>
-                        <a class="dropdown-item" href="{{ route('admin.subjects.create') }}">Создать</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Виды занятий
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.occupation') }}">Просмотреть</a>
-                        <a class="dropdown-item" href="{{ route('admin.occupation.create') }}">Создать</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Недели
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.weeks') }}">Просмотреть</a>
-                        <a class="dropdown-item" href="{{ route('admin.weeks.create') }}">Создать</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Социальные сети
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.socials') }}">Просмотреть</a>
-                        <a class="dropdown-item" href="{{ route('admin.socials.create') }}">Создать</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="content" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Пользователи
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="content">
-                        <a class="dropdown-item" href="{{ route('admin.users') }}">Просмотреть всех</a>
-                        <a class="dropdown-item" href="{{ route('user') }}">Мой профиль</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav> -->
         <nav class="mb-4">
             <ul class="topmenu">
                 <li><a href="/admin">Admin-Panel <small>alpha</small></a></li>
@@ -231,6 +127,12 @@
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.weeks') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.weeks.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Графики<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.graphics') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.graphics.create') }}">Создать</a></li>
                             </ul>
                         </li>
                     </ul>

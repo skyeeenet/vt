@@ -17,11 +17,11 @@ class SocialController extends Controller
         return view('public.user.profile', compact('user'));
     }
 
-    public function edit(Request $request) {
+    public function edit() {
 
         $user = Auth::user();
 
-        $socials = Social::select('value', 'image_id', 'id')->get();
+        $socials = Social::select('value', 'image_id', 'id', 'url')->get();
 
         return view('public.user.profile-edit', compact('user', 'socials'));
     }

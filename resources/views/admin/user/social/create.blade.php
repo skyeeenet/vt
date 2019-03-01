@@ -9,6 +9,10 @@
                 <input class="form-control" type="text" id="value" name="value">
             </div>
             <div class="form-group">
+                <label for="url">Начало URL адреса (Пример: https://www.facebook.com/)</label>
+                <input class="form-control" type="text" id="url" name="url">
+            </div>
+            <div class="form-group">
                 <label for="image">Иконка</label>
                 <select class="form-control" name="image" id="image">
                     @foreach($images as $image)

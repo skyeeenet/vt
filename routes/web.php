@@ -180,6 +180,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::post('/delete/{social}', 'User\SocialController@destroy');
     });
 
+    Route::group(['prefix' => 'graphics'], function () {
+
+        Route::get('/', 'Graphics\GraphicsController@index')->name('admin.graphics');
+        Route::get('/create', 'Graphics\GraphicsController@create')->name('admin.graphics.create');
+        Route::get('/edit/{graphic}', 'Graphics\GraphicsController@edit');
+        Route::post('/store', 'Graphics\GraphicsController@store')->name('admin.graphics.store');
+        Route::post('/update/{graphic}', 'Graphics\GraphicsController@update');
+        Route::post('/delete/{graphic}', 'Graphics\GraphicsController@destroy');
+    });
+
     Route::group(['prefix' => 'users'], function () {
 
         Route::get('/', 'User\UserController@index')->name('admin.users');

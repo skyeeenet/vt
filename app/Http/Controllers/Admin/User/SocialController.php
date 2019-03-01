@@ -28,7 +28,8 @@ class SocialController extends Controller
         $social = new Social([
 
             'image_id' => $request->input('image'),
-            'value' => $request->input('value')
+            'value' => $request->input('value'),
+            'url' => $request->input('url')
         ]);
 
         $social->save();
@@ -48,13 +49,16 @@ class SocialController extends Controller
         $social->update([
 
             'image_id' => $request->input('image'),
-            'value' => $request->input('value')
+            'value' => $request->input('value'),
+            'url' => $request->input('url'),
         ]);
 
         return redirect(route('admin.socials'));
     }
 
     public function destroy(Social $social) {
+
+        $social->socialUser()->delete();
 
         $social->delete();
 

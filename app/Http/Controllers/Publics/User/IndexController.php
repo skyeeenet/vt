@@ -23,7 +23,7 @@ class IndexController extends Controller
 
         $user = Auth::user();
 
-        $socials = Social::select('value', 'image_id', 'id')->get();
+        $socials = Social::select('value', 'image_id', 'id', 'url')->get();
 
         return view('public.user.profile-edit', compact('user', 'socials'));
     }
