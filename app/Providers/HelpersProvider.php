@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Helpers\Realizations\Page;
 use Illuminate\Support\ServiceProvider;
 
 class HelpersProvider extends ServiceProvider
@@ -24,5 +25,8 @@ class HelpersProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('App\Http\Helpers\Contracts\ImageProcessor', 'App\Http\Helpers\Realizations\ImageProcessor');
+        $this->app->bind('Page', function() {
+            return new Page();
+        });
     }
 }

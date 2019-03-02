@@ -200,6 +200,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::post('/update/{user}', 'User\UserController@update');
         Route::post('/delete/{user}', 'User\UserController@destroy');
     });
+
+    Route::group(['prefix' => 'bests'], function () {
+
+        Route::get('/', 'Bests\BestController@index')->name('admin.bests');
+        Route::get('/create', 'Bests\BestController@create')->name('admin.bests.create');
+        Route::get('/edit/{best}', 'Bests\BestController@edit');
+        Route::get('/{best}', 'Bests\BestController@show');
+        Route::post('/store', 'Bests\BestController@store')->name('admin.bests.store');
+        Route::post('/update/{best}', 'Bests\BestController@update');
+        Route::post('/delete/{best}', 'Bests\BestController@destroy');
+    });
 });
 
 Route::get('/w', function () {

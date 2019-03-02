@@ -147,6 +147,12 @@
                                 <li><a href="{{ route('admin.lecturers.create') }}">Создать</a></li>
                             </ul>
                         </li>
+                        <li><a href="">Лучшие студенты<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.bests') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.bests.create') }}">Добавить</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">Социальные сети<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.socials') }}">Просмотреть</a></li>

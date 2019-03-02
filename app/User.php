@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Models\Advert;
+use App\Models\Best;
+use App\Models\Lecturer;
 use App\Models\Role;
 use App\Models\SocialUser;
 use Illuminate\Notifications\Notifiable;
@@ -21,6 +23,16 @@ class User extends Authenticatable
     public function social() {
 
         return $this->hasMany(SocialUser::class,'user_id');
+    }
+
+    public function best() {
+
+        return $this->hasMany(Best::class);
+    }
+
+    public function teacher() {
+
+        return $this->hasMany(Lecturer::class);
     }
 
     public function role() {

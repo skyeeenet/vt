@@ -119,6 +119,12 @@ class UserController extends Controller
 
     public function destroy(User $user) {
 
+        $user->best()->delete();
+
+        $user->teacher()->delete();
+
+        $user->delete();
+
         return redirect()->back();
     }
 }

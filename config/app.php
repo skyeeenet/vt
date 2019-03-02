@@ -228,7 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Captcha'=>Mews\Captcha\Facades\Captcha::class,
-
+        'Page' => App\Http\Helpers\Facades\Page::class,
     ],
 
 ];

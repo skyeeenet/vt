@@ -16,7 +16,9 @@ class CreateBestsTable extends Migration
         Schema::create('bests', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->index()->unsigned();
-            $table->string('interview_url');
+            $table->string('interview_url')->nullable();
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
