@@ -72,7 +72,7 @@ class UserController extends Controller
                         [
                             'user_id' => $user->id,
                             'social_id' => $social->id,
-                            'url' => $request->input($social->value)
+                            'url' => $social->url . $request->input($social->value)
                         ]
                     );
                 }
@@ -98,7 +98,7 @@ class UserController extends Controller
                     [
                         'user_id' => $user->id,
                         'social_id' => $social->id,
-                        'url' => $request->input($social->value)
+                        'url' => $social->url . $request->input($social->value)
                     ]
                 );
             }

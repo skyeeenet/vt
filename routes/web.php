@@ -212,7 +212,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
 
     Route::get('/', 'Publics\User\IndexController@index')->name('user');
     Route::get('/edit', 'Publics\User\IndexController@edit')->name('user.edit');
-    Route::post('/user}', 'UserController@update')->name('user.update');
+    Route::post('/', 'UserController@update')->name('user.update');
 });
 
 Auth::routes();

@@ -39,7 +39,7 @@ class UserController extends Controller
         }
         else {
 
-            $socials = Social::select('value', 'id')->get();
+            $socials = Social::select('value', 'id', 'url')->get();
 
             foreach ($socials as $social) {
 
@@ -51,7 +51,7 @@ class UserController extends Controller
                     [
                         'user_id' => $user->id,
                         'social_id' => $social->id,
-                        'url' => $request->input($social->value)
+                        'url' => $social->url.$request->input($social->value)
                     ]
                 );
             }
