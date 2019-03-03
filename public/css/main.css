@@ -470,10 +470,6 @@ div.sliderBLock {
   overflow: hidden;
 }
 
-div.sliderBLock img {
-  object-fit: cover;
-}
-
 div.declaration {
   height: 300px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

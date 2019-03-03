@@ -20,6 +20,10 @@
                        <input type="text" class="form-control" name="title" id="title" value="{{$post->title}}">
                    </div>
                    <div class="form-group">
+                       <label for="short_body">Краткое описание</label>
+                       <input type="text" class="form-control" name="short_body" id="short_body" value="{{$post->short_body}}">
+                   </div>
+                   <div class="form-group">
                        <label for="body">Содержание</label>
                        <textarea name="body" id="body">{{$post->body}}</textarea>
                    </div>

@@ -46,7 +46,7 @@
                     <div class="col-xl-4 col-12 d-flex flex-column align-items-center d-xl-block">
                         <form action="{{route('user.update')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div><img style="max-width: 360px;max-height: 450px;" src="{{$user->image}}" alt="" class="avatar">
+                            <div><img style="max-width: 360px;max-height: 450px;" src="@if(is_null($user->image)) /images/noimage.png @else{{$user->image}} @endif" alt="" class="avatar">
                                 <div class="w-100 mt-3 mb-3">
                                     <div class="custom-file" style="width: 96%;">
                                         <input type="file" class="custom-file-input" id="customFile" name="image">
@@ -55,9 +55,12 @@
                                 </div>
                                 <div class="d-flex justify-content-around">
                                     <button class="btn btn-primary" type="submit">Загрузить</button>
-                                    <a href="#" class="btn btn-danger">Удалить</a>
                                 </div>
                             </div>
+                        </form>
+                        <form action="{{route('user.delete')}}" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-danger">Удалить</button>
                         </form>
                     </div>
                 </div>

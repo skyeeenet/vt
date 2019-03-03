@@ -32,7 +32,10 @@ class ImageController extends Controller
 
             if($request->hasFile('image')) {
 
-                $path = $imageProcessor::compressAndSave($request, 'image', 'storage/uploads/');
+                $width = $request->input('width');
+                $height = $request->input('height');
+
+                $path = $imageProcessor::compressAndSave($request, 'image', 'storage/uploads/', $width, $height);
 
                 $image = new \App\Models\Image([
                     'url' => $path,

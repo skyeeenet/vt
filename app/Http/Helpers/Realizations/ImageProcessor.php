@@ -17,6 +17,15 @@ class ImageProcessor implements \App\Http\Helpers\Contracts\ImageProcessor
 
     public static function compressAndSave(Request $request, $fileName, $path, $width = 400, $height = 400)
     {
+
+        if (is_null($width)) {
+            $width = 400;
+        }
+
+        if (is_null($height)) {
+            $height = 400;
+        }
+
         //get filename with extension
         $filenamewithextension = $request->file($fileName)->getClientOriginalName();
 

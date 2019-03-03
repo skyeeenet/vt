@@ -64,4 +64,15 @@ class UserController extends Controller
 
         return redirect(route('user'));
     }
+
+    public function destroy() {
+
+        $user = Auth::user();
+
+        $user->update([
+           'image' => null
+        ]);
+
+        return redirect()->back();
+    }
 }

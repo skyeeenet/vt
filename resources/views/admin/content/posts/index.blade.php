@@ -13,6 +13,7 @@
                     <th>Дата создания</th>
                     <th>Миниатюра</th>
                     <th>Заголовок</th>
+                    <th>Краткое описание</th>
                     <th>Редактировать</th>
                     <th>Удалить</th>
                 </tr>
@@ -25,6 +26,7 @@
                     <td>{{ $post->created_at }}</td>
                     <td><img style="max-width: 200px; max-height: 200px;" src="{{ $post->image['url'] }}" alt="mini-image"></td>
                     <td><a href="{{route('admin.content.posts').'/'.$post->id}}">{{$post->title}}</a></td>
+                    <td><p>{{$post->short_body}}</p></td>
                     <td><a class="btn btn-primary" href="{{route('admin.content.posts').'/edit/'.$post->id}}"><i class="far fa-edit"></i></a></td>
                     <td>
                         <form action="{{route('admin.content.posts').'/delete/'.$post->id}}" method="post">
@@ -35,6 +37,7 @@
                 </tr>
                 @empty
                 <tr>
+                    <td>Данные отсутствуют</td>
                     <td>Данные отсутствуют</td>
                     <td>Данные отсутствуют</td>
                     <td>Данные отсутствуют</td>

@@ -6,18 +6,12 @@
             <div class="container mt-3">
                 <div class="row">
                     <div class="col-lg-8 slck vit_index">
-                        <div class="sliderBLock card">
+                        @foreach(Page::getSliderById(1)['images'] as $slide)
+                        <div class="sliderBLock" style="background-image: url('{{$slide->image['url']}}');">
                             <div class="d-flex flex-column justify-content-center align-items-center ">
                             </div>
                         </div>
-                        <div class="sliderBLock card">
-                            <div class="d-flex flex-column justify-content-center align-items-center ">
-                            </div>
-                        </div>
-                        <div class="sliderBLock card">
-                            <div class="d-flex flex-column justify-content-center align-items-center ">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <!-- /.col-lg-8 -->
                     <div class="col-lg-4 declaration">
@@ -52,90 +46,20 @@
                 </div>
 
                 <div class="row">
+                    @foreach(Page::getLatestNews() as $new)
                     <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
+                        <div style="height: 400px;" class="card">
+                            <img style="height: 200px;" class="card-img-top" src="{{$new->image['url']}}" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-date">Апрель 17, 2018</h5>
-                                <h5 class="mt-3"><a class="card-title" href="#">Заголовок новости</a></h5>
+                                <h5 class="card-date">{{$new->created_at}}</h5>
+                                <h5 class="mt-3"><a class="card-title" href="{{'/news/'.$new->id}}">{{$new->title}}</a></h5>
                                 <p class="card-text mt-4">
-                                    Краткое описание новости свозможностью
-                                    перехода на страницус более детальным
-                                    описанием...
+                                    {{$new->short_body . '...'}}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-date">Апрель 17, 2018</h5>
-                                <h5 class="mt-3"><a class="card-title" href="#">Заголовок новости</a></h5>
-                                <p class="card-text mt-4">
-                                    Краткое описание новости свозможностью
-                                    перехода на страницус более детальным
-                                    описанием...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-date">Апрель 17, 2018</h5>
-                                <h5 class="mt-3"><a class="card-title" href="#">Заголовок новости</a></h5>
-                                <p class="card-text mt-4">
-                                    Краткое описание новости свозможностью
-                                    перехода на страницус более детальным
-                                    описанием...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-md-5 mt-sm-5 mt-5 mt-lg-4">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-date">Апрель 17, 2018</h5>
-                                <h5 class="mt-3"><a class="card-title" href="#">Заголовок новости</a></h5>
-                                <p class="card-text mt-4">
-                                    Краткое описание новости свозможностью
-                                    перехода на страницус более детальным
-                                    описанием...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-md-5 mt-sm-5 mt-5 mt-lg-4">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-date">Апрель 17, 2018</h5>
-                                <h5 class="mt-3"><a class="card-title" href="#">Заголовок новости</a></h5>
-                                <p class="card-text mt-4">
-                                    Краткое описание новости свозможностью
-                                    перехода на страницус более детальным
-                                    описанием...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-md-5 mt-sm-5 mt-5 mt-lg-4">
-                        <div class="card">
-                            <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-date">Апрель 17, 2018</h5>
-                                <h5 class="mt-3"><a class="card-title" href="#">Заголовок новости</a></h5>
-                                <p class="card-text mt-4">
-                                    Краткое описание новости свозможностью
-                                    перехода на страницус более детальным
-                                    описанием...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

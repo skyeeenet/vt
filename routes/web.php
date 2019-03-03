@@ -224,6 +224,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
     Route::get('/', 'Publics\User\IndexController@index')->name('user');
     Route::get('/edit', 'Publics\User\IndexController@edit')->name('user.edit');
     Route::post('/', 'UserController@update')->name('user.update');
+    Route::post('/delete', 'UserController@destroy')->name('user.delete');
 });
 
 Auth::routes();

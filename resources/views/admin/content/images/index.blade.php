@@ -21,6 +21,10 @@
                 <input type="file" class="form-control-file" id="server" name="image">
                 <input type="hidden" name="type" value="local">
             </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="width" placeholder="Ширина (пиксели)">
+                <input class="form-control mt-2" type="text" name="height" placeholder="Высота (пиксели)">
+            </div>
             <button type="submit" class="btn btn-primary">Загрузить</button>
         </form>
 

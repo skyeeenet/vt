@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-<?php $menu = \App\Models\Menu::with('submenu')->get(); ?>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -55,10 +54,10 @@
                 <!-- /.currentWeek -->
                 <div
                         class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
-                    <div class="mt-md-0 mt-md-0 ml-3"><img src="./images/placeholder.svg" heigth="20px"
-                                                           width="20px" alt="position"><span class="pl-2">Мариуполь</span></div>
-                    <div class="mt-2 mt-md-0 ml-3"><img src="./images/email.svg" heigth="20px" width="20px"
-                                                        alt="mail"><span class="pl-2">test@gmail.com</span></div>
+                    <div class="mt-md-0 mt-md-0 ml-3"><img src="/images/placeholder.svg" heigth="20px"
+                                                           width="20px" alt="position"><span class="pl-2">{{Page::getHeaderByType('place')}}</span></div>
+                    <div class="mt-2 mt-md-0 ml-3"><img src="/images/email.svg" heigth="20px" width="20px"
+                                                        alt="mail"><span class="pl-2">{{Page::getHeaderByType('email')}}</span></div>
                     @if(Auth::guest()) <div class="mt-2 mt-md-0 ml-3">
                         <img src="{{ asset('images/login.svg') }}" height="20px" width="20px" alt="registration"><a
                                 class="btn-reg ml-2" href="/register">Вход/Регистрация</a>
@@ -89,8 +88,8 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
-            <div class="col-md-4">
-                <a class="ml-2 navbar-brand" href="#">LOGO</a>
+            <div class="col-md-4 col-2">
+                <a class="ml-md-2 ml-0 navbar-brand" href="/"><img class="mr-3" width="40px" height="40px" src="{{Page::getHeaderByType('logo')}}" alt="">{{Page::getHeaderByType('logo-text')}}</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -101,7 +100,7 @@
 
             <div class="col-md-10 collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    @forelse($menu as $item)
+                    @forelse(Page::getMenu() as $item)
                         @if (isset($item['submenu'][0]))
                             <li class="nav-item dropdown mr-md-3">
                                 <a class="nav-link dropdown-toggle" href="#" id="enrollee" role="button"
@@ -139,17 +138,17 @@
                         <p class="vit_foot_text m-0">Клычков В.А.</p>
                         <p class="vit_foot_text m-0">Симон Н.В.</p>
                         <p class="vit_foot_text m-0">Крутиков В.А.</p>
-                        <p class="vit_foot_text m-0">Грирорьев В.В.</p>
+                        <p class="vit_foot_text m-0">Григорьев В.В.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex justify-content-center">
                     <div class="nav flex-column align-items-start">
                         <p class="vit_foot_main_text">Контакты</p>
-                        <div class="mt-md-0 mt-md-0 "><img src="./images/placeholder.svg" heigth="20px"
-                                                           width="20px" alt="City"><span class="pl-2 color_cont">Мариуполь</span></div>
-                        <div class="pt-2 mt-md-0"><img src="./images/email.svg" heigth="20px" width="20px"
-                                                       alt="Mail"><span class="pl-2 color_cont">test@gmail.com</span></div>
-                        <div class="mt-md-0 mt-md-0 pt-2"><img src="./images/support.svg" heigth="20px"
+                        <div class="mt-md-0 mt-md-0 "><img src="/images/placeholder.svg" heigth="20px"
+                                                           width="20px" alt="City"><span class="pl-2 color_cont">{{Page::getHeaderByType('place')}}</span></div>
+                        <div class="pt-2 mt-md-0"><img src="/images/email.svg" heigth="20px" width="20px"
+                                                       alt="Mail"><span class="pl-2 color_cont">{{Page::getHeaderByType('email')}}</span></div>
+                        <div class="mt-md-0 mt-md-0 pt-2"><img src="/images/support.svg" heigth="20px"
                                                                width="20px" alt="Support"><span class="pl-2 color_cont">Обратная связь</span></div>
                         <div class="mt-2 mt-md-0 ml-3">
                         </div>

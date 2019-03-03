@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index() {
 
-        $posts = Post::select('title', 'image_id', 'user_id', 'id', 'created_at')->get();
+        $posts = Post::select('title', 'image_id', 'user_id','short_body', 'id', 'created_at')->get();
 
         return view('admin.content.posts.index', compact('posts'));
     }
@@ -41,6 +41,7 @@ class PostController extends Controller
         $post->update([
             'title' => $request->input('title'),
             'image_id' => $request->input('mini'),
+            'short_body' => $request->input('short_body'),
             'body' => $request->input('body')
         ]);
 
@@ -59,6 +60,7 @@ class PostController extends Controller
         $post = new Post([
             'title' => $request->input('title'),
             'body' => $request->input('body'),
+            'short_body' => $request->input('short_body'),
             'user_id' => Auth::id(),
             'image_id' => $request->input('mini')
         ]);

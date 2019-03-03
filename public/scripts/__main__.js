@@ -65,7 +65,7 @@ function slick_news_control() {
         slidesToScroll: 1
     });
 }
-function slick_news_content_control() {
+/*function slick_news_content_control() {
     var backgrounds_cards = [
         "images/1.jpg",
         "images/1.jpg",
@@ -75,7 +75,7 @@ function slick_news_content_control() {
     for (var i = 0; i < cards.length; i++) {
         $(cards[i]).css({ "background": "url(" + backgrounds_cards[i] + ")", "background-size": "cover" });
     }
-}
+}*/
 function slick_technologies_control() {
     $('.technologies').slick({
         slidesToShow: 4,

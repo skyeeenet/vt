@@ -10,8 +10,6 @@ class IndexController extends Controller
 {
     public function index() {
 
-        $menu = Menu::with('submenu')->get();
-
-        return view('public.index.index', compact('menu'));
+        return view('public.index.index');
     }
 }
