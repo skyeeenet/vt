@@ -26,11 +26,14 @@
             </div>
             <div>
                 <p>Изображение профиля</p>
-                <img style="max-width: 300px;" src="{{$user->image}}" alt="Profile photo">
+                <img style="max-width: 300px;" src="@if(is_null($user->image)) /images/noimage.png @else{{$user->image}} @endif" alt="Profile photo">
             </div>
             <div class="form-group">
                 <label for="image">Обновить изображение</label>
                 <input type="file" class="form-control-file" id="image" name="image">
+            </div>
+            <div class="form-group">
+                <a class="btn btn-danger" href="{{route('admin.users').'/deleteProfileImage/'.$user->id}}">Удалить изображение</a>
             </div>
             <div class="form-group">
                 <label for="about">О себе</label><br>

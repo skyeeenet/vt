@@ -53,14 +53,14 @@
                                         <label class="custom-file-label" for="customFile">Обзор...</label>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-around">
-                                    <button class="btn btn-primary" type="submit">Загрузить</button>
+                                <div class="d-flex justify-content-center w-100">
+                                    <button class="btn btn-primary w-100" type="submit">Загрузить</button>
                                 </div>
                             </div>
                         </form>
-                        <form action="{{route('user.delete')}}" method="post">
+                        <form class="d-flex justify-content-center w-100 mt-2" action="{{route('user.delete')}}" method="post">
                             @csrf
-                            <button type="submit" class="btn btn-danger">Удалить</button>
+                            <button type="submit" class="btn btn-danger w-100">Удалить</button>
                         </form>
                     </div>
                 </div>

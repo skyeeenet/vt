@@ -199,6 +199,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::post('/store', 'User\UserController@store')->name('admin.users.store');
         Route::post('/update/{user}', 'User\UserController@update');
         Route::post('/delete/{user}', 'User\UserController@destroy');
+        Route::get('/deleteProfileImage/{user}', 'User\UserController@destroyProfileImage');
     });
 
     Route::group(['prefix' => 'bests'], function () {
@@ -225,6 +226,17 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
     Route::get('/edit', 'Publics\User\IndexController@edit')->name('user.edit');
     Route::post('/', 'UserController@update')->name('user.update');
     Route::post('/delete', 'UserController@destroy')->name('user.delete');
+});
+
+Route::group(['prefix' => 'message'], function () {
+
+    Route::get('/','Week\WeekController@index')->name('message');
+    Route::get('/create','Week\WeekController@create')->name('message.create');
+    Route::get('/{week}','Week\WeekController@show');
+    Route::get('/edit/{week}','Week\WeekController@edit');
+    Route::post('/store','Week\WeekController@store')->name('message.store');
+    Route::post('/update/{week}','Week\WeekController@update');
+    Route::post('/delete/{week}','Week\WeekController@destroy');
 });
 
 Auth::routes();

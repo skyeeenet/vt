@@ -117,6 +117,15 @@ class UserController extends Controller
         return redirect(route('admin.users'));
     }
 
+    public function destroyProfileImage(User $user) {
+
+        $user->update([
+            'image' => null
+        ]);
+
+        return redirect()->back();
+    }
+
     public function destroy(User $user) {
 
         $user->best()->delete();

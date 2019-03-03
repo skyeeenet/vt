@@ -1,7 +1,7 @@
 @extends('admin.layouts.app_admin')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <h3>Социальные сети</h3>
         <table class="table">
             <thead>
