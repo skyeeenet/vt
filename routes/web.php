@@ -239,6 +239,21 @@ Route::group(['prefix' => 'message'], function () {
     Route::post('/delete/{week}','Week\WeekController@destroy');
 });
 
+Route::get('/ads', 'Publics\Pages\PagesController@ads');
+Route::get('/album', 'Publics\Pages\PagesController@album');
+Route::get('/conf/stud', 'Publics\Pages\PagesController@confstud');
+Route::get('/conf/univ', 'Publics\Pages\PagesController@confuniv');
+Route::get('/enroll', 'Publics\Pages\PagesController@enroll');
+Route::get('/history', 'Publics\Pages\PagesController@history');
+Route::get('/news', 'Publics\Pages\PagesController@news');
+Route::get('/plan', 'Publics\Pages\PagesController@plan');
+Route::get('/schedule', 'Publics\Pages\PagesController@schedule');
+Route::get('/certification', 'Publics\Pages\PagesController@certification');
+Route::get('/speciality', 'Publics\Pages\PagesController@speciality');
+Route::get('/team', 'Publics\Pages\PagesController@team');
+Route::get('/contacts', 'Publics\Pages\PagesController@contacts');
+
+
 Auth::routes();
 
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha, $config = 'default') {
