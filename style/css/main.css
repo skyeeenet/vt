@@ -154,6 +154,12 @@ div.MAINBOX {
   color: #0d0b0b;
 }
 
+.card-image-container {
+  background-position: center;
+  background-size: cover;
+  max-width: 350px;
+  height: 250px;
+}
 
 .t-transf-cap {
   text-transform: capitalize;
@@ -188,6 +194,8 @@ div.MAINBOX {
   font-size: 22px;
   cursor: pointer;
 }
+
+
 
 .td-poiner {
   background-color: #ff8c01;
@@ -278,8 +286,8 @@ div.MAINBOX {
 }
 
 .history-inner-container img {
-  width: 440px;
-  height: 400px;
+  width: 100%;
+  height: auto;
 }
 
 .news-post-inner img {
@@ -1048,6 +1056,8 @@ div.alboomCategory a {
   position: relative;
 }
 
+
+
 .vit_triangl:before {
   content: "";
   position: absolute;
@@ -1228,15 +1238,24 @@ div.alboomCategory a {
   }
 }
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 774px){
   .title {
     font-size: 24px;
+  }
+
+  .card-image-container {
+    max-height: 100%;
+    max-width: 100%;
   }
 }
 
 @media screen and (max-width: 493px){
   .title {
     font-size: 22px;
+  }
+  .second-title
+  {
+    font-size: 18px;
   }
 }
 
