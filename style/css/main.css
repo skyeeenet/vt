@@ -290,17 +290,14 @@ div.MAINBOX {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   margin-top: 30px;
-  /*color: #5cb8d7;*/
-  color: #0d0d0d;
 }
 
 .news-post-inner span {
   display: inline-block;
-  margin-top: 10px;
+
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #0d0d0d;
 }
 
 .news-post-inner p {
@@ -319,6 +316,12 @@ div.MAINBOX {
   width: 1px;
   background-color: #a4a4a4;
 }
+
+.news-post-inner span:last-child{
+  color: #ff8c01;
+}
+
+
 
 .search-form {
   margin-right: 50px;
