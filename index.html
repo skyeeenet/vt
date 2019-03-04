@@ -17,7 +17,28 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./style/css/slick.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./style/css/slick-theme.css" />
 </head>
-
+<style>
+    .user-form {
+        position: relative;
+    }
+    .user-form ul {
+        display: none;
+        position: absolute;
+        top: 22px;
+        z-index: 100;
+        background-color: white;
+    }
+    .user-form ul li {
+        min-width: 150px;
+        padding: 10px;
+    }
+    .user-form ul li {
+        border-bottom: 1px solid black;
+    }
+    .user-form:hover ul {
+        display: block;
+    }
+</style>
 <body>
     <div class="MAINBOX">
         <header>
@@ -39,7 +60,7 @@
                                     alt="mail"><span class="pl-2">test@gmail.com</span></div>
                             <div class="mt-2 mt-md-0 ml-3">
                                 <img src="images/login.svg" height="20px" width="20px" alt="registration"><a
-                                    class="btn-reg ml-2" href="#">Регистрация</a>
+                                    class="btn-reg ml-2" href="#">Вход/Регистрация</a>
                             </div>
                         </div>
                         <!-- /.contactsTopHeader -->
@@ -47,9 +68,9 @@
                 </div>
             </div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-                <div class="container">
-                    <div class="col-md-4">
-                        <a class="ml-2 navbar-brand" href="#">LOGO</a>
+                <div class="container row mr-auto ml-auto no-gutters">
+                    <div class="col-md-4 col-2">
+                        <a class="ml-md-2 ml-0 navbar-brand roboto18" href="/"><img class="mr-3 navbar-logo" src="./images/_ВТ%20new_1551639993.png" alt="">Кафедра информатики</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -58,13 +79,13 @@
                     </button>
 
 
-                    <div class="col-md-10 collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="col-md-8 col-10 collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active mr-md-3">
-                                <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                                <a class="nav-link roboto18lt" href="#">Главная <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item dropdown mr-md-3">
-                                <a class="nav-link dropdown-toggle" href="#" id="enrollee" role="button"
+                                <a class="nav-link dropdown-toggle roboto18lt" href="#" id="enrollee" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     абитуриенту
                                 </a>
@@ -76,7 +97,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown mr-md-3">
-                                <a class="nav-link dropdown-toggle" href="#" id="student" role="button"
+                                <a class="nav-link dropdown-toggle roboto18lt" href="#" id="student" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     студенту
                                 </a>
@@ -88,7 +109,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown mr-md-3">
-                                <a class="nav-link dropdown-toggle" href="#" id="department" role="button"
+                                <a class="nav-link dropdown-toggle roboto18lt" href="#" id="department" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     кафедра
                                 </a>
@@ -100,7 +121,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Контакты</a>
+                                <a class="nav-link roboto18lt" href="#">Контакты</a>
                             </li>
                         </ul>
                     </div>
@@ -156,13 +177,12 @@
                             <div></div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                             <div class="card">
                                 <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="roboto14">Апрель 17, 2018</h5>
+                                    <small class="roboto14">2019-03-02 21:17:17</small>
                                     <h5 class="mt-3"><a class="roboto22md color_cont" href="#">Заголовок новости</a></h5>
                                     <p class="roboto16 second-text mt-4">
                                         Краткое описание новости свозможностью
@@ -176,7 +196,7 @@
                             <div class="card">
                                 <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="roboto14">Апрель 17, 2018</h5>
+                                    <small class="roboto14">2019-03-02 21:17:17</small>
                                     <h5 class="mt-3"><a class="roboto22md color_cont" href="#">Заголовок новости</a></h5>
                                     <p class="roboto16 second-text mt-4">
                                         Краткое описание новости свозможностью
@@ -186,11 +206,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mt-md-5 mt-lg-3">
+                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                             <div class="card">
                                 <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="roboto14">Апрель 17, 2018</h5>
+                                    <small class="roboto14">2019-03-02 21:17:17</small>
                                     <h5 class="mt-3"><a class="roboto22md color_cont" href="#">Заголовок новости</a></h5>
                                     <p class="roboto16 second-text mt-4">
                                         Краткое описание новости свозможностью
@@ -200,11 +220,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-md-5 mt-sm-5 mt-5 mt-lg-4">
+                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                             <div class="card">
                                 <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="roboto14">Апрель 17, 2018</h5>
+                                    <small class="roboto14">2019-03-02 21:17:17</small>
                                     <h5 class="mt-3"><a class="roboto22md color_cont" href="#">Заголовок новости</a></h5>
                                     <p class="roboto16 second-text mt-4">
                                         Краткое описание новости свозможностью
@@ -214,11 +234,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-md-5 mt-sm-5 mt-5 mt-lg-4">
+                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                             <div class="card">
                                 <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="roboto14">Апрель 17, 2018</h5>
+                                    <small class="roboto14">2019-03-02 21:17:17</small>
                                     <h5 class="mt-3"><a class="roboto22md color_cont" href="#">Заголовок новости</a></h5>
                                     <p class="roboto16 second-text mt-4">
                                         Краткое описание новости свозможностью
@@ -228,13 +248,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-md-5 mt-sm-5 mt-5 mt-lg-4">
+                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                             <div class="card">
                                 <img class="card-img-top" src="./images/img.jpg" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="roboto14">Апрель 17, 2018</h5>
+                                    <small class="roboto14">2019-03-02 21:17:17</small>
                                     <h5 class="mt-3"><a class="roboto22md color_cont" href="#">Заголовок новости</a></h5>
-                                    <p class="card-text mt-4">
+                                    <p class="roboto16 second-text mt-4">
                                         Краткое описание новости свозможностью
                                         перехода на страницус более детальным
                                         описанием...
@@ -385,32 +405,26 @@
                 <div class="container pt-5 vit_footer_container">
                     <div class="row">
                         <div class="col-lg-4 d-flex justify-content-center">
-                            <div class="nav flex-column align-items-start">
+                            <div class="nav w-100 flex-column align-items-center">
                                 <p class="vit_foot_main_text p-0">Разработчики</p>
                                 <p class="vit_foot_text m-0">Тилинин С.В.</p>
                                 <p class="vit_foot_text m-0">Клычков В.А.</p>
                                 <p class="vit_foot_text m-0">Симон Н.В.</p>
                                 <p class="vit_foot_text m-0">Крутиков В.А.</p>
-                                <p class="vit_foot_text m-0">Грирорьев В.В.</p>
+                                <p class="vit_foot_text m-0">Григорьев В.А.</p>
                             </div>
                         </div>
-                        <div class="col-lg-4 d-flex justify-content-center">
-                            <div class="nav flex-column align-items-start">
-                                <p class="vit_foot_main_text">Контакты</p>
-                                <div class="mt-md-0 mt-md-0 "><img src="./images/placeholder.svg" heigth="20px"
-                                        width="20px" alt="position"><span class="pl-2 color_cont">Мариуполь</span></div>
-                                <div class="pt-2 mt-md-0"><img src="./images/email.svg" heigth="20px" width="20px"
-                                        alt="mail"><span class="pl-2 color_cont">test@gmail.com</span></div>
-                                        <div class="mt-md-0 mt-md-0 pt-2"><img src="./images/support.svg" heigth="20px"
-                                            width="20px" alt="position"><span class="pl-2 color_cont">Обратная связь</span></div>
-                                <div class="mt-2 mt-md-0 ml-3">
-                                </div>
+                        <div class="col-lg-4 mt-3 mt-lg-0 d-flex justify-content-center">
+                            <div class="nav w-100 flex-column align-items-center">
+                                <p class="vit_foot_main_text text-center">Контакты</p>
+                                <div class="mt-md-0 mt-md-0 "><img src="./images/placeholder.svg" height="20px" width="20px" alt="City"><span class="pl-2 color_cont">Мариуполь</span></div>
+                                <div class="pt-2 mt-md-0"><img src="./images/email.svg" height="20px" width="20px" alt="Mail"><span class="pl-2 color_cont">test@email.com</span></div>
+                                <div class="mt-md-0 mt-md-0 pt-2"><img src="./images/support.svg" height="20px" width="20px" alt="Support"><a href=""><span class="pl-2 color_cont">Обратная связь</span></a></div>
                             </div>
                         </div>
-                        <div class="col-lg-4 d-flex  justify-content-center">
+                        <div class="col-lg-4 mt-3 mt-lg-0 d-flex justify-content-center">
                             <form class="search-form m-0" action="#" method="get">
-                                <span class="bg-white"><input type="text" placeholder="Поиск..."><button
-                                        type="submit">НАЙТИ</button></span>
+                                <span class="bg-white"><input type="text" placeholder="Поиск..."><button type="submit">НАЙТИ</button></span>
                             </form>
                         </div>
                     </div>
