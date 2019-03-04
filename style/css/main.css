@@ -969,6 +969,11 @@ div.alboomCategory a {
   font-family: "Roboto Light", sans-serif;
 }
 
+.roboto14-standard {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+
 .roboto14md{
   font-size: 14px;
   font-family: "Roboto Light", sans-serif;
@@ -1233,8 +1238,17 @@ div.alboomCategory a {
 }
 
 @media screen and (max-width: 420px){
+
   .roboto18, .roboto18lt {
     font-size: 14px;
+  }
+
+  .roboto16 {
+    font-size: 12px;
+  }
+
+  .roboto14-standard {
+    font-size: 12px;
   }
 
   .navbar-logo {
