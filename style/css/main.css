@@ -308,14 +308,6 @@ div.MAINBOX {
   font-size: 14px;
 }
 
-.news-post-inner p {
-  margin-top: 50px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5rem;
-}
-
 .span-with-line:after {
   position: absolute;
   margin-left: 18px;
@@ -324,12 +316,6 @@ div.MAINBOX {
   width: 1px;
   background-color: #a4a4a4;
 }
-
-.news-post-inner span:last-child{
-  color: #ff8c01;
-}
-
-
 
 .search-form {
   margin-right: 50px;
@@ -1246,6 +1232,10 @@ div.alboomCategory a {
   .card-image-container {
     max-height: 100%;
     max-width: 100%;
+  }
+  
+  .span-with-line:after {
+    display: none;
   }
 }
 
