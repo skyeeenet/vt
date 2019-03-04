@@ -278,8 +278,8 @@ div.MAINBOX {
 }
 
 .history-inner-container img {
-  width: 440px;
-  height: 400px;
+  width: 100%;
+  height: auto;
 }
 
 .news-post-inner img {
