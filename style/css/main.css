@@ -1237,6 +1237,10 @@ div.alboomCategory a {
   .title {
     font-size: 22px;
   }
+  .second-title
+  {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 420px){
