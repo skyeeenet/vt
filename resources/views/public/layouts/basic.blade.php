@@ -44,16 +44,13 @@
 <header>
     <div class="container-fluid topHeader">
         <div class="container">
-            <div
-                    class="d-flex flex-row justify-content-around justify-content-md-between align-items-center pt-3 pb-3 pt-lg-2 pb-lg-2">
-                <div
-                        class="d-flex flex-column flex-sm-row justify-content-center align-items-center currentWeek">
+            <div class="d-flex flex-row justify-content-around justify-content-md-between align-items-center pt-3 pb-3 pt-lg-2 pb-lg-2">
+                <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center currentWeek">
                     <div>Текущая&nbsp;неделя:&nbsp;</div>
                     <div>Четная</div>
                 </div>
                 <!-- /.currentWeek -->
-                <div
-                        class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
+                <div class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
                     <div class="mt-md-0 mt-md-0 ml-3"><img src="/images/placeholder.svg" heigth="20px"
                                                            width="20px" alt="position"><span class="pl-2">{{Page::getHeaderByType('place')}}</span></div>
                     <div class="mt-2 mt-md-0 ml-3"><img src="/images/email.svg" heigth="20px" width="20px"
@@ -89,7 +86,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
             <div class="col-md-4 col-2">
-                <a class="ml-md-2 ml-0 navbar-brand" href="/"><img class="mr-3" width="40px" height="40px" src="{{Page::getHeaderByType('logo')}}" alt="">{{Page::getHeaderByType('logo-text')}}</a>
+                <a class="ml-md-2 ml-0 navbar-brand roboto18" href="/"><img class="mr-3 navbar-logo" src="{{Page::getHeaderByType('logo')}}" alt="">{{Page::getHeaderByType('logo-text')}}</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -98,12 +95,12 @@
             </button>
 
 
-            <div class="col-md-10 collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="col-md-8 col-10 collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     @forelse(Page::getMenu() as $item)
                         @if (isset($item['submenu'][0]))
                             <li class="nav-item dropdown mr-md-3">
-                                <a class="nav-link dropdown-toggle" href="#" id="enrollee" role="button"
+                                <a class="nav-link dropdown-toggle roboto18lt" href="#" id="enrollee" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{$item['item']}}
                                 </a>
@@ -115,7 +112,7 @@
                             </li>
                         @else
                             <li class="nav-item active mr-md-3">
-                                <a class="nav-link" href="{{$item['url']}}">{{$item['item']}}<span class="sr-only">(current)</span></a>
+                                <a class="nav-link roboto18lt" href="{{$item['url']}}">{{$item['item']}}<span class="sr-only"></span></a>
                             </li>
                         @endif
                     @empty
@@ -132,32 +129,29 @@
         <div class="container pt-5 vit_footer_container">
             <div class="row">
                 <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="nav flex-column align-items-start">
+                    <div class="nav w-100 flex-column align-items-center">
                         <p class="vit_foot_main_text p-0">Разработчики</p>
                         <p class="vit_foot_text m-0">Тилинин С.В.</p>
                         <p class="vit_foot_text m-0">Клычков В.А.</p>
                         <p class="vit_foot_text m-0">Симон Н.В.</p>
                         <p class="vit_foot_text m-0">Крутиков В.А.</p>
-                        <p class="vit_foot_text m-0">Григорьев В.В.</p>
+                        <p class="vit_foot_text m-0">Григорьев В.А.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="nav flex-column align-items-start">
-                        <p class="vit_foot_main_text">Контакты</p>
+                <div class="col-lg-4 mt-3 mt-lg-0 d-flex justify-content-center">
+                    <div class="nav w-100 flex-column align-items-center">
+                        <p class="vit_foot_main_text text-center">Контакты</p>
                         <div class="mt-md-0 mt-md-0 "><img src="/images/placeholder.svg" heigth="20px"
                                                            width="20px" alt="City"><span class="pl-2 color_cont">{{Page::getHeaderByType('place')}}</span></div>
                         <div class="pt-2 mt-md-0"><img src="/images/email.svg" heigth="20px" width="20px"
                                                        alt="Mail"><span class="pl-2 color_cont">{{Page::getHeaderByType('email')}}</span></div>
                         <div class="mt-md-0 mt-md-0 pt-2"><img src="/images/support.svg" heigth="20px"
                                                                width="20px" alt="Support"><span class="pl-2 color_cont">Обратная связь</span></div>
-                        <div class="mt-2 mt-md-0 ml-3">
-                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 d-flex  justify-content-center">
+                <div class="col-lg-4 mt-3 mt-lg-0 d-flex justify-content-center">
                     <form class="search-form m-0" action="#" method="get">
-                                <span class="bg-white"><input type="text" placeholder="Поиск..."><button
-                                            type="submit">НАЙТИ</button></span>
+                                <span class="bg-white"><input type="text" placeholder="Поиск..."><button type="submit">НАЙТИ</button></span>
                     </form>
                 </div>
             </div>

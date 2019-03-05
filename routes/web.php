@@ -207,10 +207,29 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::get('/', 'Bests\BestController@index')->name('admin.bests');
         Route::get('/create', 'Bests\BestController@create')->name('admin.bests.create');
         Route::get('/edit/{best}', 'Bests\BestController@edit');
-        Route::get('/{best}', 'Bests\BestController@show');
         Route::post('/store', 'Bests\BestController@store')->name('admin.bests.store');
         Route::post('/update/{best}', 'Bests\BestController@update');
         Route::post('/delete/{best}', 'Bests\BestController@destroy');
+    });
+
+    Route::group(['prefix' => 'categories'], function () {
+
+        Route::get('/', 'Category\CategoryController@index')->name('admin.categories');
+        Route::get('/create', 'Category\CategoryController@create')->name('admin.categories.create');
+        Route::get('/edit/{category}', 'Category\CategoryController@edit');
+        Route::post('/store', 'Category\CategoryController@store')->name('admin.categories.store');
+        Route::post('/update/{category}', 'Category\CategoryController@update');
+        Route::post('/delete/{category}', 'Category\CategoryController@destroy');
+    });
+
+    Route::group(['prefix' => 'albums'], function () {
+
+        Route::get('/', 'Album\AlbumController@index')->name('admin.albums');
+        Route::get('/create', 'Album\AlbumController@create')->name('admin.albums.create');
+        Route::get('/edit/{album}', 'Album\AlbumController@edit');
+        Route::post('/store', 'Category\AlbumController@store')->name('admin.albums.store');
+        Route::post('/update/{album}', 'Album\AlbumController@update');
+        Route::post('/delete/{album}', 'Album\AlbumController@destroy');
     });
 });
 

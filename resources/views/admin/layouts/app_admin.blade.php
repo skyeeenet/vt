@@ -86,22 +86,34 @@
         <nav class="mb-4">
             <ul class="topmenu">
                 <li><a href="/admin">Admin-Panel <small>alpha</small></a></li>
-                <li><a href="" class="active">Header<span class="fa fa-angle-down"></span></a>
+                <li><a href="{{ route('admin.header.text') }}" class="active">Header<span class="fa fa-angle-down"></span></a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.header.text') }}">Редактирование текстов/изображений</a></li>
                         <li><a href="{{ route('admin.header.menu') }}">Редактирование меню</a></li>
                     </ul>
                 </li>
-                <li><a href="" class="active">Наполнение<span class="fa fa-angle-down"></span></a>
+                <li><a href="{{ route('admin.content.images') }}" class="active">Наполнение<span class="fa fa-angle-down"></span></a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.content.images') }}">Изображения</a></li>
                         <li><a href="{{ route('admin.content.text') }}">Тексты</a></li>
                         <li><a href="{{ route('admin.content.slider') }}">Создание слайдеров</a></li>
                         <li><a href="{{ route('admin.content.adverts') }}">Объявления</a></li>
                         <li><a href="{{ route('admin.content.posts') }}">Новости</a></li>
+                        <li><a href="{{ route('admin.categories') }}">Категории<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.categories') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.categories.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ route('admin.albums') }}">Альбомы<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.albums') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.albums.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-                <li><a href="" class="active">Расписание<span class="fa fa-angle-down"></span></a>
+                <li><a href="{{ route('admin.schedule') }}" class="active">Расписание<span class="fa fa-angle-down"></span></a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.schedule') }}">Просмотреть</a></li>
                         <li><a href="{{ route('admin.schedule.create') }}">Создать</a></li>
@@ -137,7 +149,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="" class="active">Пользователи<span class="fa fa-angle-down"></span></a>
+                <li><a href="{{ route('admin.users') }}" class="active">Пользователи<span class="fa fa-angle-down"></span></a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.users') }}">Просмотреть всех</a></li>
                         <li><a href="{{ route('user') }}">Мой профиль</a></li>
@@ -167,7 +179,6 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="">Контакты</a></li>
             </ul>
         </nav>
 </header>

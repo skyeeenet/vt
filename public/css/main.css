@@ -124,6 +124,7 @@ div.MAINBOX {
   font-size: 32px;
   color: #0d0b0b;
   text-transform: uppercase;
+    text-align: center;
 }
 
 .sub-title {
@@ -936,7 +937,7 @@ div.alboomCategory a {
 .roboto18 {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 
@@ -1194,12 +1195,60 @@ div.alboomCategory a {
 
 .bg_color_grey {
   background-color: #d1d1d1;
+  background-color: #d1d1d1;
 }
 
 .roboto16lt {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 300;
+}
+
+.navbar-logo {
+  width: 80px;
+  height: 80px;
+}
+
+@media screen and (max-width: 1207px){
+  .roboto18, .roboto18lt {
+    font-size: 16px;
+  }
+
+  .navbar-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 770px){
+    .title {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 493px){
+    .title {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 420px){
+  .roboto18, .roboto18lt {
+    font-size: 14px;
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  div.contactsTopHeader {
+    font-size: 12px;
+  }
+
+  .title {
+      font-size: 18px;
+  }
 }
 
 /* HanGerrel zone end */
