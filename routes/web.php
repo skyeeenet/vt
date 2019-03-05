@@ -227,9 +227,32 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::get('/', 'Album\AlbumController@index')->name('admin.albums');
         Route::get('/create', 'Album\AlbumController@create')->name('admin.albums.create');
         Route::get('/edit/{album}', 'Album\AlbumController@edit');
-        Route::post('/store', 'Category\AlbumController@store')->name('admin.albums.store');
+        Route::post('/store', 'Album\AlbumController@store')->name('admin.albums.store');
         Route::post('/update/{album}', 'Album\AlbumController@update');
         Route::post('/delete/{album}', 'Album\AlbumController@destroy');
+    });
+
+    Route::group(['prefix' => 'message'], function () {
+
+        Route::get('/','Week\WeekController@index')->name('message');
+        Route::get('/create','Week\WeekController@create')->name('message.create');
+        Route::get('/{week}','Week\WeekController@show');
+        Route::get('/edit/{week}','Week\WeekController@edit');
+        Route::post('/store','Week\WeekController@store')->name('message.store');
+        Route::post('/update/{week}','Week\WeekController@update');
+        Route::post('/delete/{week}','Week\WeekController@destroy');
+    });
+
+    Route::group(['prefix' => 'albums_images'], function () {
+
+        Route::post('/store', 'Album_Image\AlbumImageController@store')->name('admin.albums.images.store');
+        Route::post('/delete/{id}', 'Album_Image\AlbumImageController@destroy');
+    });
+
+    Route::group(['prefix' => 'albums_categories'], function () {
+
+        Route::post('/store', 'Album_Category\AlbumCategoryController@store');
+        Route::post('/delete/{id}', 'Album_Category\AlbumCategoryController@destroy');
     });
 });
 
@@ -245,17 +268,6 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
     Route::get('/edit', 'Publics\User\IndexController@edit')->name('user.edit');
     Route::post('/', 'UserController@update')->name('user.update');
     Route::post('/delete', 'UserController@destroy')->name('user.delete');
-});
-
-Route::group(['prefix' => 'message'], function () {
-
-    Route::get('/','Week\WeekController@index')->name('message');
-    Route::get('/create','Week\WeekController@create')->name('message.create');
-    Route::get('/{week}','Week\WeekController@show');
-    Route::get('/edit/{week}','Week\WeekController@edit');
-    Route::post('/store','Week\WeekController@store')->name('message.store');
-    Route::post('/update/{week}','Week\WeekController@update');
-    Route::post('/delete/{week}','Week\WeekController@destroy');
 });
 
 Route::get('/ads', 'Publics\Pages\PagesController@ads');
