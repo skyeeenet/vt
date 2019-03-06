@@ -150,7 +150,7 @@ div.MAINBOX {
   border-radius: 0 !important;
 }
 
-.second-text{
+.second-text {
   color: #0d0b0b;
 }
 
@@ -195,8 +195,6 @@ div.MAINBOX {
   cursor: pointer;
 }
 
-
-
 .td-poiner {
   background-color: #ff8c01;
 }
@@ -236,12 +234,14 @@ div.MAINBOX {
   line-height: 24px;
 }
 
-.roboto14md p:first-child span  {
+.roboto14md p:first-child span {
   color: #ff8c01;
 }
+
 .roboto14md p:last-child span {
   color: #ff8c01;
 }
+
 .pagination {
   display: inline-block;
 }
@@ -302,7 +302,6 @@ div.MAINBOX {
 
 .news-post-inner span {
   display: inline-block;
-
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -698,8 +697,8 @@ div.personInfo div:last-child {
   color: #0d0d0d;
 }
 
-.color_cont{
-  color:#ff8c01;
+.color_cont {
+  color: #ff8c01;
 }
 
 div.buttonGoTo {
@@ -843,6 +842,15 @@ div.alboomCategory a {
   margin-top: 15px;
 }
 
+.card-gallery-container {
+  background-position: center;
+  background-size: cover;
+  max-width: 250px;
+  width: 250px;
+  height: 190px;
+  margin: 10px;
+}
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
@@ -908,7 +916,7 @@ div.alboomCategory a {
   font-size: 24px;
 }
 
-.roboto22md{
+.roboto22md {
   font-size: 22px !important;
   font-family: "Roboto Medium", sans-serif !important;
 }
@@ -937,7 +945,6 @@ div.alboomCategory a {
   font-weight: 400;
 }
 
-
 .roboto18smbd {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
@@ -961,7 +968,7 @@ div.alboomCategory a {
   font-weight: 700;
 }
 
-.roboto14{
+.roboto14 {
   font-size: 14px;
   font-family: "Roboto Light", sans-serif;
 }
@@ -971,7 +978,7 @@ div.alboomCategory a {
   font-family: "Roboto", sans-serif;
 }
 
-.roboto14md{
+.roboto14md {
   font-size: 14px;
   font-family: "Roboto Light", sans-serif;
   font-weight: 500;
@@ -1041,8 +1048,6 @@ div.alboomCategory a {
   padding: 0 0 0 30px;
   position: relative;
 }
-
-
 
 .vit_triangl:before {
   content: "";
@@ -1213,65 +1218,59 @@ div.alboomCategory a {
   height: 80px;
 }
 
-@media screen and (max-width: 1207px){
+@media screen and (max-width: 1207px) {
   .roboto18, .roboto18lt {
     font-size: 16px;
   }
-
   .navbar-logo {
     width: 60px;
     height: 60px;
   }
 }
 
-@media screen and (max-width: 774px){
+@media screen and (max-width: 774px) {
   .title {
     font-size: 24px;
   }
-
   .card-image-container {
     max-height: 100%;
     max-width: 100%;
   }
-  
+  .card-gallery-container {
+    max-height: 100%;
+    max-width: 100%;
+  }
   .span-with-line:after {
     display: none;
   }
 }
 
-@media screen and (max-width: 493px){
+@media screen and (max-width: 493px) {
   .title {
     font-size: 22px;
   }
-  .second-title
-  {
+  .second-title {
     font-size: 18px;
   }
 }
 
-@media screen and (max-width: 420px){
-
+@media screen and (max-width: 420px) {
   .roboto18, .roboto18lt {
     font-size: 14px;
   }
-
   .roboto16 {
     font-size: 12px;
   }
-
   .roboto14-standard {
     font-size: 12px;
   }
-
   .navbar-logo {
     width: 40px;
     height: 40px;
   }
-
   div.contactsTopHeader {
     font-size: 12px;
   }
-
   .title {
     font-size: 18px;
   }
