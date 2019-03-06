@@ -222,6 +222,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::post('/delete/{category}', 'Category\CategoryController@destroy');
     });
 
+    Route::group(['prefix' => 'administration'], function () {
+
+        Route::get('/', 'Administration\AdministrationController@index')->name('admin.administration');
+        Route::get('/create', 'Administration\AdministrationController@create')->name('admin.administration.create');
+        Route::get('/edit', 'Administration\AdministrationController@edit')->name('admin.administration.edit');
+        Route::post('/store', 'Administration\AdministrationController@store')->name('admin.administration.store');
+        Route::post('/update', 'Administration\AdministrationController@update');
+        Route::post('/delete/{admin}', 'Administration\AdministrationController@destroy');
+    });
+
     Route::group(['prefix' => 'albums'], function () {
 
         Route::get('/', 'Album\AlbumController@index')->name('admin.albums');
@@ -284,17 +294,10 @@ Route::get('/speciality', 'Publics\Pages\PagesController@speciality');
 Route::get('/team', 'Publics\Pages\PagesController@team');
 Route::get('/contacts', 'Publics\Pages\PagesController@contacts');
 
-
 Auth::routes();
 
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha, $config = 'default') {
     return $captcha->src($config);
-});
-
-Route::get('/offset', function() {
-    return response([
-        'offset' => 1
-    ], 200);
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

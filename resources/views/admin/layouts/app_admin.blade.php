@@ -171,10 +171,20 @@
                                 <li><a href="{{ route('admin.socials.create') }}">Создать</a></li>
                             </ul>
                         </li>
+                    </ul>
+                </li>
+                <li><a href="" class="active">Администрирование<span class="fa fa-angle-down"></span></a>
+                    <ul class="submenu">
                         <li><a href="">Роли<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.roles') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.roles.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Переменные среды<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.administration') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.administration.edit') }}">Настроить</a></li>
                             </ul>
                         </li>
                     </ul>

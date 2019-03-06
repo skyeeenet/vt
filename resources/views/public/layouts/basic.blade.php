@@ -176,14 +176,11 @@
 <script src="{{ asset('scripts/__main__.js') }}"></script>
     <script>
 
-        ajax('/offset', callWeek);
-
+        ajax('/api/offset', callWeek);
         function callWeek (resp) {
-
             offset = resp['offset'];
             getWeek(offset);
         }
-
         function ajax(url, callback) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', url);
