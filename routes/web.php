@@ -291,4 +291,10 @@ Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha, $
     return $captcha->src($config);
 });
 
+Route::get('/offset', function() {
+    return response([
+        'offset' => 1
+    ], 200);
+});
+
 Route::get('/home', 'HomeController@index')->name('home');

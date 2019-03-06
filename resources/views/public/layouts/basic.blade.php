@@ -47,7 +47,7 @@
             <div class="d-flex flex-row justify-content-around justify-content-md-between align-items-center pt-3 pb-3 pt-lg-2 pb-lg-2">
                 <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center currentWeek">
                     <div>Текущая&nbsp;неделя:&nbsp;</div>
-                    <div>Четная</div>
+                    <div id="current_week">Четная</div>
                 </div>
                 <!-- /.currentWeek -->
                 <div class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
@@ -174,6 +174,54 @@
 <!-- Another JS -->
 <script src="{{ asset('scripts/additional/slick.min.js') }}"></script>
 <script src="{{ asset('scripts/__main__.js') }}"></script>
+    <script>
+
+        ajax('/offset', callWeek);
+
+        function callWeek (resp) {
+
+            offset = resp['offset'];
+            getWeek(offset);
+        }
+
+        function ajax(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url);
+            xhr.onreadystatechange = function(){
+                if (this.readyState == 4) {
+                    if (this.status == 200)
+                        callback(JSON.parse(this.responseText));
+                    // иначе сетевая ошибка
+                }
+            };
+            xhr.send(null);
+        }
+
+        function getWeek(offset){
+            var now = new Date();
+            now.setTime(Date.parse(now));
+            var FirstSeptYear=now.getFullYear();
+            if (now.getMonth()<8) FirstSeptYear=FirstSeptYear-1;
+            var FirstSept = new Date('09/01/'+FirstSeptYear);
+            var day = FirstSept.getDay();
+            if(day == 0)
+            {day=7;}
+            --day;
+            FirstSept.setTime(Date.parse(FirstSept) -day*86400000);
+            var i = parseInt(offset);                                              //для изменения четности вручную изменить на 0 или 1
+            while(now>FirstSept){
+                FirstSept.setTime(Date.parse(FirstSept)+604800000);
+                i++;
+            }
+            if (i%2 == 0) {
+                document.getElementById('current_week').innerHTML = 'Парная';
+            }
+            else {
+                document.getElementById('current_week').innerHTML = 'Непарная';
+            }
+            return;
+        }
+    </script>
 @yield('scripts')
 </div>
 </body>
