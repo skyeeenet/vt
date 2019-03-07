@@ -116,6 +116,7 @@ div.MAINBOX {
   font-size: 28px;
   color: #0d0b0b;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .title {
@@ -1255,6 +1256,9 @@ div.alboomCategory a {
   .title {
     font-size: 24px;
   }
+  .title_second {
+    font-size: 22px;
+  }
   .card-image-container {
     max-height: 100%;
     max-width: 100%;
@@ -1269,6 +1273,9 @@ div.alboomCategory a {
     font-size: 22px;
   }
   .second-title {
+    font-size: 18px;
+  }
+  .title_second {
     font-size: 18px;
   }
 }
