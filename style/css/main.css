@@ -1235,7 +1235,7 @@ div.alboomCategory a {
     width: 100%;
     height: 350px;
   }
-  .__gallery, .__gallery div a {
+  .__gallery, .__gallery div:not(.pagination)>a{
     width: 100%;
   }
 }
