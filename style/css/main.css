@@ -1150,8 +1150,8 @@ div.alboomCategory a {
   font-size: 30px;
 }
 
-.schedule-border {
-  /*border: 2px solid rgba(0,0,0,0.1);*/
+.schedule-border div div:last-child p {
+  margin-bottom: 0;
 }
 
 .schedule-date::after {
