@@ -1218,6 +1218,15 @@ div.alboomCategory a {
   height: 80px;
 }
 
+.profile {
+  color: #ff8c01;
+  text-transform: capitalize;
+}
+
+.profile:hover {
+  color: #ff7e11;
+}
+
 @media screen and (max-width: 1207px) {
   .roboto18, .roboto18lt {
     font-size: 16px;
