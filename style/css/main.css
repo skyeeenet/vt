@@ -537,10 +537,9 @@ div.declarationHead {
 
 /* Slick Sliden settigns end */
 
-div.specGreyLine {
-  border: 1px solid #d1d1d1;
+.specGreyLine {
+  border-bottom: 1px solid #e2e2e2;
   width: 100%;
-  margin-top: -30px;
 }
 
 .specHeadContentText {
