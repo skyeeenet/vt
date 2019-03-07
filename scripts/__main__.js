@@ -289,7 +289,7 @@ function slick_foreign_practice() {
         autoplaySpeed: 2000,
         slidesToShow: 2,
         slidesToScroll: 2,
-        arrows: true,
+        arrows: false,
         prevArrow: '<button class="prev"><i class="fas fa-angle-right"></i></button>',
         nextArrow: '<button class="next"><i class="fas fa-angle-left"></i></button>',
         responsive: [
