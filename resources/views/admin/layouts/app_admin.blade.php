@@ -111,6 +111,12 @@
                                 <li><a href="{{ route('admin.albums.create') }}">Создать</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('admin.conferences') }}">Конференции<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.conferences') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.conferences.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="{{ route('admin.schedule') }}" class="active">Расписание<span class="fa fa-angle-down"></span></a>

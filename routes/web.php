@@ -222,6 +222,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::post('/delete/{category}', 'Category\CategoryController@destroy');
     });
 
+    Route::group(['prefix' => 'conferences'], function () {
+
+        Route::get('/', 'Conference\ConferenceController@index')->name('admin.conferences');
+        Route::get('/create', 'Conference\ConferenceController@create')->name('admin.conferences.create');
+        Route::get('/edit/{conference}', 'Conference\ConferenceController@edit');
+        Route::post('/store', 'Conference\ConferenceController@store')->name('admin.conferences.store');
+        Route::post('/update/{conference}', 'Conference\ConferenceController@update');
+        Route::post('/info/update/{conference}', 'Conference\ConferenceInfoController@update');
+
+        Route::post('/users/store/{conference}', 'Conference\ConferenceUserController@store');
+        Route::post('/users/delete/{conference}', 'Conference\ConferenceUserController@destroy');
+
+        Route::post('/delete/{conference}', 'Conference\ConferenceController@destroy');
+    });
+
     Route::group(['prefix' => 'administration'], function () {
 
         Route::get('/', 'Administration\AdministrationController@index')->name('admin.administration');
