@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin\Message;
 use App\Http\Controllers\Controller;
 use App\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class MessageController extends Controller
 {
@@ -15,7 +17,11 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $users = User::select('id', 'name')->get();
+        $messages = Message::where('from', $user->id)->orWhere('to', $user->id)->latest()->get();
+
+        return view('public.messages', compact('messages', 'users'));
     }
 
     /**
@@ -36,7 +42,18 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->input('user') != Auth::id()) {
+
+            $message = new Message([
+                'from' => Auth::id(),
+                'to' => $request->input('user'),
+                'message' => $request->input('message')
+            ]);
+
+            $message->save();
+        }
+
+        return redirect()->back();
     }
 
     /**

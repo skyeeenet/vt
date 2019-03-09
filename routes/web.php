@@ -309,6 +309,12 @@ Route::get('/speciality', 'Publics\Pages\PagesController@speciality');
 Route::get('/team', 'Publics\Pages\PagesController@team');
 Route::get('/contacts', 'Publics\Pages\PagesController@contacts');
 
+Route::group(['prefix' => 'messages', 'middleware' => 'auth'], function () {
+
+    Route::get('/', 'Admin\Message\MessageController@index')->name('messages');
+    Route::post('/', 'Admin\Message\MessageController@store')->name('messages.store');
+});
+
 Auth::routes();
 
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha, $config = 'default') {
