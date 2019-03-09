@@ -42,6 +42,13 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'user' => 'required',
+            'message' => 'required',
+            'captcha' => 'required|captcha'
+        ]);
+
         if ($request->input('user') != Auth::id()) {
 
             $message = new Message([
@@ -98,6 +105,16 @@ class MessageController extends Controller
      */
     public function destroy(Message $message)
     {
-        //
+        $user_id = Auth::id();
+
+        if($message->userFrom['id'] == $user_id || $message->userTo['id'] == $user_id) {
+
+            $message->delete();
+
+            return redirect()->back();
+        } else {
+
+            return response('Запрещено',403);
+        }
     }
 }
