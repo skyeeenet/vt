@@ -15,6 +15,8 @@
                 <p>Текущий: <img src="@isset($arr['logo']) {{ $arr['logo'] }} @endisset" style="max-width: 100px; max-height: 100px;" alt="Логотип"></p>
                 <p>Новый: <input type="file" id="file" name="logo"></p>
                 <ul id="list" style="list-style: none;"></ul>
+                <p>Ширина (пиксели): <input type="text" name="width" value="@isset($arr['width']) {{ $arr['width'] }} @endisset"></p>
+                <p>Высота (пиксели): <input type="text" name="height" value="@isset($arr['height']) {{ $arr['height'] }} @endisset"></p>
                 <div>
                     <input class="btn btn-primary" type="submit">
                     <a class="btn btn-secondary" href="{{ route('admin.header.text') }}">Отмена</a>

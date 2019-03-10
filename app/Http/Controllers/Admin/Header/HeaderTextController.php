@@ -79,6 +79,22 @@ class HeaderTextController extends Controller
 
         }
 
+        if ($request->width) {
+
+            Header::updateOrCreate(
+                ['type' => 'width'],
+                ['value' => $request->input('width')]
+            );
+        }
+
+        if ($request->height) {
+
+            Header::updateOrCreate(
+                ['type' => 'height'],
+                ['value' => $request->input('height')]
+            );
+        }
+
         return redirect('/admin/header/text');
     }
 }

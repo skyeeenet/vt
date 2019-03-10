@@ -86,7 +86,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
             <div class="col-md-4 col-2">
-                <a class="ml-md-2 ml-0 navbar-brand roboto18" href="/"><img class="mr-3 navbar-logo" src="{{Page::getHeaderByType('logo')}}" alt="">{{Page::getHeaderByType('logo-text')}}</a>
+                <a class="ml-md-2 ml-0 navbar-brand roboto18" href="/"><img style="width: {{Page::getHeaderByType('width').'px'}}; height: {{Page::getHeaderByType('height').'px'}};" class="mr-3 navbar-logo" src="{{Page::getHeaderByType('logo')}}" alt="">{{Page::getHeaderByType('logo-text')}}</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

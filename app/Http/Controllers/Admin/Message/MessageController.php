@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Message;
 
 use App\Http\Controllers\Controller;
 use App\Message;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -59,6 +60,33 @@ class MessageController extends Controller
 
             $message->save();
         }
+
+        return redirect()->back();
+    }
+
+    public function feedback(Request $request) {
+
+        $this->validate($request, [
+            'conf' => 'required',
+            'text' => 'required',
+            'captcha' => 'required|captcha'
+        ]);
+
+        $admin_role_id = Role::where('value', 'Admin')->first()['id'];
+
+        $admin_id = User::where('role_id', $admin_role_id)->first()['id'];
+
+        $conf = $request->input('conf');
+
+        $result_text = $conf.'\n'.$request->input('text');
+
+        $message = new Message([
+            'from' => Auth::id(),
+            'to' => $admin_id,
+            'message' => $result_text
+        ]);
+
+        $message->save();
 
         return redirect()->back();
     }

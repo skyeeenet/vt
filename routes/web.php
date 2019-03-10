@@ -313,6 +313,7 @@ Route::group(['prefix' => 'messages', 'middleware' => 'auth'], function () {
 
     Route::get('/', 'Admin\Message\MessageController@index')->name('messages');
     Route::post('/', 'Admin\Message\MessageController@store')->name('messages.store');
+    Route::post('/feedback', 'Admin\Message\MessageController@feedback')->name('messages.feedback');
     Route::post('/delete/{message}', 'Admin\Message\MessageController@destroy');
 });
 

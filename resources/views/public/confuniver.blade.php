@@ -1,6 +1,43 @@
 @extends('public.layouts.basic')
 
 @section('content')
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form action="{{route('messages.feedback')}}" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center" id="myModalLabel">Регистрация</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        @csrf
+                        <div class="form-group">
+                            <label for="conf">Выберите конференцию</label>
+                            <select class="form-control" name="conf" id="conf">
+                                <option value="1">Первая конфа</option>
+                                <option value="2">Вторая конфа</option>
+                            </select>
+                        </div>
+                        <label for="text">Комментарий</label>
+                        <div class="form-group">
+                            <textarea class="form-control w-100" name="text" id="text"></textarea>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for=""></label>
+                            <img src="{{ captcha_src() }}" alt="captcha" class="captcha-img" data-refresh-config="default"><a href="#" id="refresh"><small>обновить</small></a></p>
+                        </div>
+                        <input type="text" name="captcha" placeholder="Ответ" required/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
     <main>
         <div class="container mb-5">
             <div class="text-center mb-4">
@@ -199,4 +236,26 @@
             <!-- 2017-2018 end -->
         </div>
     </main>
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $('.message a').click(function(e){
+                e.preventDefault();
+                console.log('test');
+                $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+            });
+            $('#refresh').on('click',function(){
+                var captcha = $('img.captcha-img');
+                var config = captcha.data('refresh-config');
+                $.ajax({
+                    method: 'GET',
+                    url: '/get_captcha/' + config,
+                }).done(function (response) {
+                    captcha.prop('src', response);
+                });
+            });
+        });
+    </script>
 @endsection
