@@ -34,10 +34,10 @@
                                 @foreach($socials as $social)
                                     <div class="form-group">
                                         <label for="name">{{$social->value}}</label>
-                                        <p class="d-flex"><img class="mr-2" width="35px" height="35px" src="{{$social->image['url']}}" alt=""><span>{{$social->url}}</span><input placeholder="id" class="form-control" type="text" value="{{\App\Models\SocialUser::where([
+                                        <p class="d-flex"><img class="mr-2" width="35px" height="35px" src="{{$social->image['url']}}" alt=""><span>{{$social->url}}</span><input placeholder="id" class="form-control" type="text" value="{{str_replace($social->url,'',\App\Models\SocialUser::where([
                                         'user_id' => $user->id,
                                         'social_id' => $social->id
-                                        ])->first()['url']}}" name="{{$social->value}}"></p>
+                                        ])->first()['url']) }}" name="{{$social->value}}"></p>
                                     </div>
                                 @endforeach
                             </div>

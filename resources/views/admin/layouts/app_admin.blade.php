@@ -123,31 +123,31 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.schedule') }}">Просмотреть</a></li>
                         <li><a href="{{ route('admin.schedule.create') }}">Создать</a></li>
-                        <li><a href="">Группы<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.groups') }}">Группы<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.groups') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.groups.create') }}">Создать</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Предметы<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.subjects') }}">Предметы<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.subjects') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.subjects.create') }}">Создать</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Виды занятий<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.occupation') }}">Виды занятий<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.occupation') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.occupation.create') }}">Создать</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Недели<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.weeks') }}">Недели<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.weeks') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.weeks.create') }}">Создать</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Графики<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.graphics') }}">Графики<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.graphics') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.graphics.create') }}">Создать</a></li>
@@ -159,19 +159,19 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.users') }}">Просмотреть всех</a></li>
                         <li><a href="{{ route('user') }}">Мой профиль</a></li>
-                        <li><a href="">Преподаватели<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.lecturers') }}">Преподаватели<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.lecturers') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.lecturers.create') }}">Создать</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Лучшие студенты<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.bests') }}">Лучшие студенты<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.bests') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.bests.create') }}">Добавить</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Социальные сети<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.socials') }}">Социальные сети<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.socials') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.socials.create') }}">Создать</a></li>
@@ -181,17 +181,13 @@
                 </li>
                 <li><a href="" class="active">Администрирование<span class="fa fa-angle-down"></span></a>
                     <ul class="submenu">
-                        <li><a href="">Роли<span class="fa fa-angle-down"></span></a>
+                        <li><a href="{{ route('admin.roles') }}">Роли<span class="fa fa-angle-down"></span></a>
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.roles') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.roles.create') }}">Создать</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Переменные среды<span class="fa fa-angle-down"></span></a>
-                            <ul class="submenu">
-                                <li><a href="{{ route('admin.administration') }}">Просмотреть</a></li>
-                                <li><a href="{{ route('admin.administration.edit') }}">Настроить</a></li>
-                            </ul>
+                        <li><a href="{{ route('admin.administration.edit') }}">Переменные среды</a>
                         </li>
                     </ul>
                 </li>

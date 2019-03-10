@@ -26,7 +26,9 @@
                             <div><img style="max-width: 360px;max-height: 450px;" src="@if(is_null($user->image)) /images/noimage.png @else{{$user->image}} @endif" alt="" class="avatar"></div>
                         <div class="d-flex mt-3">
                             @forelse($socials as $social)
+                                @if (!is_null($social->url))
                                 <a class="mr-2" href="{{$social->url}}"><img width="35px" height="35px" src="{{\App\Models\Social::where('id', $social->social_id)->first()->image['url']}}" alt=""></a>
+                                @endif
                             @empty
                             <p class="roboto18lt">Пользователь еще не добавил соц.сети</p>
                             @endforelse

@@ -43,6 +43,10 @@ class UserController extends Controller
 
             foreach ($socials as $social) {
 
+                $res_url = $social->url.str_replace($social->url,'',$request->input($social->value));
+
+                if ($res_url == $social->url) $res_url = null;
+
                 SocialUser::updateOrCreate(
                     [
                         'user_id' => $user->id,
@@ -51,7 +55,7 @@ class UserController extends Controller
                     [
                         'user_id' => $user->id,
                         'social_id' => $social->id,
-                        'url' => $social->url.$request->input($social->value)
+                        'url' => $res_url
                     ]
                 );
             }

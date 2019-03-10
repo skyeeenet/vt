@@ -3,6 +3,7 @@
 namespace App\Http\Helpers\Realizations;
 
 
+use App\Models\Best;
 use App\Models\Header;
 use App\Models\Image;
 use App\Models\Menu;
@@ -40,5 +41,10 @@ class Page
     public static function getLatestNews() {
 
         return Post::latest()->limit(6)->get();
+    }
+
+    public static function getBests() {
+
+        return Best::with('user')->get();
     }
 }
