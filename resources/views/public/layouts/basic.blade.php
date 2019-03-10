@@ -60,23 +60,28 @@
                                 class="btn-reg ml-2" href="/register">Вход/Регистрация</a>
                     </div>
                     @else
-                        <div class="mt-2 mt-md-0 ml-3 user-form">
-                            <a href="#">{{Auth::user()->name}}</a>
-                            <ul>
-                                <li><a href="/user">Мой профиль</a></li>
-                                @if(Auth::user()->role['value'] == 'Admin') <li><a href="/admin">Админка</a></li> @endif
-                                <li> <a href="{{ url('/logout') }}"
-                                        onclick="event.preventDefault();
+                        <ul class="ml-3 navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link profile dropdown-toggle roboto14-standard" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Иванов Иван Иванович
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/user">Мой профиль</a>
+                                    @if(Auth::user()->role['value'] == 'Admin') <a class="dropdown-item" href="/admin">Админка</a> @endif
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ url('/logout') }}"
+                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Выйти
                                     </a>
-
                                     <form id="logout-form" action="{{ url('/logout') }}"
                                           method="POST"style="display: none;">
                                         {{ csrf_field() }}
-                                    </form></li>
-                            </ul>
-                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
                     @endif
                 </div>
                 <!-- /.contactsTopHeader -->

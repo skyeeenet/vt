@@ -11,7 +11,7 @@ class AdvertController extends Controller
 {
     public function index() {
 
-        $adverts = Advert::paginate(10);
+        $adverts = Advert::orderBy('created_at', 'desc')->paginate(10);
 
         return view('admin.content.adverts.index', compact('adverts'));
     }
@@ -20,6 +20,7 @@ class AdvertController extends Controller
 
         $advert = new Advert([
             'value' => $request->input('advertText'),
+            'short' => $request->input('advertShort'),
             'user_id' => Auth::id()
         ]);
 
@@ -43,7 +44,8 @@ class AdvertController extends Controller
     public function update(Advert $advert, Request $request) {
 
         $advert->update([
-           'value' => $request->input('advertText')
+           'value' => $request->input('advertText'),
+           'short' => $request->input('advertShort')
         ]);
 
         return redirect(route('admin.content.adverts'));

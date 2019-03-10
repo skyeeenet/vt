@@ -1246,4 +1246,22 @@ div.alboomCategory a {
   }
 }
 
+.best-image {
+  border-radius: 50%;
+  width: 238px;
+  height: 238px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile {
+  color: #ff8c01;
+  text-transform: capitalize;
+}
+
+.profile:hover {
+  color: #ff7e11;
+}
+
 /* HanGerrel zone end */

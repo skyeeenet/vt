@@ -6,6 +6,10 @@
         <form action="{{route('admin.content.adverts').'/update/'.$advert->id}}" method="post">
             {{csrf_field()}}
             <div class="form-group">
+                <label for="advertShort">Описание</label>
+                <textarea class="form-control" name="advertShort" id="advertShort" rows="3">{{$advert->short}}</textarea>
+            </div>
+            <div class="form-group">
                 <label for="advertText">Содержимое</label>
                 <textarea class="form-control" name="advertText" id="advertText" rows="3">{{$advert->value}}</textarea>
             </div>

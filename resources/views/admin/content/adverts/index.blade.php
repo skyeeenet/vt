@@ -7,6 +7,10 @@
         {{csrf_field()}}
         <h3>Добавить объявление</h3>
         <div class="form-group">
+            <label for="advertShort">Краткое описание (выводится на главной странице)</label>
+            <input type="text" class="form-control" id="advertShort" name="advertShort">
+        </div>
+        <div class="form-group">
             <label for="advertText">Содержание объявления</label>
             <input type="text" class="form-control" id="advertText" name="advertText">
         </div>
@@ -17,6 +21,7 @@
             <tr>
                 <th>Дата</th>
                 <th>Автор</th>
+                <th>Краткое описание</th>
                 <th>Содержание</th>
                 <th>Редактировать</th>
                 <th>Удалить</th>
@@ -27,6 +32,7 @@
             <tr>
                 <td>{{$advert->created_at}}</td>
                 <td>{{$advert->author['name']}}<br>{{$advert->author['email']}}</td>
+                <td>{{$advert->short}}</td>
                 <td>{{$advert->value}}</td>
                 <td><a class="btn btn-primary" href="{{route('admin.content.adverts').'/edit/'.$advert->id}}"><i class="far fa-edit"></i></a></td>
                 <td>

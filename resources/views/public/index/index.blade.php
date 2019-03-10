@@ -166,34 +166,16 @@
             </div>
             <div class="container mt-5">
                 <div id="thebest">
-                    <div class="thebest-container pt-5 pb-5">
-                        <img src="images/best.jpeg" alt="">
-                        <a class="d-block mt-3" href="">
-                            <h3>Иванов Иван</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="thebest-container pt-5 pb-5">
-                        <img src="images/best.jpeg" alt="">
-                        <a class="d-block mt-3" href="">
-                            <h3>Иванов Иван</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="thebest-container pt-5 pb-5">
-                        <img src="images/best.jpeg" alt="">
-                        <a class="d-block mt-3" href="">
-                            <h3>Иванов Иван</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
-                    <div class="thebest-container pt-5 pb-5">
-                        <img src="images/best.jpeg" alt="">
-                        <a class="d-block mt-3" href="">
-                            <h3>Иванов Иван</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                    </div>
+                    <?php $bests = Page::getBests(); ?>
+                    @foreach($bests as $best)
+                        <div class="thebest-container pt-5 pb-5 d-flex flex-column align-items-center">
+                            <div class="best-image" style="background-image: url('{{$best['user']['image']}}');"></div>
+                            <a class="d-block mt-3" href="">
+                                <h3>{{$best['user']['name']}}</h3>
+                            </a>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>
