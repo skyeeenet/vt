@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Post;
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'CheckAdmin']], function () {
    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
 
@@ -316,6 +318,8 @@ Route::group(['prefix' => 'messages', 'middleware' => 'auth'], function () {
     Route::post('/feedback', 'Admin\Message\MessageController@feedback')->name('messages.feedback');
     Route::post('/delete/{message}', 'Admin\Message\MessageController@destroy');
 });
+
+Route::get('/search', 'SearchController@searchResult')->name('search');
 
 Auth::routes();
 

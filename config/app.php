@@ -177,6 +177,7 @@ return [
         App\Providers\HelpersProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class
 
     ],
 

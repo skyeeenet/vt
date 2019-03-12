@@ -155,8 +155,8 @@
                     </div>
                 </div>
                 <div class="col-lg-4 mt-3 mt-lg-0 d-flex justify-content-center">
-                    <form class="search-form m-0" action="#" method="get">
-                                <span class="bg-white"><input type="text" placeholder="Поиск..."><button type="submit">НАЙТИ</button></span>
+                    <form class="search-form m-0" action="{{route('search')}}" method="get">
+                                <span class="bg-white"><input type="text" name="search" placeholder="Поиск..."><button type="submit">НАЙТИ</button></span>
                     </form>
                 </div>
             </div>
