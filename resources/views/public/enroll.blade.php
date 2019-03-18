@@ -12,7 +12,7 @@
                             <div></div>
                         </div>
                     </div>
-                    <div class="col-10 mb-2 mt-4">
+                    <div class="col-12 p-0 col-md-10 mb-2 mt-4">
                         <p class="roboto18lt">
                             Кафедра інформатики була організована в 1990 році.
                         </p>
@@ -24,19 +24,25 @@
                             доцент, кандидат
                             економічних наук Постемський Ігор Євгенович.
                         </p>
-                        <div class="enr_history mt-5 mb-5">
-                            <div class="history-inner-container d-flex justify-content-center">
-                                <img src="/images/img.jpg" alt="" >
-                            </div>
-                            <div class="history-inner-container d-flex justify-content-center">
-                                <img src="/images/img.jpg" alt="" >
-                            </div>
-                            <div class="history-inner-container d-flex justify-content-center">
-                                <img src="/images/img.jpg" alt="" >
-                            </div>
-                            <div class="history-inner-container d-flex justify-content-center">
-                                <img src="/images/img.jpg" alt="">
-                            </div>
+                        <!-- <div class="enr_history mt-5 mb-5">
+                             <div class="history-inner-container d-flex justify-content-center align-items-center">
+                                 <img src="../images/photo.png" alt="" >
+                             </div>
+                             <div class="history-inner-container d-flex justify-content-center align-items-center">
+                                 <img src="../images/photo.png" alt="" >
+                             </div>
+                             <div class="history-inner-container d-flex justify-content-center align-items-center">
+                                 <img src="../images/photo.png" alt="" >
+                             </div>
+                             <div class="history-inner-container d-flex justify-content-center align-items-center">
+                                 <img src="../images/photo.png" alt="">
+                             </div>
+                         </div> -->
+                        <div class="enr_history row mt-5 mb-5">
+                            <img class="mr-2" width="400px" height="400px" src="../images/photo.png" alt="">
+                            <img class="ml-2" width="400px" height="400px" src="../images/photo.png" alt="">
+                            <img class="mr-2" width="400px" height="400px" src="../images/photo.png" alt="">
+                            <img class="ml-2" width="400px" height="400px" src="../images/photo.png" alt="">
                         </div>
                         <p class="roboto18lt">
                             У перший викладацький склад кафедри входили:
@@ -88,37 +94,37 @@
                     </div>
                 </div>
                 <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-5">
-                    <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-2">
-                        <img src="/images/ellipse.png" alt="spec_logo">
+                    <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-2 text-center">
+                        <img src="../images/ellipse.png" alt="spec_logo">
                         <div class="roboto24 mt-4">Информатика (Бакалаврат)</div>
                         <div class="roboto16">
                             Небольшое описание специальности
                         </div>
-                        <a href="/speciality">
+                        <a href="#">
                             <div class="someBlockButton mt-3">
                                 Подробнее
                             </div>
                         </a>
                     </div>
-                    <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-2">
-                        <img src="/images/ellipse.png" alt="spec_logo">
+                    <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-2 text-center">
+                        <img src="../images/ellipse.png" alt="spec_logo">
                         <div class="roboto24 mt-4">Информатика (Бакалаврат)</div>
                         <div class="roboto16">
                             Небольшое описание специальности
                         </div>
-                        <a href="/speciality">
+                        <a href="#">
                             <div class="someBlockButton mt-3">
                                 Подробнее
                             </div>
                         </a>
                     </div>
-                    <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-2">
-                        <img src="/images/ellipse.png" alt="spec_logo">
+                    <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-2 text-center">
+                        <img src="../images/ellipse.png" alt="spec_logo">
                         <div class="roboto24 mt-4">Информатика (Бакалаврат)</div>
                         <div class="roboto16">
                             Небольшое описание специальности
                         </div>
-                        <a href="/speciality">
+                        <a href="#">
                             <div class="someBlockButton mt-3">
                                 Подробнее
                             </div>
@@ -148,7 +154,7 @@
             <div class="container">
                 <div class="d-flex flex-column align-items-center">
                     <div class="w-100 d-flex flex-column align-items-center mt-5">
-                        <h2 class="title_second">Трудоустройство учащихся</h2>
+                        <h2 class="title_second text-center">Трудоустройство учащихся</h2>
                         <div class="d-flex flex-row justify-content-center specDoubledColorLine">
                             <div></div>
                             <div></div>

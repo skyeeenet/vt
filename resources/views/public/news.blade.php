@@ -4,7 +4,7 @@
     <main>
         <section>
             <div class="container">
-                <div class="text-center">
+                <div class="text-center my-5">
                     <h1 class="title">Новости</h1>
                     <div class="d-flex flex-row justify-content-center specDoubledColorLine">
                         <div></div>
@@ -12,16 +12,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 col-md-12">
-                        <div class="row news-post mt-5">
+                    <div class="mx-3 mx-md-0 col-lg-8 col-md-12">
+                        <div class="row news-post mb-5">
                             <div class="news-post-inner">
                                 <img src="../images/photo.png" alt="">
                                 <a href="#">
-                                    <h2>Заголовок номер один</h2>
+                                    <h2 class="link second-title">Заголовок номер один</h2>
                                 </a>
-                                <span class="span-with-line mr-3">Дата: Июнь 13, 2019</span>
-                                <span class="ml-3">Автор: Иванов Иван</span>
-                                <p class="">
+                                <div class="d-md-block d-flex flex-column">
+                                    <span class="span-with-line mr-3">Дата: <span class="color_cont">Июнь 13, 2019</span></span>
+                                    <span class="ml-md-3 ml-0">Автор: <span class="color_cont">Иванов Иван</span></span>
+                                </div>
+                                <p class="roboto16 mt-3">
                                     There are many variations of passages of Lorem Ipsum available, but the
                                     majority have suffered altera
                                     tion in some form, by injected humour, or randomised words which don’t look
@@ -32,15 +34,17 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row news-post mt-5">
+                        <div class="row news-post mb-5">
                             <div class="news-post-inner">
                                 <img src="../images/photo.png" alt="">
                                 <a href="#">
-                                    <h2>Заголовок номер один</h2>
+                                    <h2 class="link second-title">Заголовок номер один</h2>
                                 </a>
-                                <span class="span-with-line mr-3">Дата: Июнь 13, 2019</span>
-                                <span class="ml-3">Автор: Иванов Иван</span>
-                                <p>
+                                <div class="d-md-block d-flex flex-column">
+                                    <span class="span-with-line mr-3">Дата: <span class="color_cont">Июнь 13, 2019</span></span>
+                                    <span class="ml-md-3 ml-0">Автор: <span class="color_cont">Иванов Иван</span></span>
+                                </div>
+                                <p class="roboto16 mt-3">
                                     There are many variations of passages of Lorem Ipsum available, but the
                                     majority have suffered altera
                                     tion in some form, by injected humour, or randomised words which don’t look
@@ -51,15 +55,17 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row news-post mt-5">
+                        <div class="row news-post mb-5">
                             <div class="news-post-inner">
                                 <img src="../images/photo.png" alt="">
                                 <a href="#">
-                                    <h2>Заголовок номер один</h2>
+                                    <h2 class="link second-title">Заголовок номер один</h2>
                                 </a>
-                                <span class="span-with-line mr-3">Дата: Июнь 13, 2019</span>
-                                <span class="ml-3">Автор: Иванов Иван</span>
-                                <p>
+                                <div class="d-md-block d-flex flex-column">
+                                    <span class="span-with-line mr-3">Дата: <span class="color_cont">Июнь 13, 2019</span></span>
+                                    <span class="ml-md-3 ml-0">Автор: <span class="color_cont">Иванов Иван</span></span>
+                                </div>
+                                <p class="roboto16 mt-3">
                                     There are many variations of passages of Lorem Ipsum available, but the
                                     majority have suffered altera
                                     tion in some form, by injected humour, or randomised words which don’t look
@@ -70,7 +76,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row d-flex justify-content-center mt-5 mb-5">
+                        <div class="row d-flex justify-content-center my-5">
                             <div class="pagination">
                                 <a href="#">&laquo;</a>
                                 <a href="#">1</a>
@@ -83,14 +89,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 d-flex flex-column align-items-center">
-                        <div class="row mt-5">
-                            <form class="search-form" action="#" method="get">
+                    <div
+                            class="col-lg-4 col-md-12 d-flex flex-column align-items-center align-items-lg-start mb-5 mb-lg-0">
+                        <div class="d-none d-lg-block">
+                            <form class="search-form m-0" action="#" method="get">
                                     <span><input type="text" placeholder="Поиск..."><button
                                                 type="submit">НАЙТИ</button></span>
                             </form>
                         </div>
-                        <div class="row mt-5 d-md-flex flex-md-column align-self-start ml-md-3 recent-posts">
+                        <div class="d-flex flex-column mt-2 mt-lg-5 ml-0 ml-lg-4 recent-posts">
                             <h3>Недавние посты</h3>
                             <a href="#">Заголовок поста номер один</a>
                             <a href="#">Заголовок поста номер два</a>
@@ -98,7 +105,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>

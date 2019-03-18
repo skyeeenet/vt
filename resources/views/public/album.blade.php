@@ -15,81 +15,63 @@
                 </div>
             </div>
             <div
-                    class="d-flex flex-column-reverse flex-xl-row justify-content-around align-items-center align-items-xl-start">
-                <div class="flex-column justify-content-center align-items-center">
-                    <!-- ROW 1 -->
-                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
-                        <div
-                                class="d-flex flex-row flex-md-column justify-content-between align-items-center alboomSmallPhotoRow">
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                            </a>
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                            </a>
-                        </div>
-                        <!-- /.alboomSmallPhotoRow -->
-                        <div
-                                class="d-flex flex-row flex-md-column justify-content-between align-items-center alboomSmallPhotoRow">
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                            </a>
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                            </a>
-                        </div>
-                        <!-- /.alboomSmallPhotoRow -->
-                        <div class="alboomBigPhoto">
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5 копия 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5 копия 5.png" alt="gallery_photo">
-                            </a>
-                        </div>
-                        <!-- /.alboomBigPhoto -->
+                    class="d-flex flex-column flex-xl-row justify-content-around align-items-center align-items-xl-start">
+                <div class="__gallery flex-column justify-content-center align-items-center">
+                    <div
+                            class="row d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
                     </div>
-                    <!-- /.d-flex flex-column justify-content-center align-items-center -->
-                    <!-- ROW 1 END -->
-                    <!-- ROW 2 -->
-                    <div class="d-flex flex-column flex-md-row-reverse justify-content-center align-items-center">
-                        <div
-                                class="d-flex flex-row flex-md-column justify-content-between align-items-center alboomSmallPhotoRow">
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                            </a>
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                            </a>
-                        </div>
-                        <!-- /.alboomSmallPhotoRow -->
-                        <div
-                                class="d-flex flex-row flex-md-column justify-content-between align-items-center alboomSmallPhotoRow">
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                            </a>
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5.png" alt="gallery_photo">
-                            </a>
-                        </div>
-                        <!-- /.alboomSmallPhotoRow -->
-                        <div class="alboomBigPhoto">
-                            <a data-fancybox="gallery" href="../images/Прямоугольник 5 копия 5.png">
-                                <!-- preview -->
-                                <img src="../images/Прямоугольник 5 копия 5.png" alt="gallery_photo">
-                            </a>
-                        </div>
-                        <!-- /.alboomBigPhoto -->
+                    <div
+                            class="row d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
                     </div>
-                    <!-- /.d-flex flex-column justify-content-center align-items-center -->
-                    <!-- ROW 2 END -->
-                    <div class="row d-flex justify-content-center mt-5 mb-5">
+                    <div
+                            class="row d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
+                        <a data-fancybox="gallery" href="../images/person.png">
+                            <div style="background-image: url('../images/person.png');"
+                                 class="card-gallery-container">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row d-flex flex-row justify-content-center mt-5 mb-5">
                         <div class="pagination roboto18lt">
                             <a href="#">&laquo;</a>
                             <a href="#">1</a>
@@ -103,14 +85,8 @@
                     </div>
                 </div>
                 <div
-                        class="d-flex flex-column justify-content-center align-items-center align-items-xl-start mb-4 mb-lg-0">
-                    <div class="row mt-5">
-                        <form class="search-form m-0" action="#" method="get">
-                                <span><input type="text" placeholder="Поиск..."><button
-                                            type="submit">НАЙТИ</button></span>
-                        </form>
-                    </div>
-                    <div class="row mt-5 d-flex flex-column justify-content-start align-items-start alboomCategory">
+                        class="d-flex flex-column justify-content-center align-items-center align-items-xl-start mb-2 mb-lg-0">
+                    <div class="mt-2 mb-2 alboomCategory recent-posts">
                         <h3>Категории</h3>
                         <a href="#">Категория 1</a>
                         <a href="#">Категория 2</a>

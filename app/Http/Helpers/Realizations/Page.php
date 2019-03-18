@@ -4,8 +4,10 @@ namespace App\Http\Helpers\Realizations;
 
 
 use App\Models\Best;
+use App\Models\Conference;
 use App\Models\Header;
 use App\Models\Image;
+use App\Models\Lecturer;
 use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Slider;
@@ -46,5 +48,19 @@ class Page
     public static function getBests() {
 
         return Best::with('user')->get();
+    }
+
+    public static function getLecturers () {
+        return Lecturer::with('user')->get();
+    }
+
+    public static function getConferenceById($id) {
+
+        return Conference::where('id', $id)->with('info', 'users')->get();
+    }
+
+    public static function getConferenceByType($type) {
+
+        return Conference::where('type', $type)->with('info', 'users')->get();
     }
 }

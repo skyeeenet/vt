@@ -11,9 +11,9 @@
                         <div></div>
                     </div>
                 </div>
-                <span class="dox-text">Документы</span>
-                <div class="row documents">
-                    <div class="col">
+                <div class="dox-text text-center my-5 second-title">Документы</div>
+                <div class="d-block d-md-flex row mb-5 pb-5 my-md-5 py-md-5">
+                    <div class="col mb-3 mb-md-0">
                         <div class="shield d-flex flex-column align-items-center">
                             <img src="../images/shield.svg" alt="">
                             <a href="#" class="roboto24">Гост</a>
@@ -47,31 +47,33 @@
                         <div class="dropdown_element">
                             <p class="roboto24bd">Бакалаврат</p>
                             <p class="roboto18smbd">ВТ-17</p>
-                            <table class="table table-sertif">
-                                <thead class="roboto18smbd bg-light" style="color: #007bff;">
-                                <tr>
-                                    <th style="width: 25%;">ФИО</th>
-                                    <th style="width: 25%;">Руководитель</th>
-                                    <th class="text-right">Тема</th>
-                                </tr>
-                                </thead>
-                                <tbody class="roboto18">
-                                <tr>
-                                    <td>Иванов И. И.</td>
-                                    <td class="roboto18smbd">Иванов И. И.</td>
-                                    <td class="text-right">Автоматизированная система учета и планирования
-                                        обработки
-                                        металла резаньем</td>
-                                </tr>
-                                <tr>
-                                    <td>Иванов И. И.</td>
-                                    <td class="roboto18smbd">Иванов И. И.</td>
-                                    <td class="text-right">Автоматизированная система учета и планирования
-                                        обработки
-                                        металла резаньем</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive-sm">
+                                <table class="table table-sertif">
+                                    <thead class="roboto18smbd bg-light" style="color: #007bff;">
+                                    <tr>
+                                        <th style="width: 25%;">ФИО</th>
+                                        <th style="width: 25%;">Руководитель</th>
+                                        <th class="text-right">Тема</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="roboto18">
+                                    <tr>
+                                        <td>Иванов И. И.</td>
+                                        <td class="roboto18smbd">Иванов И. И.</td>
+                                        <td class="text-right">Автоматизированная система учета и планирования
+                                            обработки
+                                            металла резаньем</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Иванов И. И.</td>
+                                        <td class="roboto18smbd">Иванов И. И.</td>
+                                        <td class="text-right">Автоматизированная система учета и планирования
+                                            обработки
+                                            металла резаньем</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <!-- <div class="row">
                                 <div class="col-3 ml-3 border" style="border: 2px solid #c6c6c6 !important;">
                                     <p class="d-flex justify-content-start roboto18smbd pt-2"

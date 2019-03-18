@@ -16,7 +16,7 @@
                 <div
                         class="d-flex flex-column justify-content-center align-items-center d-lg-block specMainContentText mt-5">
                     <div class="float-right mb-4 mb-lg-0"><img src="../images/Computer_Science.png" alt=""></div>
-                    <p class="roboto18">Спеціальність дає можливість отримати одну з найбільш престижних професій
+                    <p class="roboto18lt">Спеціальність дає можливість отримати одну з найбільш престижних професій
                         IT-програміста,
                         фахівці якої на сьогоднішній день є високооплачуваними і вкрай затребуваними. В процесі
                         навчання Ви опануєте програмування на сучасних алгоритмічних мовах, що входять до
@@ -153,120 +153,120 @@
                 <div class="roboto24bd">1 КУРС</div>
                 <div class="roboto18smbd my-3">1 семестр</div>
                 <div class="row">
-                    <div class="col-xl-2 col-lg-4 col-6">
-                        <div class="listDisciplineElement bg_color_green roboto16 mb-3 py-3 px-1 text-center">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
+                        <div class="listDisciplineElement bg_color_green roboto16 mb-3 py-3 px-0 px-0 text-center">
                             Программирование
                             на С++</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_aquamarine roboto16 mb-3 py-3 px-1 text-center">
                             Математическая
                             логика</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">
                             Инженерная
                             графика</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_aquamarine roboto16 mb-3 py-3 px-1 text-center">
                             Алгебра
                             и геометрия</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">
                             Программирование
                             на С++</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">
                             Математическая
                             логика</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">
                             Инженерная
                             графика</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
                 </div>
                 <div class="roboto18smbd mb-3">2 семестр</div>
                 <div class="row">
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_green roboto16 mb-3 py-3 px-1 text-center">
                             Программирование
                             на С++</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_aquamarine roboto16 mb-3 py-3 px-1 text-center">
                             Математическая
                             логика</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">
                             Инженерная
                             графика</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_aquamarine roboto16 mb-3 py-3 px-1 text-center">
                             Алгебра
                             и геометрия</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">
                             Программирование
                             на С++</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">
                             Математическая
                             логика</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">
                             Инженерная
                             графика</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-6">
+                    <div class="col-xl-2 col-lg-4 col-sm-6 col-12">
                         <div class="listDisciplineElement bg_color_grey roboto16 mb-3 py-3 px-1 text-center">Алгебра
                             и геометрия</div>
                     </div>
@@ -305,7 +305,7 @@
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-10 d-flex justify-content-center">
-                        <p class="roboto18">
+                        <p class="roboto18lt">
                             Студенты старших курсов специальности 122 «Компьютерные науки» – Специализация
                             «Компьютерная
                             механика» имеют возможность пройти практику в странах Евросоюза. Студенты 5-го и 6-го
@@ -329,29 +329,6 @@
         </section>
         <section>
             <div class="container">
-                <div class="d-flex flex-column align-items-center">
-                    <div class="w-100 d-flex flex-column align-items-center mt-5 mb-4">
-                        <h2 class="title_second">Заграничная стажировка</h2>
-                        <div class="d-flex flex-row justify-content-center specDoubledColorLine">
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <p class="roboto18lt">
-                            Студенты старших курсов специальности 122 «Компьютерные науки» – Специализация
-                            «Компьютерная
-                            механика» имеют возможность пройти практику в странах Евросоюза. Студенты 5-го и
-                            6-го курсов
-                            получают стипендию им. Леонарда Эйлера от Немецкого фонда академических обменов
-                            (DAAD). Все
-                            желающие студенты могут стать участником Европейской программы академических
-                            обменов Erasmus, в
-                            рамках которой один или два семестра проходить обучение в одном из университетов
-                            Евросоюза.
-                        </p>
-                    </div>
-                </div>
                 <div class="d-flex justify-content-center mb-4">
                     <div class="gallery">
                         <div class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-around ">

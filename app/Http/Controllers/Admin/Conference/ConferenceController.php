@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Conference;
 
 use App\Http\Controllers\Controller;
 use App\Models\Conference;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class ConferenceController extends Controller
@@ -62,9 +63,11 @@ class ConferenceController extends Controller
     {
         $info = $conference->info;
 
+        $sliders = Slider::select('id')->get();
+
         $users = $conference->users;
 
-        return view('admin.conference.edit', compact('conference', 'info', 'users'));
+        return view('admin.conference.edit', compact('conference', 'info', 'users', 'sliders'));
     }
 
     /**

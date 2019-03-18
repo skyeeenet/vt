@@ -77,7 +77,10 @@ class ConferenceInfoController extends Controller
             'chairman' => $request->input('chairman'),
             'secretary' => $request->input('secretary'),
             'duration' => $request->input('duration'),
-            'show_reg' => $request->input('show')
+            'show_reg' => $request->input('show'),
+            'slider_id' => $request->input('slider'),
+            'protocol' => $request->input('protocol'),
+            'theses' => $request->input('theses'),
         ]);
 
         return redirect()->back();

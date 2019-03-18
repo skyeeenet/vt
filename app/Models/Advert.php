@@ -21,6 +21,6 @@ class Advert extends Model
     {
         $array = $this->toArray();
 
-        return array('short' => $array['short'],'value' => $array['value']);
+        return array('short' => $array['short'],'value' => $array['value'], 'id' => $array['id']);
     }
 }

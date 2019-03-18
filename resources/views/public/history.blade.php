@@ -12,9 +12,8 @@
                             <div></div>
                         </div>
                     </div>
-                    <div class="d-flex flex-column justify-content-center align-items-center d-lg-block mt-5">
-                        <div class="float-none float-lg-right mb-5 mb-lg-0 mx-3"><img src="../images/history.png"
-                                                                                      alt=""></div>
+                    <div class="d-flex w-100 flex-column justify-content-center align-items-center d-lg-block mt-5">
+                        <div class="float-none float-lg-right mb-5 mb-lg-0 mx-3"><img src="../images/history.png" alt=""></div>
                         <p class="roboto16lt">
                             На фоне общего положительного впечатления о работе в плане научной дискуссии хотелось
                             бы

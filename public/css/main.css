@@ -116,6 +116,7 @@ div.MAINBOX {
   font-size: 28px;
   color: #0d0b0b;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .title {
@@ -124,7 +125,7 @@ div.MAINBOX {
   font-size: 32px;
   color: #0d0b0b;
   text-transform: uppercase;
-    text-align: center;
+  text-align: center;
 }
 
 .sub-title {
@@ -150,10 +151,16 @@ div.MAINBOX {
   border-radius: 0 !important;
 }
 
-.second-text{
+.second-text {
   color: #0d0b0b;
 }
 
+.card-image-container {
+  background-position: center;
+  background-size: cover;
+  max-width: 350px;
+  height: 250px;
+}
 
 .t-transf-cap {
   text-transform: capitalize;
@@ -228,12 +235,14 @@ div.MAINBOX {
   line-height: 24px;
 }
 
-.roboto14md p:first-child span  {
+.roboto14md p:first-child span {
   color: #ff8c01;
 }
+
 .roboto14md p:last-child span {
   color: #ff8c01;
 }
+
 .pagination {
   display: inline-block;
 }
@@ -278,8 +287,8 @@ div.MAINBOX {
 }
 
 .history-inner-container img {
-  width: 440px;
-  height: 400px;
+  width: 100%;
+  height: auto;
 }
 
 .news-post-inner img {
@@ -290,25 +299,13 @@ div.MAINBOX {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   margin-top: 30px;
-  /*color: #5cb8d7;*/
-  color: #0d0d0d;
 }
 
 .news-post-inner span {
   display: inline-block;
-  margin-top: 10px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #0d0d0d;
-}
-
-.news-post-inner p {
-  margin-top: 50px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5rem;
 }
 
 .span-with-line:after {
@@ -541,10 +538,9 @@ div.declarationHead {
 
 /* Slick Sliden settigns end */
 
-div.specGreyLine {
-  border: 1px solid #d1d1d1;
+.specGreyLine {
+  border-bottom: 1px solid #e2e2e2;
   width: 100%;
-  margin-top: -30px;
 }
 
 .specHeadContentText {
@@ -701,8 +697,8 @@ div.personInfo div:last-child {
   color: #0d0d0d;
 }
 
-.color_cont{
-  color:#ff8c01;
+.color_cont {
+  color: #ff8c01;
 }
 
 div.buttonGoTo {
@@ -846,6 +842,15 @@ div.alboomCategory a {
   margin-top: 15px;
 }
 
+.card-gallery-container {
+  background-position: center;
+  background-size: cover;
+  max-width: 250px;
+  width: 250px;
+  height: 190px;
+  margin: 10px;
+}
+
 /* andinoriel zone end */
 
 /* vitassuper zone */
@@ -911,7 +916,7 @@ div.alboomCategory a {
   font-size: 24px;
 }
 
-.roboto22md{
+.roboto22md {
   font-size: 22px !important;
   font-family: "Roboto Medium", sans-serif !important;
 }
@@ -940,7 +945,6 @@ div.alboomCategory a {
   font-weight: 400;
 }
 
-
 .roboto18smbd {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
@@ -961,15 +965,20 @@ div.alboomCategory a {
 .roboto16lt {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 300;
 }
 
-.roboto14{
+.roboto14 {
   font-size: 14px;
   font-family: "Roboto Light", sans-serif;
 }
 
-.roboto14md{
+.roboto14-standard {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+
+.roboto14md {
   font-size: 14px;
   font-family: "Roboto Light", sans-serif;
   font-weight: 500;
@@ -1141,8 +1150,8 @@ div.alboomCategory a {
   font-size: 30px;
 }
 
-.schedule-border {
-  /*border: 2px solid rgba(0,0,0,0.1);*/
+.schedule-border div div:last-child p {
+  margin-bottom: 0;
 }
 
 .schedule-date::after {
@@ -1204,55 +1213,9 @@ div.alboomCategory a {
   font-weight: 300;
 }
 
-@media screen and (max-width: 1207px){
-  .roboto18, .roboto18lt {
-    font-size: 16px;
-  }
-
-  .navbar-logo {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-@media screen and (max-width: 770px){
-    .title {
-        font-size: 24px;
-    }
-}
-
-@media screen and (max-width: 493px){
-    .title {
-        font-size: 22px;
-    }
-}
-
-@media screen and (max-width: 420px){
-  .roboto18, .roboto18lt {
-    font-size: 14px;
-  }
-
-  .navbar-logo {
-    width: 40px;
-    height: 40px;
-  }
-
-  div.contactsTopHeader {
-    font-size: 12px;
-  }
-
-  .title {
-      font-size: 18px;
-  }
-}
-
-.best-image {
-  border-radius: 50%;
-  width: 238px;
-  height: 238px;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: center;
+.navbar-logo {
+  width: 80px;
+  height: 80px;
 }
 
 .profile {
@@ -1262,6 +1225,96 @@ div.alboomCategory a {
 
 .profile:hover {
   color: #ff7e11;
+}
+
+@media screen and (max-width: 1207px) {
+  .roboto18, .roboto18lt {
+    font-size: 16px;
+  }
+  .navbar-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card-gallery-container {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    height: 350px;
+  }
+  .__gallery, .__gallery div:not(.pagination)>a{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-gallery-container {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card-gallery-container {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 774px) {
+  .title {
+    font-size: 24px;
+  }
+  .title_second {
+    font-size: 22px;
+  }
+  .card-image-container {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .span-with-line:after {
+    display: none;
+  }
+  .sub-title{
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 493px) {
+  .title {
+    font-size: 22px;
+  }
+  .second-title {
+    font-size: 18px;
+  }
+  .title_second {
+    font-size: 18px;
+  }
+  .sub-title{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .roboto18, .roboto18lt {
+    font-size: 14px;
+  }
+  .roboto16 {
+    font-size: 12px;
+  }
+  .roboto14-standard {
+    font-size: 12px;
+  }
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+  div.contactsTopHeader {
+    font-size: 12px;
+  }
+  .title {
+    font-size: 18px;
+  }
 }
 
 /* HanGerrel zone end */

@@ -13,15 +13,15 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
-                        @forelse($posts as $post)
+                        @forelse($posts_arr as $post)
                         <div class="row news-post mt-5">
                             <div class="news-post-inner">
-                                <img src="../images/photo.png" alt="">
-                                <a href="#">
+                                <img src="{{$post->image['url']}}" alt="">
+                                <a href="{{$post['id']}}">
                                     <h2>{{$post['title']}}</h2>
                                 </a>
-                                <span class="span-with-line mr-3">Дата: Июнь 13, 2019</span>
-                                <span class="ml-3">Автор: Иванов Иван</span>
+                                <span class="span-with-line mr-3">{{$post->created_at}}</span>
+                                <span class="ml-3">{{$post->author['name']}}</span>
                                 <p class="">
                                     {{$post['short_body']}}
                                 </p>
@@ -30,20 +30,20 @@
                         @empty
                             <p>Записи не найдены</p>
                         @endforelse
-
-
-                        <div class="row d-flex justify-content-center mt-5 mb-5">
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="#">1</a>
-                                <a class="active" href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">&raquo;</a>
-                            </div>
-                        </div>
+                        @isset($ads_arr)
+                            @foreach($ads_arr as $ad)
+                                <div class="row news-post mt-5">
+                                    <div class="news-post-inner">
+                                        <a href="{{$ad['id']}}">
+                                            <h2>{{$ad['short']}}</h2>
+                                        </a>
+                                        <p>{{$ad['value']}}</p>
+                                        <span class="span-with-line mr-3">{{$ad->created_at}}</span>
+                                        <span class="ml-3">{{$ad->author['name']}}</span>
+                                    </div>
+                                </div>
+                            @endforeach
+                            @endisset
                     </div>
                     <div class="col-lg-4 col-md-12 d-flex flex-column align-items-center">
                         <div class="row mt-5">

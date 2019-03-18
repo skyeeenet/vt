@@ -34,7 +34,7 @@
                                 <button class="btn btn-primary p-1 schedule-btn" type="submit">Отобразить</button>
                             </form>
                         </div>
-                        <div class="schedule-border mt-4">
+                        <div class="schedule-border my-5">
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-2 d-flex flex-column align-items-center text-center">
                                     <b>I пара</b>
@@ -46,8 +46,8 @@
                                     <img src="../images/lectures.png" alt="">
                                 </div>
                                 <div class="col-4 d-flex flex-column align-items-center">
-                                    <p>Ст.Преп.</p>
-                                    <p>Иванов И.И.</p>
+                                    <p><b>Ст.Преп.</b></p>
+                                    <p><b>Иванов И.И.</b></p>
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-between align-items-center">
@@ -61,8 +61,8 @@
                                     <img src="../images/lectures.png" alt="">
                                 </div>
                                 <div class="col-4 d-flex flex-column align-items-center">
-                                    <p>Ст.Преп.</p>
-                                    <p>Иванов И.И.</p>
+                                    <p><b>Ст.Преп.</b></p>
+                                    <p><b>Иванов И.И.</b></p>
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-between align-items-center">
@@ -76,8 +76,8 @@
                                     <img src="../images/lectures.png" alt="">
                                 </div>
                                 <div class="col-4 d-flex flex-column align-items-center">
-                                    <p>Ст.Преп.</p>
-                                    <p>Иванов И.И.</p>
+                                    <p><b>Ст.Преп.</b></p>
+                                    <p><b>Иванов И.И.</b></p>
                                 </div>
                             </div>
                             <div class="row d-flex justify-content-between align-items-center">
@@ -91,8 +91,8 @@
                                     <img src="../images/lectures.png" alt="">
                                 </div>
                                 <div class="col-4 d-flex flex-column align-items-center">
-                                    <p>Ст.Преп.</p>
-                                    <p>Иванов И.И.</p>
+                                    <p><b>Ст.Преп.</b></p>
+                                    <p><b>Иванов И.И.</b></p>
                                 </div>
                             </div>
                         </div>

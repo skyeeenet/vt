@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Publics\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Conference;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Page;
 
 class PagesController extends Controller
 {
@@ -25,12 +27,16 @@ class PagesController extends Controller
 
     public function confstud() {
 
-        return view('public.confstud');
+        $confs = Page::getConferenceByType('Студенческая наука');
+
+        return view('public.confstud', compact('confs'));
     }
 
     public function confuniv() {
 
-        return view('public.confuniver');
+        $confs = Page::getConferenceByType('Университетская наука');
+
+        return view('public.confuniver', compact('confs'));
     }
 
     public function enroll() {

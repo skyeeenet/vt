@@ -68,3 +68,15 @@
         </section>
     </main>
 @endsection
+
+@section('scripts')
+    <script>
+        $('input[type=file]').change(function(e){
+            $in=$(this);
+            var res = $in.val().replace("C:\\fakepath\\", '');
+            var offset = parseInt((res.length * 60) / 100);
+            res = res.substring(offset);
+            $in.next().html('...' + res);
+        });
+    </script>
+@endsection

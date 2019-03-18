@@ -320,6 +320,7 @@ Route::group(['prefix' => 'messages', 'middleware' => 'auth'], function () {
 });
 
 Route::get('/search', 'SearchController@searchResult')->name('search');
+Route::get('/fullsearch', 'SearchController@fullSearch')->name('fullsearch');
 
 Auth::routes();
 

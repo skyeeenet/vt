@@ -40,6 +40,22 @@
                 <input type="text" class="form-control" id="year" name="duration" value="{{$info->duration}}">
             </div>
             <div class="form-group">
+                <label for="protocol">Протокол проведения</label>
+                <input type="text" class="form-control" id="protocol" name="protocol" value="{{$info->protocol}}">
+            </div>
+            <div class="form-group">
+                <label for="theses">Сборник тезисов докладов</label>
+                <input type="text" class="form-control" id="theses" name="theses" value="{{$info->theses}}">
+            </div>
+            <div class="form-group">
+                <label for="slider">Слайдер</label>
+                <select class="form-control" name="slider" id="slider">
+                    @foreach($sliders as $slider)
+                        <option @if($info->slider_id == $slider->id) selected @endif value="{{$slider->id}}">{{$slider->id}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="show">Отображать возможность регистрации ?</label>
                 <select class="form-control" name="show" id="show">
                     <option @if($info->show_reg == 1) selected @endif value="1">Да</option>

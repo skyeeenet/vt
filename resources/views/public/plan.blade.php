@@ -11,14 +11,15 @@
                         <div></div>
                     </div>
                 </div>
-                <h3 class="sub-title">График работы</h3>
+                <h3 class="sub-title text-center mt-5 mb-3 my-lg-5">График работы</h3>
                 <!-- TABLE BEGIN -->
-                <div class="row d-flex flex-column align-items-center mt-5">
+                <div class="row d-flex flex-column align-items-center">
                     <div class="col-lg-8 col-md-12">
-                        <h2 class="text-center table-title">Декабрь 2019</h2>
+                        <!-- <h2 class="text-center table-title">Декабрь 2019</h2> -->
                         <div class="table-responsive mt-4">
                             <table class="table table-bordered">
                                 <thead>
+                                <span class="table-title">Декабрь 2019</span>
                                 <tr>
                                     <th>Понедельник</th>
                                     <th>Вторник</th>
@@ -79,7 +80,7 @@
                             </table>
                         </div>
                         <div>
-                            <form class="d-flex w-100 justify-content-between" action="">
+                            <form class="d-block d-md-flex w-100 offset-4 offset-md-0 justify-content-md-between" action="">
                                 <p><input class="mr-2" type="radio" checked name="sel">1 АТТЕСТАЦИЯ</p>
                                 <p><input class="mr-2" type="radio" name="sel">2 АТТЕСТАЦИЯ</p>
                                 <p><input class="mr-2" type="radio" name="sel">СЕССИЯ</p>

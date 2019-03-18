@@ -17,4 +17,9 @@ class Conference extends Model
 
         return $this->hasMany(Conference_user::class);
     }
+
+    public function slider() {
+
+        return $this->hasManyThrough(Slider::class, Conference_info::class, 'conference_id', 'id', 'slider_id');
+    }
 }
