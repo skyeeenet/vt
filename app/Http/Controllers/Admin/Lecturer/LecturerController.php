@@ -51,7 +51,10 @@ class LecturerController extends Controller
 
     public function edit(Lecturer $lecturer)
     {
-        return view('admin.lecturers', compact('lecturer'));
+
+        $users = User::all();
+
+        return view('admin.lecturers.edit', compact('lecturer', 'users'));
     }
 
     public function update(Request $request, Lecturer $lecturer)

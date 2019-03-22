@@ -13,8 +13,9 @@
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8">
-                        <div class="row mt-4 d-flex justify-content-end">
-                            <form class="mr-3" action="" method="post">
+
+                        <div class="row mt-4 d-flex justify-content-center">
+                            <form class="mr-3" id="schedule-inputs" action="" method="post">
                                 <select name="day" id="day">
                                     <option value="Понедельник">Понедельник</option>
                                     <option value="Вторник">Вторник</option>
@@ -24,81 +25,113 @@
                                     <option value="Суббота">Суббота</option>
                                 </select>
                                 <select name="week" id="week">
-                                    <option value="1">Четная</option>
-                                    <option value="2">Нечетная</option>
+                                    @foreach($weeks as $week)
+                                        <option value="{{$week->id}}">{{$week->value}}</option>
+                                    @endforeach
                                 </select>
-                                <select name="" id="">
-                                    <option value="">ВТ-18</option>
-                                    <option value="">ВТ-17</option>
+                                <select name="group" id="group">
+                                    @foreach($groups as $group)
+                                        <option value="{{$group->id}}">{{$group->value}}</option>
+                                    @endforeach
                                 </select>
-                                <button class="btn btn-primary p-1 schedule-btn" type="submit">Отобразить</button>
+                                <button id="send" class="btn btn-primary p-1 schedule-btn" type="submit">Отобразить</button>
                             </form>
                         </div>
-                        <div class="schedule-border my-5">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="col-2 d-flex flex-column align-items-center text-center">
-                                    <b>I пара</b>
-                                </div>
-                                <div class="col-4 d-flex flex-column align-items-center">
-                                    <p class="m-0">Основы численных методов</p>
-                                </div>
-                                <div class="col-2 d-flex flex-column align-items-center">
-                                    <img src="../images/lectures.png" alt="">
-                                </div>
-                                <div class="col-4 d-flex flex-column align-items-center">
-                                    <p><b>Ст.Преп.</b></p>
-                                    <p><b>Иванов И.И.</b></p>
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="col-2 d-flex flex-column align-items-center text-center">
-                                    <b>II пара</b>
-                                </div>
-                                <div class="col-4 d-flex flex-column align-items-center">
-                                    <p class="m-0">Основы численных методов</p>
-                                </div>
-                                <div class="col-2 d-flex flex-column align-items-center">
-                                    <img src="../images/lectures.png" alt="">
-                                </div>
-                                <div class="col-4 d-flex flex-column align-items-center">
-                                    <p><b>Ст.Преп.</b></p>
-                                    <p><b>Иванов И.И.</b></p>
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="col-2 d-flex flex-column align-items-center text-center">
-                                    <b>III пара</b>
-                                </div>
-                                <div class="col-4 d-flex flex-column align-items-center">
-                                    <p class="m-0">Основы численных методов</p>
-                                </div>
-                                <div class="col-2 d-flex flex-column align-items-center">
-                                    <img src="../images/lectures.png" alt="">
-                                </div>
-                                <div class="col-4 d-flex flex-column align-items-center">
-                                    <p><b>Ст.Преп.</b></p>
-                                    <p><b>Иванов И.И.</b></p>
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="col-2 d-flex flex-column align-items-center text-center">
-                                    <b>IV пара</b>
-                                </div>
-                                <div class="col-4 d-flex flex-column align-items-center">
-                                    <p class="m-0">Основы численных методов</p>
-                                </div>
-                                <div class="col-2 d-flex flex-column align-items-center">
-                                    <img src="../images/lectures.png" alt="">
-                                </div>
-                                <div class="col-4 d-flex flex-column align-items-center">
-                                    <p><b>Ст.Преп.</b></p>
-                                    <p><b>Иванов И.И.</b></p>
-                                </div>
-                            </div>
-                        </div>
+
+                        <table class="table table-responsive-lg mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Пара</th>
+                                    <th>Дисциплина</th>
+                                    <th>Тип пары</th>
+                                    <th>Преподаватель</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>
         </section>
     </main>
+@endsection
+
+@section('scripts')
+    <script>
+
+        const send = function (url, data) {
+
+            const request = $.ajax({
+                url: url,
+                type: "post",
+                data: data
+            });
+
+            request.done(function (response, textStatus, jqXHR){
+                // Log a message to the console
+                console.log(response)
+                build(response)
+            });
+
+            request.fail(function (jqXHR, textStatus, errorThrown){
+                // Log the error to the console
+                console.error(
+                    "The following error occurred: "+
+                    textStatus, errorThrown
+                );
+            });
+
+        };
+
+        const build = function (data) {
+
+            console.log(data)
+
+            let body = $('#table-body');
+
+            body.empty();
+
+            data.forEach(function (item) {
+
+                console.log(item['occupation']['value'])
+
+                body.append('<tr>'
+                    +'<td>'+item['number']+'</td>'
+                    +'<td>'+item['subject']['value']+'</td>'
+                    +'<td>'+item['occupation']['value']+'</td>'
+                    +'<td>'+ item['lecturer_degree'] +'<br>'+item['lecturer_name']+'</td>'
+                    +'</tr>');
+            });
+        }
+
+        $(function() {
+
+            $('#send').on('click', function (e) {
+
+                e.preventDefault()
+
+                const $form_inputs = $('#schedule-inputs select option:selected')
+
+                const resources = {
+                    day: $form_inputs[0]['value'],
+                    week: $form_inputs[1]['value'],
+                    group: $form_inputs[2]['value']
+                }
+
+                //const result_string = JSON.stringify(resources)
+
+                const result_string = resources
+                
+                const url = '/api/schedule'
+
+                send(url, result_string)
+
+            });
+
+        });
+
+    </script>
 @endsection

@@ -22,3 +22,5 @@ Route::get('/offset', function() {
         'offset' => \App\Models\Administration::where('type', 'offset')->first()['value']
     ], 200);
 });
+
+Route::post('/schedule', 'ApiController@show');

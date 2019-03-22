@@ -133,11 +133,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
         Route::get('/','Lecturer\LecturerController@index')->name('admin.lecturers');
         Route::get('/create','Lecturer\LecturerController@create')->name('admin.lecturers.create');
-        Route::get('/{role}','Lecturer\LecturerController@show');
-        Route::get('/edit/{role}','Lecturer\LecturerController@edit');
+        Route::get('/{lecturer}','Lecturer\LecturerController@show');
+        Route::get('/edit/{lecturer}','Lecturer\LecturerController@edit');
         Route::post('/store','Lecturer\LecturerController@store')->name('admin.lecturers.store');
-        Route::post('/update/{role}','Lecturer\LecturerController@update');
-        Route::post('/delete/{role}','Lecturer\LecturerController@destroy');
+        Route::post('/update/{lecturer}','Lecturer\LecturerController@update');
+        Route::post('/delete/{lecturer}','Lecturer\LecturerController@destroy');
     });
 
     Route::group(['prefix' => 'subjects'], function () {
@@ -298,17 +298,20 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
 });
 
 Route::get('/ads', 'Publics\Pages\PagesController@ads');
+Route::get('/ads/{advert}', 'Publics\Pages\PagesController@singleadvert');
 Route::get('/album', 'Publics\Pages\PagesController@album');
 Route::get('/conf/stud', 'Publics\Pages\PagesController@confstud');
 Route::get('/conf/univ', 'Publics\Pages\PagesController@confuniv');
 Route::get('/enroll', 'Publics\Pages\PagesController@enroll');
 Route::get('/history', 'Publics\Pages\PagesController@history');
 Route::get('/news', 'Publics\Pages\PagesController@news');
+Route::get('/news/{post}', 'Publics\Pages\PagesController@singlenews');
 Route::get('/plan', 'Publics\Pages\PagesController@plan');
 Route::get('/schedule', 'Publics\Pages\PagesController@schedule');
 Route::get('/certification', 'Publics\Pages\PagesController@certification');
 Route::get('/speciality', 'Publics\Pages\PagesController@speciality');
 Route::get('/team', 'Publics\Pages\PagesController@team');
+Route::get('/team/{lecturer}', 'Publics\Pages\PagesController@teamsingle')->name('lecturer');
 Route::get('/contacts', 'Publics\Pages\PagesController@contacts');
 
 Route::group(['prefix' => 'messages', 'middleware' => 'auth'], function () {
@@ -320,6 +323,7 @@ Route::group(['prefix' => 'messages', 'middleware' => 'auth'], function () {
 });
 
 Route::get('/search', 'SearchController@searchResult')->name('search');
+Route::get('/search/ads', 'SearchController@searchads')->name('searchads');
 Route::get('/fullsearch', 'SearchController@fullSearch')->name('fullsearch');
 
 Auth::routes();

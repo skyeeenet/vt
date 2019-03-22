@@ -15,7 +15,8 @@
         "laravel/framework": "5.7.*",
         "laravel/scout": "^7.1",
         "laravel/tinker": "^1.0",
-        "mews/captcha": "^2.2"
+        "mews/captcha": "^2.2",
+      "ext-json": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

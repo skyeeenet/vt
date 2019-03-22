@@ -18,6 +18,7 @@
                 <th>Группа</th>
                 <th>Вид занятия</th>
                 <th>Предмет</th>
+                <th>Преподаватель</th>
                 <th>Редактировать</th>
                 <th>Удалить</th>
             </tr>
@@ -73,6 +74,7 @@
                         +'<td>'+item['group']['value']+'</td>'
                         +'<td>'+item['occupation']['value']+'</td>'
                         +'<td>'+item['subject']['value']+'</td>'
+                        +'<td>'+ item['lecturer_degree'] +'<br>'+item['lecturer_name']+'</td>'
                         +'<td><a class="btn btn-primary" href="schedule/edit/'+item['id']+'"><i class="far fa-edit"></i></a></td>'
                         +'<td><form action="schedule/delete/'+item['id']+'" method="post">{{csrf_field()}}<button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></form></td>'
                     +'</tr>');

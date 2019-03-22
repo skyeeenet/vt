@@ -14,15 +14,15 @@
             </div>
             <div class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-around align-items-center my-5">
                 <div>
-                    <img class="hoverEffect" src="../images/person.png" alt="person">
+                    <img class="hoverEffect" src="{{$lecturer['user']['image']}}" alt="person">
                 </div>
                 <div class="text-center text-lg-left mt-4 mt-lg-0">
                     <div class="personInfo" style="margin-bottom: 40px;">
-                        <div>Иванов Иван Иванович</div>
-                        <div>Старший преподаватель</div>
+                        <div>{{$lecturer['user']['name']}}</div>
+                        <div>{{$lecturer['position']}}</div>
                     </div>
-                    <div><span class="condensed">Должность:</span> Доцент</div>
-                    <div style="margin-bottom: 40px;"><span class="condensed">Кафедра:</span> Информатика</div>
+                    <div><span class="condensed">Должность:</span> {{$lecturer['position']}}</div>
+                    <div style="margin-bottom: 40px;"><span class="condensed">Кафедра:</span> {{$lecturer['department']}}</div>
                     <div class="mb-4 condensed">Контакты</div>
                     <div class="d-flex flex-row justify-content-around align-items-center mb-4">
                         <div class="d-flex flex-column justify-content-center align-items-center">
@@ -31,7 +31,7 @@
                                 Email
                             </div>
                             <div id="email_popup" class="popup_element">
-                                <a href="mailto:#">email@email.com</a>
+                                <a href="mailto:#">{{$lecturer['email']}}</a>
                             </div>
                             <!-- /.text-center -->
                         </div>
@@ -42,7 +42,7 @@
                                 Телефон
                             </div>
                             <div id="phone_popup" class="popup_element">
-                                +380647845125
+                                {{$lecturer['phone']}}
                             </div>
                             <!-- /.text-center -->
                         </div>
@@ -54,7 +54,7 @@
                                 Facebook
                             </div>
                             <div id="facebook_popup" class="popup_element">
-                                <a href="#">facebook.com/user404</a>
+                                <a href="{{$lecturer['facebook']}}">{{$lecturer['facebook']}}4</a>
                             </div>
                             <!-- /.text-center -->
                         </div>
@@ -63,7 +63,7 @@
                     <div class="mb-3 condensed">Наукометрика</div>
                     <div class="d-flex flex-row justify-content-between align-items-center">
                         <div class="mr-4 condensed">Электронный репозиторий НТБ ПГТУ</div>
-                        <a href="#" style="color: inherit;">
+                        <a href="{{$lecturer['ntb']}}" style="color: inherit;">
                             <div class="buttonGoTo px-3 py-1 roboto16">Перейти</div>
                         </a>
                     </div>

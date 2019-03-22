@@ -31,8 +31,6 @@ div.MAINBOX {
   overflow-x: hidden !important;
 }
 
-/* skyeeenet zone */
-
 .navbar {
   z-index: 10;
 }
@@ -42,54 +40,6 @@ div.MAINBOX {
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
-}
-
-.menu-btn {
-  z-index: 10;
-  display: block;
-  width: 50px;
-  height: 50px;
-  position: relative;
-}
-
-.menu-btn span, .menu-btn span::before, .menu-btn span::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -1px;
-  margin-left: -10px;
-  width: 20px;
-  height: 2px;
-  background-color: black;
-}
-
-.menu-btn span::before, .menu-btn span::after {
-  content: '';
-  display: block;
-  transition: .2s;
-}
-
-.menu-btn span::before {
-  /*Поднимаем псевдоэлемент на 5px */
-  transform: translateY(-5px);
-}
-
-.menu-btn span::after {
-  transform: translateY(5px);
-}
-
-/* крестик*/
-
-.menu-btn-active span {
-  height: 0;
-}
-
-.menu-btn-active span::before {
-  transform: rotate(45deg);
-}
-
-.menu-btn-active span::after {
-  transform: rotate(-45deg);
 }
 
 .thebest-container {
@@ -102,12 +52,6 @@ div.MAINBOX {
   height: 300px;
   width: 300px;
   border-radius: 100%;
-}
-
-#btn-show {
-  display: none;
-  cursor: pointer;
-  z-index: 100;
 }
 
 .title_second {
@@ -167,7 +111,6 @@ div.MAINBOX {
 }
 
 .adv-item {
-  /*border: 1px solid #c6c6c6;*/
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
 }
@@ -243,7 +186,7 @@ div.MAINBOX {
   color: #ff8c01;
 }
 
-.pagination {
+/*.pagination {
   display: inline-block;
 }
 
@@ -261,7 +204,7 @@ div.MAINBOX {
 
 .pagination a:hover:not(.active) {
   background-color: #ddd;
-}
+}*/
 
 .slick-center {
   transform: scale(1.2, 1.2);
@@ -403,10 +346,6 @@ div.MAINBOX {
   font-size: 14px;
 }
 
-/* skyeeenet zone end */
-
-/* andinoriel zone */
-
 div.topHeader {
   background-color: #0d0b0b;
 }
@@ -481,8 +420,6 @@ div.declarationHead {
   text-transform: uppercase;
 }
 
-/* Slick Slider settings */
-
 .dotsSlck {
   outline: none;
   position: absolute;
@@ -525,7 +462,6 @@ div.declarationHead {
   width: 30px;
   height: 2px;
   background-color: white;
-  /*content: url("../../images/sliderButton.png");*/
   opacity: 0.25;
   color: white;
 }
@@ -535,8 +471,6 @@ div.declarationHead {
   opacity: 1;
   color: white;
 }
-
-/* Slick Sliden settigns end */
 
 .specGreyLine {
   border-bottom: 1px solid #e2e2e2;
@@ -845,15 +779,11 @@ div.alboomCategory a {
 .card-gallery-container {
   background-position: center;
   background-size: cover;
-  max-width: 250px;
-  width: 250px;
-  height: 190px;
+  max-width: 400px;
+  width: 100%;
+  height: 400px;
   margin: 10px;
 }
-
-/* andinoriel zone end */
-
-/* vitassuper zone */
 
 .vit_foot_main_text {
   text-transform: uppercase;
@@ -1002,12 +932,6 @@ div.alboomCategory a {
   top: 55px;
 }
 
-@media screen and (max-width: 992px) {
-  .vit_dropdownchild {
-    display: none !important;
-  }
-}
-
 .vit_dropdownchild a:hover {
   color: #b1054a;
 }
@@ -1116,10 +1040,6 @@ div.alboomCategory a {
   max-width: 360px;
 }
 
-/* vitassuper zone end */
-
-/* skyeeenet zone */
-
 .prev {
   display: inline-block;
   position: absolute;
@@ -1182,17 +1102,9 @@ div.alboomCategory a {
   border: none;
 }
 
-/* skyeeenet zone end */
-
-/* intusmortius zone */
-
 .gallery {
   max-width: 60%;
 }
-
-/* intusmortius zone end */
-
-/* HanGerrel zone */
 
 .bg_color_green {
   background-color: #4caf50;
@@ -1227,6 +1139,10 @@ div.alboomCategory a {
   color: #ff7e11;
 }
 
+.navbar-logo-text {
+  display: none;
+}
+
 @media screen and (max-width: 1207px) {
   .roboto18, .roboto18lt {
     font-size: 16px;
@@ -1246,6 +1162,9 @@ div.alboomCategory a {
   }
   .__gallery, .__gallery div:not(.pagination)>a{
     width: 100%;
+  }
+  .vit_dropdownchild {
+    display: none !important;
   }
 }
 
@@ -1305,9 +1224,11 @@ div.alboomCategory a {
   .roboto14-standard {
     font-size: 12px;
   }
-  .navbar-logo {
-    width: 40px;
-    height: 40px;
+  .logo-text {
+    display: none;
+  }
+  .navbar-logo-text {
+    display: inline-block;
   }
   div.contactsTopHeader {
     font-size: 12px;
@@ -1316,5 +1237,3 @@ div.alboomCategory a {
     font-size: 18px;
   }
 }
-
-/* HanGerrel zone end */

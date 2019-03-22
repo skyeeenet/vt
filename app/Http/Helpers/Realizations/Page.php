@@ -3,6 +3,7 @@
 namespace App\Http\Helpers\Realizations;
 
 
+use App\Models\Advert;
 use App\Models\Best;
 use App\Models\Conference;
 use App\Models\Header;
@@ -12,9 +13,15 @@ use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Slider;
 use App\Models\Text;
+use App\User;
 
 class Page
 {
+    public static function getAds() {
+
+        return Advert::latest()->paginate(10);
+    }
+
     public static function getTextById($id) {
 
         return Text::where('id', $id)->first();
@@ -45,6 +52,11 @@ class Page
         return Post::latest()->limit(6)->get();
     }
 
+    public static function getNews() {
+
+        return Post::latest()->paginate(6);
+    }
+
     public static function getBests() {
 
         return Best::with('user')->get();
@@ -62,5 +74,10 @@ class Page
     public static function getConferenceByType($type) {
 
         return Conference::where('type', $type)->with('info', 'users')->get();
+    }
+
+    public static function getUserById($id) {
+
+        return User::where('id', $id)->first();
     }
 }

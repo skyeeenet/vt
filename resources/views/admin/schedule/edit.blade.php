@@ -62,6 +62,16 @@
                         <option @if($occupation->id == $schedule->occupation_type_id) selected @endif value="{{$occupation->id}}">{{$occupation->value}}</option>
                     @endforeach
                 </select>
+                <label for="lecturer">Преподаватель</label>
+                <div class="form-group">
+                    <select class="form-control" name="lecturer_id" id="lecturer">
+                        @forelse($lecturers as $lecturer)
+                            <option @if($lecturer->id == $schedule->lecturer_id) selected @endif value="{{$lecturer->id}}">{{$lecturer['user']['name']}}</option>
+                        @empty
+                            <option value="">Пусто</option>
+                        @endforelse
+                    </select>
+                </div>
                 <button class="btn btn-primary" type="sumbit">Обновить</button>
             </form>
         </div>

@@ -26,36 +26,13 @@
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="teacher col-lg-4 col-md-6 col-12 mt-3 d-flex flex-column align-items-center">
-                        <img src="../images/img.jpg" alt="">
-                        <a class="mt-3" href="#"><h3>Иванов И.В.</h3></a>
-                        <p>доктор технических наук, профессор</p>
-                    </div>
-                    <div class="teacher col-lg-4 col-md-6 col-12 mt-3 d-flex flex-column align-items-center">
-                        <img src="../images/img.jpg" alt="">
-                        <a class="mt-3" href="#"><h3>Иванов И.В.</h3></a>
-                        <p>доктор технических наук, профессор</p>
-                    </div>
-                    <div class="teacher col-lg-4 col-md-6 col-12 mt-3 d-flex flex-column align-items-center">
-                        <img src="../images/img.jpg" alt="">
-                        <a class="mt-3" href="#"><h3>Иванов И.В.</h3></a>
-                        <p>доктор технических наук, профессор</p>
-                    </div>
-                    <div class="teacher col-lg-4 col-md-6 col-12 mt-3 d-flex flex-column align-items-center">
-                        <img src="../images/img.jpg" alt="">
-                        <a class="mt-3" href="#"><h3>Иванов И.В.</h3></a>
-                        <p>доктор технических наук, профессор</p>
-                    </div>
-                    <div class="teacher col-lg-4 col-md-6 col-12 mt-3 d-flex flex-column align-items-center">
-                        <img src="../images/img.jpg" alt="">
-                        <a class="mt-3" href="#"><h3>Иванов И.В.</h3></a>
-                        <p>доктор технических наук, профессор</p>
-                    </div>
-                    <div class="teacher col-lg-4 col-md-6 col-12 mt-3 d-flex flex-column align-items-center">
-                        <img src="../images/img.jpg" alt="">
-                        <a class="mt-3" href="#"><h3>Иванов И.В.</h3></a>
-                        <p>доктор технических наук, профессор</p>
-                    </div>
+                    @foreach($lecturers as $lecturer)
+                        <div class="teacher col-lg-4 col-md-6 col-12 mt-3 d-flex flex-column align-items-center">
+                            <img src="{{$lecturer['user']['image']}}" alt="">
+                            <a class="mt-3" href="{{route('lecturer', $lecturer->id)}}"><h3>{{$lecturer['user']['name']}}</h3></a>
+                            <p>{{$lecturer['position']}}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>

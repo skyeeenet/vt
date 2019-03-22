@@ -100,7 +100,7 @@
                         <div class="roboto16">
                             Небольшое описание специальности
                         </div>
-                        <a href="#">
+                        <a href="/speciality">
                             <div class="someBlockButton mt-3">
                                 Подробнее
                             </div>
@@ -112,7 +112,7 @@
                         <div class="roboto16">
                             Небольшое описание специальности
                         </div>
-                        <a href="#">
+                        <a href="/speciality">
                             <div class="someBlockButton mt-3">
                                 Подробнее
                             </div>
@@ -124,7 +124,7 @@
                         <div class="roboto16">
                             Небольшое описание специальности
                         </div>
-                        <a href="#">
+                        <a href="/speciality">
                             <div class="someBlockButton mt-3">
                                 Подробнее
                             </div>

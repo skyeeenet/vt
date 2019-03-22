@@ -25,6 +25,15 @@
                     <p>Данные отсутствуют</p>
                 @endforelse
             </select>
+            <div class="form-group">
+                <select class="form-control" name="lecturer_id" id="lecturer">
+                    @forelse($lecturers as $lecturer)
+                        <option value="{{$lecturer->id}}">{{$lecturer['user']['name']}}</option>
+                    @empty
+                        <option value="">Пусто</option>
+                    @endforelse
+                </select>
+            </div>
             <label for="number">Пара</label>
             <select class="form-control mb-4" name="number" id="number">
                 <option value="1">1 Пара</option>

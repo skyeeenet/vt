@@ -9,51 +9,27 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- Animate CSS-->
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/animate.css') }}" />
     <!-- Another CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/main.css') }}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/slick.css') }}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/slick-theme.css') }}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/main.css') }}" />
     @yield('styles')
-    <style>
-        .user-form {
-            position: relative;
-        }
-        .user-form ul {
-            display: none;
-            position: absolute;
-            top: 22px;
-            z-index: 100;
-            background-color: white;
-        }
-        .user-form ul li {
-            min-width: 150px;
-            padding: 10px;
-        }
-        .user-form ul li {
-            border-bottom: 1px solid black;
-        }
-        .user-form:hover ul {
-            display: block;
-        }
-    </style>
 </head>
 <body>
 <div class="MAINBOX">
 <header>
     <div class="container-fluid topHeader">
         <div class="container">
-            <div class="d-flex flex-row justify-content-around justify-content-md-between align-items-center pt-3 pb-3 pt-lg-2 pb-lg-2">
-                <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center currentWeek">
+            <div class="d-flex flex-column flex-sm-row justify-content-around justify-content-md-between align-items-center pt-3 pb-3 pt-lg-2 pb-lg-2">
+                <div class="d-flex mb-3 mb-sm-0 flex-column flex-sm-row justify-content-center align-items-center currentWeek">
                     <div>Текущая&nbsp;неделя:&nbsp;</div>
-                    <div id="current_week">Четная</div>
+                    <div id="current_week"></div>
                 </div>
                 <!-- /.currentWeek -->
                 <div class="d-flex flex-column flex-md-row justify-content-around align-items-start align-items-md-center contactsTopHeader">
-                    <div class="mt-md-0 mt-md-0 ml-3"><img src="/images/placeholder.svg" heigth="20px"
+                    <div class="mt-md-0 mt-md-0 ml-3"><img src="./images/placeholder.svg" heigth="20px"
                                                            width="20px" alt="position"><span class="pl-2">{{Page::getHeaderByType('place')}}</span></div>
-                    <div class="mt-2 mt-md-0 ml-3"><img src="/images/email.svg" heigth="20px" width="20px"
+                    <div class="mt-2 mt-md-0 ml-3"><img src="./images/email.svg" heigth="20px" width="20px"
                                                         alt="mail"><span class="pl-2">{{Page::getHeaderByType('email')}}</span></div>
                     @if(Auth::guest()) <div class="mt-2 mt-md-0 ml-3">
                         <img src="{{ asset('images/login.svg') }}" height="20px" width="20px" alt="registration"><a
@@ -84,14 +60,13 @@
                         </ul>
                     @endif
                 </div>
-                <!-- /.contactsTopHeader -->
             </div>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
             <div class="col-md-4 col-2">
-                <a class="ml-md-2 ml-0 navbar-brand roboto18" href="/"><img style="width: {{Page::getHeaderByType('width').'px'}}; height: {{Page::getHeaderByType('height').'px'}};" class="mr-3 navbar-logo" src="{{Page::getHeaderByType('logo')}}" alt="">{{Page::getHeaderByType('logo-text')}}</a>
+                <a class="ml-md-2 ml-0 navbar-brand roboto18" href="/"><img style="width: {{Page::getHeaderByType('width').'px'}}; height: {{Page::getHeaderByType('height').'px'}};" class="mr-3 navbar-logo" src="{{Page::getHeaderByType('logo')}}" alt=""><span class="logo-text">{{Page::getHeaderByType('logo-text')}}</span></a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -105,7 +80,7 @@
                     @forelse(Page::getMenu() as $item)
                         @if (isset($item['submenu'][0]))
                             <li class="nav-item dropdown mr-md-3">
-                                <a class="nav-link dropdown-toggle roboto18lt" href="#" id="enrollee" role="button"
+                                <a class="nav-link dropdown-toggle roboto18" href="#" id="enrollee" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{$item['item']}}
                                 </a>
@@ -117,7 +92,7 @@
                             </li>
                         @else
                             <li class="nav-item active mr-md-3">
-                                <a class="nav-link roboto18lt" href="{{$item['url']}}">{{$item['item']}}<span class="sr-only"></span></a>
+                                <a class="nav-link roboto18" href="{{$item['url']}}">{{$item['item']}}<span class="sr-only"></span></a>
                             </li>
                         @endif
                     @empty

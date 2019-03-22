@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Publics\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Advert;
 use App\Models\Conference;
+use App\Models\Group;
+use App\Models\Lecturer;
 use App\Models\Menu;
+use App\Models\Post;
+use App\Models\Week;
 use Illuminate\Http\Request;
 use Page;
 
@@ -17,7 +22,16 @@ class PagesController extends Controller
 
     public function ads() {
 
-        return view('public.ads');
+        $posts_arr = Page::getAds();
+
+        return view('public.ads', compact('posts_arr'));
+    }
+
+    public function singleadvert(Advert $advert) {
+
+        $post = $advert;
+
+        return view('public.adssingle', compact('post'));
     }
 
     public function album() {
@@ -46,12 +60,23 @@ class PagesController extends Controller
 
     public function history() {
 
-        return view('public.history');
+        $image = Page::getImageById(5)['url'];
+
+        $text = Page::getTextById(4)['value'];
+
+        return view('public.history', compact('image', 'text'));
     }
 
     public function news() {
 
-        return view('public.news');
+        $posts = Page::getNews();
+
+        return view('public.news', compact('posts'));
+    }
+
+    public function singlenews(Post $post) {
+
+        return view('public.singlenews', compact('post'));
     }
 
     public function plan() {
@@ -61,7 +86,11 @@ class PagesController extends Controller
 
     public function schedule() {
 
-        return view('public.schedule');
+        $groups = Group::select('id', 'value')->get();
+
+        $weeks = Week::select('id', 'value')->get();
+
+        return view('public.schedule', compact('groups', 'weeks'));
     }
 
     public function certification() {
@@ -76,7 +105,14 @@ class PagesController extends Controller
 
     public function team() {
 
-        return view('public.team');
+        $lecturers = Page::getLecturers();
+
+        return view('public.team', compact('lecturers'));
+    }
+
+    public function teamsingle(Lecturer $lecturer) {
+
+        return view('public.teamsingle', compact('lecturer'));
     }
 
     public function contacts() {
