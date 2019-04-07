@@ -18,10 +18,10 @@ As a back-end developer, i wrote the whole back-end part, from the admin panel a
         * DB_PASSWORD= (Enter your DB user password)
     5. Run Web Server and open "project_name" in browser
 ### My project supports:
-    * Editing information on pages from the admin panel
-    * Dynamic menu editing
-    * Adding images to the general pool of photos. Automatic image compression and image resolution change depending on the entered values     
-    * Adding images is possible both locally and by reference
+* Editing information on pages from the admin panel
+* Dynamic menu editing
+* Adding images to the general pool of photos. Automatic image compression and image resolution change depending on the entered values     
+* Adding images is possible both locally and by reference
     * Implemented message system
     * Implemented user role system
     * Implemented captcha
