@@ -19,12 +19,14 @@
                             Объявления
                         </div>
                         <div class="d-flex flex-column justify-content-center align-items-center declaration-text">
-                            <p> Недавние события повлекли за собой массу протестов1 </p>
-                            <p> Недавние события повлекли за собой массу протестов2 </p>
-                            <p> Недавние события повлекли за собой массу протестов3 </p>
+                            @forelse(Page::getAdsByAmount(3) as $item)
+                                <p><a href="{{route('singAdvert', $item->id)}}">{{$item->short}}</a></p>
+                                @empty
+                                <p>Объявления отсутствуют</p>
+                            @endforelse
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a class="link" href="#">Все объявления</a>
+                            <a class="link" href="{{route('adverts')}}">Все объявления</a>
                         </div>
                     </div>
                     <!-- /.col-lg-4 -->

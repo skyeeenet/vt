@@ -4,7 +4,9 @@ namespace App\Http\Helpers\Realizations;
 
 
 use App\Models\Advert;
+use App\Models\Album_Category;
 use App\Models\Best;
+use App\Models\Category;
 use App\Models\Conference;
 use App\Models\Header;
 use App\Models\Image;
@@ -20,6 +22,16 @@ class Page
     public static function getAds() {
 
         return Advert::latest()->paginate(10);
+    }
+
+    public static function getAdsByAmount($amount) {
+
+        return Advert::latest()->limit($amount)->get();
+    }
+
+    public static function getCategories() {
+
+        return Category::all();
     }
 
     public static function getTextById($id) {

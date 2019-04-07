@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Publics\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\Advert;
+use App\Models\Category;
 use App\Models\Conference;
 use App\Models\Group;
 use App\Models\Lecturer;
@@ -37,6 +38,11 @@ class PagesController extends Controller
     public function album() {
 
         return view('public.album');
+    }
+
+    public function albumCategory(Category $category) {
+
+        return $category;
     }
 
     public function confstud() {

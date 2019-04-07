@@ -40,7 +40,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link profile dropdown-toggle roboto14-standard" href="#" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Иванов Иван Иванович
+                                    {{Auth::user()->name}}
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/user">Мой профиль</a>

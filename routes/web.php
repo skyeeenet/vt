@@ -297,9 +297,10 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
     Route::post('/delete', 'UserController@destroy')->name('user.delete');
 });
 
-Route::get('/ads', 'Publics\Pages\PagesController@ads');
-Route::get('/ads/{advert}', 'Publics\Pages\PagesController@singleadvert');
+Route::get('/ads', 'Publics\Pages\PagesController@ads')->name('adverts');
+Route::get('/ads/{advert}', 'Publics\Pages\PagesController@singleadvert')->name('singAdvert');
 Route::get('/album', 'Publics\Pages\PagesController@album');
+Route::get('/album/category/{category}', 'Publics\Pages\PagesController@albumCategory');
 Route::get('/conf/stud', 'Publics\Pages\PagesController@confstud');
 Route::get('/conf/univ', 'Publics\Pages\PagesController@confuniv');
 Route::get('/enroll', 'Publics\Pages\PagesController@enroll');

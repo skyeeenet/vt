@@ -45,13 +45,6 @@ div.MAINBOX {
 .thebest-container {
   width: 100%;
   display: flex;
-  flex-direction: column;
-}
-
-.thebest-container img {
-  height: 300px;
-  width: 300px;
-  border-radius: 100%;
 }
 
 .title_second {
@@ -217,16 +210,21 @@ div.MAINBOX {
   transition: .3s linear;
 }
 
-.thebest-container img {
-  margin: 0 auto;
-  height: 200px;
-  width: 200px;
+.best-image {
+  height: 238px;
+  width: 238px;
   border-radius: 50%;
+  background-size: cover;
 }
 
 .declaration-text {
   height: 210px;
   overflow: hidden;
+}
+
+.declaration-text a {
+
+  color: #5cb8d7;
 }
 
 .history-inner-container img {
@@ -315,7 +313,12 @@ div.MAINBOX {
 }
 
 .link {
-  color: #5cb8d7;
+  /*color: #5cb8d7;*/
+  color: #ff8c01;
+}
+
+.link:hover {
+  color: #ff8c01;
 }
 
 .teacher img {

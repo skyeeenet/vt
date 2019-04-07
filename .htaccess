@@ -1,24 +1,23 @@
-## Кодировка документов
-AddDefaultCharset utf-8
-#AddDefaultCharset koi8-u
-#AddDefaultCharset windows-1251
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
 
-## Файл индексного документа
-#DirectoryIndex index.shtml index.html index.htm index.php
+    RewriteEngine On
 
-## Воспринимать файлы *.html как SSI
-#AddHandler server-parsed .html
+	RewriteRule ^$ public/ [L]
+	RewriteRule ((?s).*) public/$1 [L]
+	
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-## Включить парсинг SSI выражений в устаревшем формате
-#SSILegacyExprParser on
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
 
-## Разрешение вывода содержимого каталога
-#Options +Indexes
-
-## Не писать в access.log информацию о файлах *.gif и *.jpg
-#SetEnvIf Request_URI \.gif$ access_log
-#SetEnvIf Request_URI \.jpg$ access_log
-
-RewriteEngine on
-RewriteRule ^$ public/ [L]
-RewriteRule ((?s).*) public/$1 [L]
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>

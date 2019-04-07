@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 06 2019 г., 17:51
+-- Время создания: Апр 07 2019 г., 11:07
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.2.0
 
@@ -51,6 +51,7 @@ INSERT INTO `administrations` (`id`, `type`, `value`, `created_at`, `updated_at`
 
 CREATE TABLE `adverts` (
   `id` int(10) UNSIGNED NOT NULL,
+  `short` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `value` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -61,18 +62,11 @@ CREATE TABLE `adverts` (
 -- Дамп данных таблицы `adverts`
 --
 
-INSERT INTO `adverts` (`id`, `value`, `user_id`, `created_at`, `updated_at`) VALUES
-(4, 'testetstset', 1, '2019-02-02 10:30:18', '2019-02-02 10:30:18'),
-(5, 'asdasdasd', 1, '2019-02-02 10:30:28', '2019-02-02 10:30:28'),
-(6, 'adsfgadfgdfg', 1, '2019-02-02 10:30:30', '2019-02-02 10:30:30'),
-(7, 'dafgdagdfg', 1, '2019-02-02 10:30:32', '2019-02-02 10:30:32'),
-(8, 'adfgdagdafg', 1, '2019-02-02 10:30:34', '2019-02-02 10:30:34'),
-(9, 'dfgadgadfgdf', 1, '2019-02-02 10:30:37', '2019-02-02 10:30:37'),
-(10, 'adfgdafgdafg', 1, '2019-02-02 10:30:39', '2019-02-02 10:30:39'),
-(11, 'dafgdafgdafgdafg', 1, '2019-02-02 10:30:42', '2019-02-02 10:30:42'),
-(12, 'dafgdafgadfgdafg', 1, '2019-02-02 10:30:45', '2019-02-02 10:30:45'),
-(13, 'dafgdafgdafgdfg', 1, '2019-02-02 10:30:49', '2019-02-02 10:30:49'),
-(14, 'dafgdafgadfgadfg', 1, '2019-02-02 10:30:53', '2019-02-02 10:30:53');
+INSERT INTO `adverts` (`id`, `short`, `value`, `user_id`, `created_at`, `updated_at`) VALUES
+(15, 'short', 'test1', 1, '2019-03-10 15:56:32', '2019-03-10 15:56:32'),
+(16, 'Краткое описание для поиска', 'для поиска', 1, '2019-03-12 16:15:27', '2019-03-12 16:15:27'),
+(17, 'Краткое описание для поиска', 'для поиска', 1, '2019-03-12 16:15:42', '2019-03-12 16:15:42'),
+(18, 'Краткое описание для поиска', 'Новое объявление номер один', 1, '2019-03-13 17:22:11', '2019-03-13 17:22:11');
 
 -- --------------------------------------------------------
 
@@ -152,6 +146,16 @@ CREATE TABLE `bests` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `bests`
+--
+
+INSERT INTO `bests` (`id`, `user_id`, `interview_url`, `title`, `description`, `created_at`, `updated_at`) VALUES
+(1, 2, 'test', 'test', 'test', '2019-03-10 15:16:02', '2019-03-10 15:16:02'),
+(2, 4, 'test2', 'test2', 'test2', '2019-03-10 15:16:17', '2019-03-10 15:16:17'),
+(3, 1, 'test3', 'test3', 'test3', '2019-03-10 15:16:29', '2019-03-10 15:16:29'),
+(4, 5, 'test5', 'test5', 'test5', '2019-03-10 15:16:40', '2019-03-10 15:16:40');
+
 -- --------------------------------------------------------
 
 --
@@ -172,6 +176,84 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `value`, `created_at`, `updated_at`) VALUES
 (1, 'Категория номер 2', '2019-03-05 12:23:22', '2019-03-05 12:26:49'),
 (2, 'Категория 3', '2019-03-05 16:37:31', '2019-03-05 16:37:31');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `conferences`
+--
+
+CREATE TABLE `conferences` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `conferences`
+--
+
+INSERT INTO `conferences` (`id`, `type`, `year`, `created_at`, `updated_at`) VALUES
+(5, 'Студенческая наука', '2018-2018', '2019-03-09 14:49:50', '2019-03-09 14:49:50'),
+(7, 'Университетская наука', '2020-2022', '2019-03-16 13:03:09', '2019-03-16 13:03:24'),
+(8, 'Студенческая наука', '2024-2025', '2019-03-18 15:06:15', '2019-03-18 15:06:15');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `conference_infos`
+--
+
+CREATE TABLE `conference_infos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `conference_id` int(10) UNSIGNED NOT NULL,
+  `slider_id` int(10) UNSIGNED DEFAULT NULL,
+  `place` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `time` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `chairman` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `secretary` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `duration` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `protocol` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `theses` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `show_reg` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `conference_infos`
+--
+
+INSERT INTO `conference_infos` (`id`, `conference_id`, `slider_id`, `place`, `time`, `chairman`, `secretary`, `duration`, `protocol`, `theses`, `show_reg`, `created_at`, `updated_at`) VALUES
+(3, 5, 2, 'Место проведения', 'time', 'askdmkasmd', 'kasdlkmasd', NULL, 'ссылка', 'ссылка', 1, '2019-03-09 14:49:50', '2019-03-16 12:54:45'),
+(5, 7, 2, 'sdfsadf', 'asdfsadf', 'dsfgdfg', 'fgdhdfgh', '2015-2016', 'sdfsdf', 'sdfsdf', 1, '2019-03-16 13:03:09', '2019-03-16 13:05:34'),
+(6, 8, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2019-03-18 15:06:15', '2019-03-18 15:06:33');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `conference_users`
+--
+
+CREATE TABLE `conference_users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `conference_id` int(10) UNSIGNED NOT NULL,
+  `theme` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `speaker` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `head` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `conference_users`
+--
+
+INSERT INTO `conference_users` (`id`, `conference_id`, `theme`, `speaker`, `head`, `created_at`, `updated_at`) VALUES
+(2, 5, 'Тема номер один', 'Текст', 'Тест', '2019-03-09 15:00:29', '2019-03-09 15:00:29'),
+(5, 7, 'Тема номер один', 'Докладчик номер один', NULL, '2019-03-16 13:07:14', '2019-03-16 13:07:14');
 
 -- --------------------------------------------------------
 
@@ -240,7 +322,9 @@ INSERT INTO `headers` (`id`, `type`, `value`, `url`, `created_at`, `updated_at`)
 (3, 'place', 'Мариуполь', NULL, '2019-01-30 18:39:39', '2019-03-02 16:32:11'),
 (4, 'email', 'testemail@gmail.com', NULL, '2019-01-30 18:39:39', '2019-03-02 16:32:11'),
 (5, 'logo-text', 'КАФЕДРА ИНФОРМАТИКИ', NULL, '2019-01-30 18:39:39', '2019-03-03 18:40:15'),
-(6, 'logo', '/storage/uploads/7da2811810f2c2ab16b46ce220492fec_zhjenshhiny_programmisty_1551288076.jpg', NULL, '2019-02-27 15:21:05', '2019-02-27 15:21:16');
+(6, 'logo', '/storage/uploads/логотип-ВТ-new_1553285580.png', NULL, '2019-02-27 15:21:05', '2019-03-22 18:13:00'),
+(7, 'width', '80', NULL, '2019-03-10 15:02:32', '2019-03-10 15:08:31'),
+(8, 'height', '80', NULL, '2019-03-10 15:02:32', '2019-03-10 15:08:31');
 
 -- --------------------------------------------------------
 
@@ -271,7 +355,8 @@ INSERT INTO `images` (`id`, `url`, `type`, `created_at`, `updated_at`) VALUES
 (13, '/storage/uploads/c50edb334013a40_1551285549.jpg', 'local', '2019-02-27 14:39:10', '2019-02-27 14:39:10'),
 (14, '/storage/uploads/632d61_08775ac40539499999acd916b57e993a_mv2_d_2800_2100_s_2_1551287872.jpg', 'local', '2019-02-27 15:17:52', '2019-02-27 15:17:52'),
 (15, '/storage/uploads/forbesbillionaires-02-pic668-668x444-31786_qQKyX1Q_1551288348.jpg', 'local', '2019-02-27 15:25:48', '2019-02-27 15:25:48'),
-(17, '/storage/uploads/students-technology-books_1551616573.jpg', 'local', '2019-03-03 10:36:14', '2019-03-03 10:36:14');
+(17, '/storage/uploads/students-technology-books_1551616573.jpg', 'local', '2019-03-03 10:36:14', '2019-03-03 10:36:14'),
+(18, '/storage/uploads/sl-1_1552748044.png', 'local', '2019-03-16 12:54:04', '2019-03-16 12:54:04');
 
 -- --------------------------------------------------------
 
@@ -297,7 +382,8 @@ CREATE TABLE `lecturers` (
 --
 
 INSERT INTO `lecturers` (`id`, `user_id`, `position`, `department`, `email`, `phone`, `facebook`, `ntb`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Профессор', 'Информатика', 'serega.tilinin@gmail.com', '111111111', 'url', 'url', '2019-02-24 19:11:25', '2019-02-24 19:11:25');
+(1, 1, 'Профессор', 'Информатика', 'serega.tilinin@gmail.com', '111111111', 'url', 'urlasd', '2019-02-24 19:11:25', '2019-03-19 14:29:29'),
+(2, 2, 'Test', 'Информатика', 'test@yandex.ru', '123456789', 'test', 'test', '2019-03-22 17:03:29', '2019-03-22 17:03:29');
 
 -- --------------------------------------------------------
 
@@ -338,6 +424,18 @@ CREATE TABLE `messages` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `messages`
+--
+
+INSERT INTO `messages` (`id`, `from`, `to`, `message`, `created_at`, `updated_at`) VALUES
+(3, 1, 2, 'asdasdasdasd', '2019-03-09 18:03:16', '2019-03-09 18:03:16'),
+(4, 1, 3, 'Еще одно сообщение', '2019-03-09 18:04:49', '2019-03-09 18:04:49'),
+(6, 5, 1, 'Привет снова', '2019-03-09 19:15:27', '2019-03-09 19:15:27'),
+(7, 5, 2, 'Привет привет привет', '2019-03-09 19:15:45', '2019-03-09 19:15:45'),
+(8, 1, 2, 'тест', '2019-03-09 19:33:26', '2019-03-09 19:33:26'),
+(9, 1, 1, '1\\n(перв.конф нов. строка)', '2019-03-10 12:31:22', '2019-03-10 12:31:22');
 
 -- --------------------------------------------------------
 
@@ -384,7 +482,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (27, '2019_03_05_143042_create_albums_table', 18),
 (28, '2019_03_05_144723_create_album__categories_table', 19),
 (29, '2019_03_05_150321_create_album__images_table', 20),
-(30, '2019_03_06_134543_create_administrations_table', 21);
+(30, '2019_03_06_134543_create_administrations_table', 21),
+(31, '2019_03_09_132258_create_conferences_table', 22),
+(32, '2019_03_09_132320_create_conference_infos_table', 22),
+(33, '2019_03_09_132335_create_conference_users_table', 22);
 
 -- --------------------------------------------------------
 
@@ -465,7 +566,10 @@ INSERT INTO `posts` (`id`, `image_id`, `title`, `body`, `short_body`, `user_id`,
 (7, 14, 'test', '<p>tess</p>', 'test', 1, '2019-03-02 19:16:57', '2019-03-02 19:16:57'),
 (8, 7, 'tesst', '<p>setset</p>', 'test', 1, '2019-03-02 19:17:02', '2019-03-02 19:17:02'),
 (9, 7, 'sadfgas', 'sadasdasd', 'asdfasdf', 1, '2019-03-02 19:17:17', '2019-03-02 19:17:17'),
-(10, 5, 'asdasdf', '<p>adfgadfgadfg</p>', 'adfgdfg', 1, '2019-03-02 19:17:24', '2019-03-02 19:17:24');
+(10, 5, 'asdasdf', '<p>adfgadfgadfg</p>', 'adfgdfg', 1, '2019-03-02 19:17:24', '2019-03-02 19:17:24'),
+(11, 1, 'Пост для поиска', '<p>пост для поиска</p>', 'пост для поиска', 1, '2019-03-12 16:12:05', '2019-03-12 16:12:05'),
+(12, 1, 'Заголовок для поиска тест555', '<p>Краткое Содержание для поиска тест555<br></p>', 'Краткое описание для поиска тест555', 1, '2019-03-12 16:45:23', '2019-03-12 16:45:23'),
+(13, 1, 'Заголовок для поиска тест666', '<p>Заголовок для поиска тест666<br></p>', 'Заголовок для поиска тест666', 1, '2019-03-12 16:49:55', '2019-03-12 16:49:55');
 
 -- --------------------------------------------------------
 
@@ -503,6 +607,7 @@ CREATE TABLE `schedules` (
   `group_id` int(10) UNSIGNED NOT NULL,
   `subject_id` int(10) UNSIGNED NOT NULL,
   `week_id` int(11) NOT NULL,
+  `lecturer_id` int(10) UNSIGNED DEFAULT NULL,
   `occupation_type_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -512,12 +617,12 @@ CREATE TABLE `schedules` (
 -- Дамп данных таблицы `schedules`
 --
 
-INSERT INTO `schedules` (`id`, `number`, `day`, `group_id`, `subject_id`, `week_id`, `occupation_type_id`, `created_at`, `updated_at`) VALUES
-(11, 1, 'Понедельник', 2, 5, 2, 3, '2019-02-16 13:39:28', '2019-02-18 13:52:12'),
-(13, 6, 'Понедельник', 2, 6, 2, 3, '2019-02-18 13:53:38', '2019-02-18 13:53:38'),
-(14, 1, 'Вторник', 2, 5, 3, 3, '2019-02-18 13:53:58', '2019-02-18 13:53:58'),
-(15, 1, 'Понедельник', 2, 6, 2, 2, '2019-02-18 13:54:23', '2019-02-18 13:54:23'),
-(16, 1, 'Понедельник', 3, 6, 3, 3, '2019-02-18 14:01:00', '2019-02-18 14:01:00');
+INSERT INTO `schedules` (`id`, `number`, `day`, `group_id`, `subject_id`, `week_id`, `lecturer_id`, `occupation_type_id`, `created_at`, `updated_at`) VALUES
+(11, 1, 'Понедельник', 2, 5, 2, 1, 3, '2019-02-16 13:39:28', '2019-03-22 17:04:43'),
+(13, 6, 'Понедельник', 2, 6, 2, 1, 3, '2019-02-18 13:53:38', '2019-02-18 13:53:38'),
+(14, 1, 'Вторник', 2, 5, 3, 1, 3, '2019-02-18 13:53:58', '2019-02-18 13:53:58'),
+(15, 1, 'Понедельник', 2, 6, 2, 1, 2, '2019-02-18 13:54:23', '2019-02-18 13:54:23'),
+(16, 1, 'Понедельник', 3, 6, 3, 2, 3, '2019-02-18 14:01:00', '2019-03-22 17:04:49');
 
 -- --------------------------------------------------------
 
@@ -538,7 +643,8 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `page_id`, `title`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'slider2', '2019-02-16 10:43:58', '2019-02-16 10:43:58');
+(1, NULL, 'slider2', '2019-02-16 10:43:58', '2019-02-16 10:43:58'),
+(2, NULL, 'Второй слайдер', '2019-03-16 12:52:58', '2019-03-16 12:52:58');
 
 -- --------------------------------------------------------
 
@@ -561,7 +667,12 @@ CREATE TABLE `slider_images` (
 
 INSERT INTO `slider_images` (`id`, `image_id`, `slider_id`, `value`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, 'Слайд номер один', '2019-02-16 10:43:58', '2019-02-16 10:43:58'),
-(2, 5, 1, 'Слайд номер два', '2019-02-16 10:44:19', '2019-02-16 10:44:19');
+(2, 5, 1, 'Слайд номер два', '2019-02-16 10:44:19', '2019-02-16 10:44:19'),
+(5, 18, 2, NULL, '2019-03-16 12:54:15', '2019-03-16 12:54:15'),
+(6, 18, 2, NULL, '2019-03-16 12:54:20', '2019-03-16 12:54:20'),
+(7, 18, 2, NULL, '2019-03-16 12:54:23', '2019-03-16 12:54:23'),
+(8, 18, 2, NULL, '2019-03-16 12:54:25', '2019-03-16 12:54:25'),
+(9, 18, 2, NULL, '2019-03-16 12:54:27', '2019-03-16 12:54:27');
 
 -- --------------------------------------------------------
 
@@ -583,7 +694,8 @@ CREATE TABLE `socials` (
 --
 
 INSERT INTO `socials` (`id`, `value`, `url`, `image_id`, `created_at`, `updated_at`) VALUES
-(3, 'Facebook', 'https://www.facebook.com/', 12, '2019-03-01 15:57:48', '2019-03-01 16:02:46');
+(3, 'Facebook', 'https://www.facebook.com/', 12, '2019-03-01 15:57:48', '2019-03-01 16:02:46'),
+(4, 'test', 'test', 5, '2019-03-10 15:23:51', '2019-03-10 15:23:51');
 
 -- --------------------------------------------------------
 
@@ -595,7 +707,7 @@ CREATE TABLE `social_users` (
   `id` int(10) UNSIGNED NOT NULL,
   `social_id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -605,7 +717,14 @@ CREATE TABLE `social_users` (
 --
 
 INSERT INTO `social_users` (`id`, `social_id`, `user_id`, `url`, `created_at`, `updated_at`) VALUES
-(3, 3, 1, 'https://www.facebook.com/https://www.facebook.com/', '2019-03-01 16:11:01', '2019-03-03 11:30:20');
+(3, 3, 1, NULL, '2019-03-01 16:11:01', '2019-03-16 10:46:53'),
+(4, 4, 1, NULL, '2019-03-10 15:24:02', '2019-03-16 10:46:53'),
+(5, 3, 2, 'https://www.facebook.com/', '2019-03-10 16:06:46', '2019-03-10 16:06:46'),
+(6, 4, 2, 'test', '2019-03-10 16:06:46', '2019-03-10 16:06:46'),
+(7, 3, 4, 'https://www.facebook.com/', '2019-03-10 16:07:01', '2019-03-10 16:07:01'),
+(8, 4, 4, 'test', '2019-03-10 16:07:01', '2019-03-10 16:07:01'),
+(9, 3, 5, 'https://www.facebook.com/', '2019-03-10 16:07:14', '2019-03-10 16:07:14'),
+(10, 4, 5, 'test', '2019-03-10 16:07:14', '2019-03-10 16:07:14');
 
 -- --------------------------------------------------------
 
@@ -657,7 +776,8 @@ INSERT INTO `submenus` (`id`, `menu_id`, `value`, `url`, `created_at`, `updated_
 (15, 10, 'Состав', '/team', '2019-03-03 14:13:34', '2019-03-03 14:13:34'),
 (16, 10, 'История', '/history', '2019-03-03 14:13:41', '2019-03-03 14:13:41'),
 (17, 10, 'Конференция', '/conf/stud', '2019-03-03 14:15:39', '2019-03-03 14:15:39'),
-(18, 10, 'Альбом', '/album', '2019-03-03 14:18:24', '2019-03-03 14:18:24');
+(18, 10, 'Альбом', '/album', '2019-03-03 14:18:24', '2019-03-03 14:18:24'),
+(19, 10, 'Унив.Конфа', '/conf/univ', '2019-03-16 13:02:40', '2019-03-16 13:02:40');
 
 -- --------------------------------------------------------
 
@@ -667,7 +787,7 @@ INSERT INTO `submenus` (`id`, `menu_id`, `value`, `url`, `created_at`, `updated_
 
 CREATE TABLE `texts` (
   `id` int(10) UNSIGNED NOT NULL,
-  `description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `value` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `page_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -679,7 +799,9 @@ CREATE TABLE `texts` (
 --
 
 INSERT INTO `texts` (`id`, `description`, `value`, `page_id`, `created_at`, `updated_at`) VALUES
-(3, 'Контакты', '<p>Контакты для связи</p>', NULL, '2019-02-16 12:57:47', '2019-03-03 14:29:54');
+(3, 'Контакты', '<p>Контакты для связи</p>', NULL, '2019-02-16 12:57:47', '2019-03-03 14:29:54'),
+(4, 'Описание для страницы история', '<p><span style=\"color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\">На фоне общего положительного впечатления о работе в плане научной дискуссии хотелось бы обратить внимание на ряд моментов. Перечислить моменты. Знакомство с авторефератом, диссертацией, статьей, пояснительной запиской и др. позволяет сделать вывод, что работа этого автора имеет практическую ценность и удовлетворяет требованиям ГАК, ВАК, журнала и проч. Переход что-нибудь - составная часть стратегического современного научного направления. Методом таким-то выявлен эффект такой-то. Автором проведена серьезная работа по определению функций чего-нибудь.&nbsp;</span><br style=\"margin: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\"><br style=\"margin: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\"><span style=\"color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\">Степень обоснованности научных положений работы, их достоверность определяется корректностью используемых теоретических и методологических положений, методических подходов и их практических приложений. В целом работа очень интересная. Достоинством работы является подробное изложение полученных результатов. В этой связи предложенная автором модель, классификайия, методика в части какая-то часть исследования, безусловно, вносит значительный вклад в размитие соответствующей области науки и имеет большое значение для реаль&nbsp;</span><br style=\"margin: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\"><br style=\"margin: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\"><span style=\"color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\">В методике, постановке эксперимента, алгоритме, чем-нибудь еще нет описания чего-нибудь, и вообще не ясно предусмотрено ли это что-то. Текст содержит слишком длинные абзацы. Автор указывает, что использует общеизвестную информацию: процитируйте автора. Однако не приводится названий или ссылок на конкретныет работы.&nbsp;</span><br style=\"margin: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\"><br style=\"margin: 0px; padding: 0px; color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\"><span style=\"color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\">На фоне общего положительного впечатления о работе в плане научной дискуссии хотелось бы обратить внимание на ряд моментов. Перечислить моменты. Знакомство с авторефератом, диссертацией, статьей, пояснительной запиской и др. позволяет сделать вывод, что работа этого автора имеет практическую ценность и удовлетворяет требованиям ГАК, ВАК, журнала и проч. Переход что-нибудь - составная часть стратегического современного научного направления. Методом таким-то выявлен эффект такой-то. Автором проведена серьезная работа по определению функций чего-нибудь.</span><br></p>', NULL, '2019-03-18 15:14:03', '2019-03-18 15:14:03'),
+(5, 'История кафедры', '<p><span style=\"color: rgb(33, 37, 41); font-family: Roboto, sans-serif;\">На фоне общего положительного впечатления о работе в плане научной дискуссии хотелось бы обратить внимание на ряд моментов. Перечислить моменты. Знакомство с авторефератом, диссертацией, статьей, пояснительной запиской и др. позволяет сделать вывод, что работа этого автора имеет практическую ценность и удовлетворяет требованиям ГАК, ВАК, журнала и проч. Переход что-нибудь - составная часть стратегического современного научного направления. Методом таким-то выявлен эффект такой-то. Автором проведена серьезная работа по определению функций чего-нибудь.</span></p>', NULL, '2019-03-18 15:24:16', '2019-03-18 15:28:52');
 
 -- --------------------------------------------------------
 
@@ -706,10 +828,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `image`, `description`, `role_id`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Тилинин Сергей', NULL, 'Описание профиля', '5', 'serega.tilinin@gmail.com', NULL, '$2y$10$EZjMoSg4pOHBI6/iUZrzXOTz9NFaski2lMd/SQZxlsmOe07Ye/hba', 'p770I87PHBV2c8wQ4tpbuEAbSHhrXfzO6y7WJP8KUOSctujLbp9SA6cmyAQZ', '2019-02-01 16:27:33', '2019-03-03 11:30:54'),
-(2, 'kilokr', NULL, NULL, '1', 'klilokr@gmail.com', NULL, '$2y$10$RHsfV3OTeA51AdyCMTSageUZMgqtkpqscnVGvCZ8N2LFFQMWTqcPK', '1pW9siNg6bHVFRQctsxSLq9y2vzkmJs4EyDlPoTAkzGbI2kswJLLIEGenIk1', '2019-02-25 18:21:53', '2019-02-25 18:21:53'),
+(1, 'Тилинин Сергей', '/storage/profile_images/3721180-932818_1552239841.jpg', 'Описание профиля', '5', 'serega.tilinin@gmail.com', NULL, '$2y$10$EZjMoSg4pOHBI6/iUZrzXOTz9NFaski2lMd/SQZxlsmOe07Ye/hba', '6T0rG8ElHGcM7poXyo01aUr8HKHlkEXHXKOCsHnxNd3SywagGhuHzQDPslGf', '2019-02-01 16:27:33', '2019-03-10 15:44:01'),
+(2, 'kilokr', '/storage/profile_images/b6c4b79bb1954b16b393da9d8f98a5c7_1552241206.jpg', NULL, '5', 'klilokr@gmail.com', NULL, '$2y$10$RHsfV3OTeA51AdyCMTSageUZMgqtkpqscnVGvCZ8N2LFFQMWTqcPK', '1pW9siNg6bHVFRQctsxSLq9y2vzkmJs4EyDlPoTAkzGbI2kswJLLIEGenIk1', '2019-02-25 18:21:53', '2019-03-10 16:06:46'),
 (3, 'Тилинин Сергей Вадимович', NULL, NULL, '1', 'skyetest@yandex.ru', NULL, '$2y$10$TtqGYTTZlnJ7xeNC5GOn/./m/iFrXodhocpPQVC8CfyBfef276vLi', 'IhpmjJnIbJhBSVbWJVJIuFIGMEXIIuiTpKUmdAqZlS6a32VIUcXZRNWGNrLA', '2019-02-25 19:51:34', '2019-02-25 19:51:34'),
-(4, 'Тест тест тес5', NULL, NULL, '1', 'test@jkhkj.com', NULL, '$2y$10$xvjRU7GG7eE1v52pBa53gOAyxAqc1pi15bpfjpsnLGxAsBsjWwPlC', 'fdA8bkgqpXdf5xXtdFpJ9xhbilR4EvBEleIFMemYOrTfEWPiISXMNJUmUU7t', '2019-02-26 15:32:04', '2019-02-26 15:32:04');
+(4, 'Тест тест тес5', '/storage/profile_images/2591a3cf-efdb-4a3b-a6ba-29a83a569e63_1552241220.jpg', NULL, '5', 'test@jkhkj.com', NULL, '$2y$10$xvjRU7GG7eE1v52pBa53gOAyxAqc1pi15bpfjpsnLGxAsBsjWwPlC', 'fdA8bkgqpXdf5xXtdFpJ9xhbilR4EvBEleIFMemYOrTfEWPiISXMNJUmUU7t', '2019-02-26 15:32:04', '2019-03-10 16:07:01'),
+(5, 'Тест', '/storage/profile_images/nazarov-600_1552241234.jpg', NULL, '5', 'test@gmail.com', NULL, '$2y$10$/dR9FlLoJC9RNIUHC2U0zuHLfDemlu7fE7xs0rG3gSgaNnMuI3dB.', 'AVyh9aRMwsl63StxuaprnPqquERkgh2usGRo8jluk4UaFRVkQzBferISUcKk', '2019-03-09 19:14:44', '2019-03-10 16:07:14'),
+(6, 'Тест5', NULL, NULL, '1', 'test5@gmail.ru', NULL, '$2y$10$hiF.jwnuH31xIs2MN8UVn.cKm8vfuV8cbkuLr8SnZh/ANor73.f6K', 'k7Y1WsBnIdnHe5aD3ojzDuNRe37p4edDCQXlxUJOA7Lg7aTayJUzt2O2vYim', '2019-03-12 16:08:04', '2019-03-12 16:08:04');
 
 -- --------------------------------------------------------
 
@@ -783,6 +907,26 @@ ALTER TABLE `bests`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `conferences`
+--
+ALTER TABLE `conferences`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `conference_infos`
+--
+ALTER TABLE `conference_infos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `conference_infos_conference_id_index` (`conference_id`);
+
+--
+-- Индексы таблицы `conference_users`
+--
+ALTER TABLE `conference_users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `conference_users_conference_id_index` (`conference_id`);
 
 --
 -- Индексы таблицы `graphics`
@@ -878,7 +1022,8 @@ ALTER TABLE `schedules`
   ADD PRIMARY KEY (`id`),
   ADD KEY `schedules_group_id_index` (`group_id`),
   ADD KEY `schedules_subject_id_index` (`subject_id`),
-  ADD KEY `occupation_type_id` (`occupation_type_id`);
+  ADD KEY `occupation_type_id` (`occupation_type_id`),
+  ADD KEY `lecturer_id` (`lecturer_id`);
 
 --
 -- Индексы таблицы `sliders`
@@ -957,7 +1102,7 @@ ALTER TABLE `administrations`
 -- AUTO_INCREMENT для таблицы `adverts`
 --
 ALTER TABLE `adverts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `albums`
@@ -981,13 +1126,31 @@ ALTER TABLE `album_images`
 -- AUTO_INCREMENT для таблицы `bests`
 --
 ALTER TABLE `bests`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `conferences`
+--
+ALTER TABLE `conferences`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT для таблицы `conference_infos`
+--
+ALTER TABLE `conference_infos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT для таблицы `conference_users`
+--
+ALTER TABLE `conference_users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `graphics`
@@ -1005,19 +1168,19 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT для таблицы `headers`
 --
 ALTER TABLE `headers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `lecturers`
 --
 ALTER TABLE `lecturers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `menus`
@@ -1029,13 +1192,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT для таблицы `occupation_types`
@@ -1053,7 +1216,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `roles`
@@ -1071,25 +1234,25 @@ ALTER TABLE `schedules`
 -- AUTO_INCREMENT для таблицы `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `slider_images`
 --
 ALTER TABLE `slider_images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `socials`
 --
 ALTER TABLE `socials`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `social_users`
 --
 ALTER TABLE `social_users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `subjects`
@@ -1101,19 +1264,19 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT для таблицы `submenus`
 --
 ALTER TABLE `submenus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT для таблицы `texts`
 --
 ALTER TABLE `texts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `weeks`
