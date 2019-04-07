@@ -11,11 +11,11 @@ As a back-end developer, i wrote the whole back-end part, from the admin panel a
     2. Extract .zip archive to "domains/project_name" (in case you use Open Server)
     3. Import "DUMP-DB.sql" to your DB
     4. Edit DB options in the file ".env"
-    * DB_HOST=127.0.0.1
-    * DB_PORT=3306
-    * DB_DATABASE=vt (Enter your DB name)
-    * DB_USERNAME=root (Enter your DB username)
-    * DB_PASSWORD= (Enter your DB user password)
+        * DB_HOST=127.0.0.1
+        * DB_PORT=3306
+        * DB_DATABASE=vt (Enter your DB name)
+        * DB_USERNAME=root (Enter your DB username)
+        * DB_PASSWORD= (Enter your DB user password)
     5. Run Web Server and open "project_name" in browser
 ### My project supports:
 * Editing information on pages from the admin panel
