@@ -1,13 +1,13 @@
-#Department website VT
+# Department website VT
 ***
 This site was created by order of the Department of Informatics of the Priazovsky State Technical University.
 The development team involved a development team of 5 people. The task was divided into front-end and back-end parts.
 I participated in both parts.
-###Front-End
+### Front-End
 As a front-end developer, i did the layout of pages, the reactive display of some elements on the site, such as displaying a schedule for each group and so on. I also wrote a script to display the evenness or oddness of the week.
-###Back-End
+### Back-End
 As a back-end developer, i wrote the whole back-end part, from the admin panel and creating the database architecture, to transferring the static layout to the Laravel.
-###How can you install this project ?
+### How can you install this project ?
     1. Download current repository
     2. Extract .zip archive to "domains/project_name" (in case you use Open Server)
     3. Import "DUMP-DB.sql" to your DB
@@ -18,7 +18,7 @@ As a back-end developer, i wrote the whole back-end part, from the admin panel a
         * DB_USERNAME=root (Enter your DB username)
         * DB_PASSWORD= (Enter your DB user password)
     5. Run Web Server and open "project_name" in browser
-###My project supports:
+### My project supports:
     * Editing information on pages from the admin panel
     * Dynamic menu editing
     * Adding images to the general pool of photos. Automatic image compression and image resolution change depending on the entered values     
@@ -32,7 +32,7 @@ As a back-end developer, i wrote the whole back-end part, from the admin panel a
     * Implemented search for news and announcements on the site using laravel scout
     * [Summernote](https://summernote.org/) is installed as a text editor
 There are more than 20+ features that you can see on your own via running this project on your computer.
-###In my project i used:
+### In my project i used:
     * Eloquent ORM
     * Facades
     * Contracts
