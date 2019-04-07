@@ -1,5 +1,4 @@
 # Department website VT
-***
 This site was created by order of the Department of Informatics of the Priazovsky State Technical University.
 The development team involved a development team of 5 people. The task was divided into front-end and back-end parts.
 I participated in both parts.
