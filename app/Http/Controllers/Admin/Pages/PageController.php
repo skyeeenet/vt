@@ -5,13 +5,15 @@ namespace App\Http\Controllers\Admin\Pages;
 use App\Http\Controllers\Controller;
 use App\Models\Page;
 use App\Models\Slider;
+use App\Models\Template;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PageController extends Controller
 {
     public function index() {
 
-        $pages = Page::select('id', 'url', 'title')->get();
+        $pages = Page::select('id', 'slug', 'seo_title', 'template_id' , 'seo_h1')->with('template')->get();
 
         return view('admin.pages.index', compact('pages'));
     }
@@ -19,8 +21,11 @@ class PageController extends Controller
     public function store(Request $request) {
 
         $page = new Page([
-            'url' => $request->input('url'),
-            'title' => $request->input('title')
+            'seo_title' => $request->input('seo_title'),
+            'seo_description' => $request->input('seo_description'),
+            'seo_h1' => $request->input('seo_h1'),
+            'content' => $request->input('content'),
+            'template_id' => $request->input('template_id'),
         ]);
 
         $page->save();
@@ -28,16 +33,45 @@ class PageController extends Controller
         return redirect()->back();
     }
 
+    public function create() {
+
+        $templates = Template::all();
+        $fields = Page::with('customFields')->get();
+
+        return view('admin.pages.create', compact('templates', 'fields'));
+    }
+
+    public function show($slug) {
+
+        if (is_numeric($slug)) {
+
+            $page = Page::findOrFail($slug);
+
+            return Redirect::to(route('page.show', $page->slug), 301);
+        }
+
+        $page = Page::whereSlug($slug)->firstOrFail();
+
+        return view($this::getTemplateNameById($page->template_id), compact('page'));
+    }
+
     public function edit(Page $page) {
 
-        return view('admin.pages.edit', compact('page'));
+        $templates = Template::all();
+
+        $fields = $page->customFields;
+
+        return view('admin.pages.edit', compact('page', 'templates', 'fields'));
     }
 
     public function update(Page $page, Request $request) {
 
         $page->update([
-           'url' => $request->input('url'),
-           'title' => $request->input('title')
+            'seo_title' => $request->input('seo_title'),
+            'seo_description' => $request->input('seo_description'),
+            'seo_h1' => $request->input('seo_h1'),
+            'content' => $request->input('content'),
+            'template_id' => $request->input('template_id'),
         ]);
 
         return redirect(route('admin.pages'));
@@ -63,5 +97,11 @@ class PageController extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    private static function getTemplateNameById($id) {
+
+        $temp_name = Template::findOrFail($id)->name;
+        return 'templates.' . $temp_name;
     }
 }

@@ -117,6 +117,18 @@
                                 <li><a href="{{ route('admin.conferences.create') }}">Создать</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('admin.templates') }}">Шаблоны<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.templates') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.template.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ route('admin.pages') }}">Страницы<span class="fa fa-angle-down"></span></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('admin.pages') }}">Просмотреть</a></li>
+                                <li><a href="{{ route('admin.page.create') }}">Создать</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a href="{{ route('admin.schedule') }}" class="active">Расписание<span class="fa fa-angle-down"></span></a>
@@ -204,12 +216,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.7/summernote.js"></script>
 @yield('scripts')
-<script>
-    $(document).ready(function() {
-
-        $('#body').summernote();
-
-    });
-</script>
 </body>
 </html>

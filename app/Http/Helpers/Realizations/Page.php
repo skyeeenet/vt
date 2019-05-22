@@ -15,6 +15,7 @@ use App\Models\Lecturer;
 use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Slider;
+use App\Models\Template;
 use App\Models\Text;
 use App\User;
 
@@ -103,4 +104,5 @@ class Page
 
         return User::where('id', $id)->first();
     }
+
 }

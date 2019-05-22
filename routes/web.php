@@ -80,20 +80,32 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
    });
 
+    Route::group(['prefix' => 'template'], function () {
+
+        Route::get('/', 'Template\TemplateController@index')->name('admin.templates');
+        Route::get('/create', 'Template\TemplateController@create')->name('admin.template.create');
+        Route::get('/edit/{template}', 'Template\TemplateController@edit')->name('admin.template.edit');
+        Route::post('/store', 'Template\TemplateController@store')->name('admin.template.store');
+        Route::post('/update/{template}', 'Template\TemplateController@update')->name('admin.template.update');
+        Route::post('/delete/{template}', 'Template\TemplateController@destroy')->name('admin.template.delete');
+    });
+
+    Route::group(['prefix' => 'fields'], function () {
+
+        Route::get('/edit/{field}', 'CustomField\CustomFieldController@edit')->name('admin.field.edit');
+        Route::post('/store', 'CustomField\CustomFieldController@store')->name('admin.field.store');
+        Route::post('/update/{field}', 'CustomField\CustomFieldController@update')->name('admin.field.update');
+        Route::post('/delete/{field}', 'CustomField\CustomFieldController@destroy')->name('admin.field.delete');
+    });
+
    Route::group(['prefix' => 'pages'], function () {
 
        Route::get('/', 'Pages\PageController@index')->name('admin.pages');
-       Route::get('/{page}', 'Pages\PageController@show');
-       Route::get('/create', 'Pages\PageController@create')->name('admin.pages.create');
-       Route::get('/edit/{page}', 'Pages\PageController@edit');
-       Route::post('/store', 'Pages\PageController@store')->name('admin.pages.store');
-       Route::post('/update/{page}', 'Pages\PageController@update');
-       Route::post('/delete/{page}', 'Pages\PageController@destroy');
-
-       Route::group(['prefix' => 'index'], function () {
-
-            Route::get('/', 'Pages\Index\IndexController@index')->name('admin.pages.index.index');
-       });
+       Route::get('/create', 'Pages\PageController@create')->name('admin.page.create');
+       Route::get('/edit/{page}', 'Pages\PageController@edit')->name('admin.page.edit');
+       Route::post('/store', 'Pages\PageController@store')->name('admin.page.store');
+       Route::post('/update/{page}', 'Pages\PageController@update')->name('admin.page.update');
+       Route::post('/delete/{page}', 'Pages\PageController@destroy')->name('admin.page.delete');
    });
 
    Route::group(['prefix' => 'schedule'], function () {
@@ -302,6 +314,8 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
     Route::post('/', 'UserController@update')->name('user.update');
     Route::post('/delete', 'UserController@destroy')->name('user.delete');
 });
+
+Route::get('/page/{slug}', 'Admin\Pages\PageController@show')->name('page.show');
 
 Route::get('/ads', 'Publics\Pages\PagesController@ads')->name('adverts');
 Route::get('/ads/{slug}', 'Publics\Pages\PagesController@singleadvert')->name('singAdvert');
