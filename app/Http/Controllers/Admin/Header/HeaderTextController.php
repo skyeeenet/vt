@@ -65,7 +65,7 @@ class HeaderTextController extends Controller
 
             if($request->hasFile('logo')) {
 
-                if ($current_logo != null) {
+                if ($current_logo != null && file_exists($current_logo->value)) {
                     unlink(public_path($current_logo->value));
                 }
 

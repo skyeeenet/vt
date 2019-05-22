@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title')О специальности 122 «Информатика» - ПГТУ - Кафедра Информатики@endsection
+@section('description')Специальность 122 «Информатика». ПГТУ - Кафедра информатики@endsection
+
 @section('content')
     <main>
         <section>

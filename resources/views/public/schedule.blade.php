@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title')Расписание - ПГТУ - Кафедра Информатики@endsection
+@section('description')Расписание занятий. ПГТУ - Кафедра информатики@endsection
+
 @section('content')
     <main>
         <section>

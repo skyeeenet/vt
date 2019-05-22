@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title'){{$post['short']}} - ПГТУ - Кафедра Информатики@endsection
+@section('description'){{$post['short'] . ' - '. $post->author['name']}}. ПГТУ - Кафедра Информатики@endsection
+
 @section('content')
     <main>
         <section>

@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title')О кафедре - ПГТУ - Кафедра Информатики@endsection
+@section('description')Информация о кафедре: история и специальности, которым можно обучиться у нас. ПГТУ - Кафедра Информатики@endsection
+
 @section('content')
     <main>
         <section>
@@ -24,20 +27,6 @@
                             доцент, кандидат
                             економічних наук Постемський Ігор Євгенович.
                         </p>
-                        <!-- <div class="enr_history mt-5 mb-5">
-                             <div class="history-inner-container d-flex justify-content-center align-items-center">
-                                 <img src="../images/photo.png" alt="" >
-                             </div>
-                             <div class="history-inner-container d-flex justify-content-center align-items-center">
-                                 <img src="../images/photo.png" alt="" >
-                             </div>
-                             <div class="history-inner-container d-flex justify-content-center align-items-center">
-                                 <img src="../images/photo.png" alt="" >
-                             </div>
-                             <div class="history-inner-container d-flex justify-content-center align-items-center">
-                                 <img src="../images/photo.png" alt="">
-                             </div>
-                         </div> -->
                         <div class="enr_history row mt-5 mb-5">
                             <img class="mr-2" width="400px" height="400px" src="../images/photo.png" alt="">
                             <img class="ml-2" width="400px" height="400px" src="../images/photo.png" alt="">

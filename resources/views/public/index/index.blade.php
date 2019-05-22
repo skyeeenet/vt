@@ -1,5 +1,9 @@
 @extends('public.layouts.basic')
 
+@section('title')ПГТУ - Кафедра Информатики@endsection
+
+@section('description')Приазовский государственный технический университет - Кафедра Информатики (ВТ). Главная страница кафедры информатики@endsection
+
 @section('content')
     <main>
         <section>
@@ -19,12 +23,14 @@
                             Объявления
                         </div>
                         <div class="d-flex flex-column justify-content-center align-items-center declaration-text">
-                            <p> Недавние события повлекли за собой массу протестов1 </p>
-                            <p> Недавние события повлекли за собой массу протестов2 </p>
-                            <p> Недавние события повлекли за собой массу протестов3 </p>
+                            @forelse(Page::getAdsByAmount(3) as $item)
+                                <p><a href="{{route('singAdvert', $item->id)}}">{{$item->short}}</a></p>
+                                @empty
+                                <p>Объявления отсутствуют</p>
+                            @endforelse
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a class="link" href="#">Все объявления</a>
+                            <a class="link" href="{{route('adverts')}}">Все объявления</a>
                         </div>
                     </div>
                     <!-- /.col-lg-4 -->
@@ -36,7 +42,7 @@
         <section>
             <div class="container mt-5">
                 <div class="w-100 d-flex flex-column align-items-center margin-bottom">
-                    <a href="#">
+                    <a href="/news">
                         <h2 class="title link">Недавние новости и события</h2>
                     </a>
                     <div class="d-flex flex-row justify-content-center specDoubledColorLine mt-2">
@@ -46,15 +52,15 @@
                 </div>
 
                 <div class="row">
-                    @foreach(Page::getLatestNews() as $new)
+                    @foreach($recent_posts as $recent)
                     <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
                         <div style="height: 400px;" class="card">
-                            <img style="height: 200px;" class="card-img-top" src="{{$new->image['url']}}" alt="Card image cap">
+                            <img style="height: 200px;" class="card-img-top" src="{{$recent->image['url']}}" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-date">{{$new->created_at}}</h5>
-                                <h5 class="mt-3"><a class="card-title" href="{{'/news/'.$new->id}}">{{$new->title}}</a></h5>
+                                <h5 class="card-date">{{date('d F Y', strtotime($recent->created_at))}}</h5>
+                                <h2 class="mt-3"><a class="card-title" href="{{'/news/'.$recent->slug}}">{{$recent->title}}</a></h2>
                                 <p class="card-text mt-4">
-                                    {{$new->short_body . '...'}}
+                                    {{$recent->short_body . '...'}}
                                 </p>
                             </div>
                         </div>
@@ -156,6 +162,15 @@
                 </div>
             </div>
         </section>
+        <div id="bg-message"></div>
+        <div id="message">
+            <ul>
+                <li><strong><i class="fas fa-times"></i></strong></li>
+                <li><h3 class="text-center mb-3">Здравствуйте</h3></li>
+                <li><p class="text-center">Сайт работает в тестовом режиме и все еще наполняется.</p></li>
+                <li><p class="text-center">Просим прощения за неудобства</p></li>
+            </ul>
+        </div>
         <section>
             <div class="w-100 d-flex flex-column align-items-center mt-5">
                 <h2 class="title">Лучшие студенты</h2>
@@ -180,4 +195,40 @@
             </div>
         </section>
     </main>
+@endsection
+
+@section('scripts')
+    <script>
+
+        function getCookie(name) {
+            var matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        $(function() {
+
+            if (!getCookie('test-accept')) {
+
+                var date = new Date;
+                date.setDate(date.getDate() + 2);
+
+                document.cookie = "test-accept=true; expires=" + date.toUTCString();
+
+                var $btn_close = $('#message ul li strong');
+                var $bg_message = $('#bg-message');
+                var $message = $('#message');
+
+                $message.css('display', 'flex');
+                $bg_message.css('display', 'block');
+
+                $btn_close.click(function () {
+                    $bg_message.fadeOut();
+                    $message.fadeOut() ;
+                });
+            }
+        });
+
+    </script>
 @endsection

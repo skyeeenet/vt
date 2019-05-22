@@ -1,5 +1,8 @@
 @extends('admin.layouts.app_admin')
 
+@section('title')Профиль пользователя - ПГТУ - Кафедра Информатики@endsection
+@section('description')Профиль пользователя кафедры информатики ПГТУ@endsection
+
 @section('content')
     <div class="container">
         <div class="row">

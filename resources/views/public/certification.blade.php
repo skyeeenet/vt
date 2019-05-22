@@ -1,5 +1,9 @@
 @extends('public.layouts.basic')
 
+@section('title')Дипломирование - ПГТУ - Кафедра Информатики@endsection
+@section('description')Полезная информация о дипломировании. ПГТУ - Кафедра Информатики@endsection
+
+
 @section('content')
     <main>
         <section>

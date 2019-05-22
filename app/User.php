@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Advert;
 use App\Models\Best;
+use App\Models\Interview;
 use App\Models\Lecturer;
 use App\Models\Role;
 use App\Models\SocialUser;
@@ -48,6 +49,10 @@ class User extends Authenticatable
     public function to() {
 
         return $this->belongsTo(Message::class, 'to');
+    }
+
+    public function interview() {
+        return $this->hasOne(Interview::class);
     }
 
     /**

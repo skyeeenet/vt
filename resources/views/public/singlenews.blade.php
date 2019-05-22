@@ -1,11 +1,14 @@
 @extends('public.layouts.basic')
 
+@section('title'){{$post['title']}} - ПГТУ - Кафедра Информатики@endsection
+@section('description'){{$post['short_body']}}@endsection
+
 @section('content')
     <main>
         <section>
             <div class="container">
                 <div class="text-center my-5">
-                    <h1 class="title">Новости</h1>
+                    <h2 class="title">Новости</h2>
                     <div class="d-flex flex-row justify-content-center specDoubledColorLine">
                         <div></div>
                         <div></div>
@@ -28,18 +31,6 @@
                                     </p>
                                 </div>
                             </div>
-                        <div class="row d-flex justify-content-center my-5">
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="#">1</a>
-                                <a class="active" href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">&raquo;</a>
-                            </div>
-                        </div>
                     </div>
                     <div
                             class="col-lg-4 col-md-12 d-flex flex-column align-items-center align-items-lg-start mb-5 mb-lg-0">

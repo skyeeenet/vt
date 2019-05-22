@@ -124,6 +124,12 @@
             font-family: "Roboto";
             color: white;
         }
+        .btn-link {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            font-family: "Roboto";
+        }
     </style>
 @endsection
 
@@ -161,6 +167,12 @@
                 <input type="text" name="email" placeholder="Email" required autofocus/>
                 <input type="password" name="password" placeholder="Пароль" required/>
                 <button>Войти</button>
+
+                @if (Route::has('password.request'))
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        {{ 'Забыли пароль ?' }}
+                    </a>
+                @endif
                 <p class="message">Нет аккаунта ? <a href="#">Создать аккаунт</a></p>
             </form>
         </div>

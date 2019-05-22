@@ -169,6 +169,7 @@
                             <ul class="submenu">
                                 <li><a href="{{ route('admin.bests') }}">Просмотреть</a></li>
                                 <li><a href="{{ route('admin.bests.create') }}">Добавить</a></li>
+                                <li><a href="{{ route('admin.interviews') }}">Интервью</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('admin.socials') }}">Социальные сети<span class="fa fa-angle-down"></span></a>

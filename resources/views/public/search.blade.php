@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title')Поиск - ПГТУ - Кафедра Информатики@endsection
+@section('description')Результаты поиска. ПГТУ - Кафедра информатики@endsection
+
 @section('content')
     <main>
         <section>

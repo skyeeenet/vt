@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Page;
 
 class CheckAdmin
 {
@@ -19,7 +20,7 @@ class CheckAdmin
     {
         $user = Auth::user();
 
-        if ($user->role['value'] == 'Admin') {
+        if ($user->role['id'] == Page::getAdminRole()) {
 
             return $next($request);
         }

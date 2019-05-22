@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title')История кафедры - ПГТУ - Кафедра Информатики@endsection
+@section('description')История кафедры информатики@endsection
+
 @section('content')
     <main>
         <section>

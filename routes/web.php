@@ -281,10 +281,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::post('/store', 'Album_Category\AlbumCategoryController@store');
         Route::post('/delete/{id}', 'Album_Category\AlbumCategoryController@destroy');
     });
-});
 
-Route::get('/w', function () {
-    return view('welcome');
+    Route::group(['prefix' => 'interviews'], function () {
+
+        Route::get('/','Interview\InterviewController@index')->name('admin.interviews');
+        Route::get('/create','Interview\InterviewController@create')->name('admin.interview.create');
+        Route::get('/edit/{interview}','Interview\InterviewController@edit');
+        Route::post('/store','Interview\InterviewController@store')->name('admin.interview.store');
+        Route::post('/update/{interview}','Interview\InterviewController@update');
+        Route::post('/delete/{interview}','Interview\InterviewController@destroy');
+    });
 });
 
 Route::get('/', 'Publics\Index\IndexController@index');
@@ -297,15 +303,16 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {
     Route::post('/delete', 'UserController@destroy')->name('user.delete');
 });
 
-Route::get('/ads', 'Publics\Pages\PagesController@ads');
-Route::get('/ads/{advert}', 'Publics\Pages\PagesController@singleadvert');
+Route::get('/ads', 'Publics\Pages\PagesController@ads')->name('adverts');
+Route::get('/ads/{slug}', 'Publics\Pages\PagesController@singleadvert')->name('singAdvert');
 Route::get('/album', 'Publics\Pages\PagesController@album');
+Route::get('/album/category/{category}', 'Publics\Pages\PagesController@albumCategory');
 Route::get('/conf/stud', 'Publics\Pages\PagesController@confstud');
 Route::get('/conf/univ', 'Publics\Pages\PagesController@confuniv');
 Route::get('/enroll', 'Publics\Pages\PagesController@enroll');
 Route::get('/history', 'Publics\Pages\PagesController@history');
 Route::get('/news', 'Publics\Pages\PagesController@news');
-Route::get('/news/{post}', 'Publics\Pages\PagesController@singlenews');
+Route::get('/news/{slug}', 'Publics\Pages\PagesController@singlenews')->name('post.show');
 Route::get('/plan', 'Publics\Pages\PagesController@plan');
 Route::get('/schedule', 'Publics\Pages\PagesController@schedule');
 Route::get('/certification', 'Publics\Pages\PagesController@certification');
@@ -313,6 +320,7 @@ Route::get('/speciality', 'Publics\Pages\PagesController@speciality');
 Route::get('/team', 'Publics\Pages\PagesController@team');
 Route::get('/team/{lecturer}', 'Publics\Pages\PagesController@teamsingle')->name('lecturer');
 Route::get('/contacts', 'Publics\Pages\PagesController@contacts');
+Route::get('/offer', 'Publics\Pages\PagesController@offerAds');
 
 Route::group(['prefix' => 'messages', 'middleware' => 'auth'], function () {
 
@@ -331,5 +339,3 @@ Auth::routes();
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha, $config = 'default') {
     return $captcha->src($config);
 });
-
-Route::get('/home', 'HomeController@index')->name('home');

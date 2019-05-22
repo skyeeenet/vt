@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title'){{$lecturer['user']['name']}} - ПГТУ - Кафедра Информатики@endsection
+@section('description'){{$lecturer['user']['name']}}@endsection
+
 @section('content')
     <main>
         <div class="container">

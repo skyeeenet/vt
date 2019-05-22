@@ -1,12 +1,15 @@
 @extends('public.layouts.basic')
 
+@section('title')Коллектив - ПГТУ - Кафедра Информатики@endsection
+@section('description')Коллектив кафедры информатики ПГТУ@endsection
+
 @section('content')
     <main>
         <section>
             <div class="container">
                 <div class="text-center mb-5 mt-5">
                     <h1 class="title">
-                        Колектив
+                        Коллектив
                     </h1>
                     <div class="d-flex flex-row justify-content-center specDoubledColorLine">
                         <div></div>

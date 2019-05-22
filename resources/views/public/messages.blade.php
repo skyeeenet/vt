@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title')Сообщения - ПГТУ - Кафедра Информатики@endsection
+@section('description')Отправленные и получение сообщения@endsection
+
 @section('content')
 <main>
     <div class="errors text-center">

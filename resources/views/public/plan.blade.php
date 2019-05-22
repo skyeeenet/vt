@@ -1,5 +1,8 @@
 @extends('public.layouts.basic')
 
+@section('title')Графики и планы - ПГТУ - Кафедра Информатики@endsection
+@section('description')Графики и планы. ПГТУ - Кафедра информатики@endsection
+
 @section('content')
     <main>
         <section>
